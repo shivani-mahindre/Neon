@@ -1,0 +1,111 @@
+package com.pageFactory.desktopMecca;
+
+import java.awt.print.Printable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
+import java.util.Random;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.FindElement;
+import org.sikuli.script.Screen;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.itextpdf.text.log.SysoCounter;
+
+public class Message_SendUnread_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig = new Properties();
+	String user = "";
+	Screen objScreen;
+
+	public Message_SendUnread_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		user = pojo.getUser();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+
+	// PAM
+	private By PAMUsername = By.xpath("//input[@id='usernameEmail']");
+	private By PAMpassword = By.xpath("//input[@id='password']");
+	private By loginSubmitBtn = By.xpath("//button[@id='loginSubmit']");
+	private By searchBox = By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton = By.xpath("//button[@id='unifiedSubmit']");
+	private By messageTAB = By.xpath("//a[contains(.,'Messages')]");
+	private By newMessageTab = By.xpath("//a[contains(.,'New')]");
+	private By senderName = By.xpath("//input[@id='from']");
+	private By messageTitle = By.xpath("//input[@id='subject']");
+	private By textArea = By.xpath("//textarea[@id='body']");
+	private By confirmBtn = By.xpath("//a[contains(.,'Confirm')]");
+
+	// Front End
+	private By accountTab = By.xpath("//span[contains(.,'Account')]");
+	private By messageTab = By.xpath("//a[contains(.,'Messages')]");
+	private By getSendername = By.xpath("//tr//td[3]");
+	private By unreadMessagetext = By.xpath("//span[@id='playerInboxNotifications']");
+
+	private By loginError = By.xpath("//li[contains(.,'Login attempt was unsuccessful')]");
+
+	public void createMessage_BE()
+	{
+
+		objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+		objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+		objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+		objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+		objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+
+		objUtilities.logReporter("Click on Message Tab", objWrapperFunctions.click(messageTAB), false);
+		try
+		{
+
+			Thread.sleep(9000);
+
+			objScreen.click("/src/main/resources/images/NewMessage.PNG");
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		;
+		// objUtilities.logReporter("Click on new Message",objWrapperFunctions.click(newMessageTab),
+		// false);
+		objUtilities.logReporter("Enter Sender", objWrapperFunctions.setText(senderName, "Autoamtion Team"), false);
+		objUtilities.logReporter("Enter title ", objWrapperFunctions.setText(messageTitle, "SQS Autoamtion test"), false);
+		objUtilities.logReporter("Enter Description", objWrapperFunctions.setText(textArea, "This is automation test Message"), false);
+		objUtilities.logReporter("Click on confirm button", objWrapperFunctions.click(confirmBtn), false);
+
+	}
+
+	public void readMessage_FE()
+	{
+
+		objUtilities.logReporter("Click on account Tab ", objWrapperFunctions.click(accountTab), false);
+		objUtilities.logReporter("Click on message Tab ", objWrapperFunctions.click(messageTab), false);
+
+		String ureadMessagetext = objWrapperFunctions.getText(unreadMessagetext);
+		if (ureadMessagetext.contains("0"))
+		{
+			objUtilities.logReporter("No new/unread message", objWrapperFunctions.verifyIsElementPresent(unreadMessagetext), false);
+		} else
+		{
+			String senderName_FE = objWrapperFunctions.getText(getSendername);
+			objUtilities.logReporter(" new/unread message", objWrapperFunctions.verifyIsElementPresent(unreadMessagetext), false);
+		}
+
+	}
+
+}

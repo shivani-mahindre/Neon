@@ -1,0 +1,111 @@
+package com.pageFactory.desktopMecca;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.sun.jna.platform.unix.X11.Screen;
+
+public class TransationHistoryValidation_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;	
+	String user="";
+	String startDate="";
+	Screen objScreen;
+	
+	public TransationHistoryValidation_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		//System.out.println("Usernmme->>"+user);
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+		
+	}
+	// Front end account
+		  private  By accountMenu = By.xpath("//span[contains(.,'Account')]");
+		  private  By accounthistorytab = By.xpath("//a[contains(.,'Account History')]");
+		  private  By activityTypeLabel = By.xpath("//label[contains(.,'Activity Type')]");
+		  private  By activityTypeDropdown = By.xpath("//select[@id='activityType']");
+		  private  By startDateLabel = By.xpath("//label[contains(.,'Start Date:')]");
+		  private  By startDateInputbox = By.xpath("//input[@id='sortStartDate']");
+		  
+		  private  By endDateLabel = By.xpath("//label[contains(.,'End Date:')]");
+		  private  By endDateInputbox = By.xpath("//input[@id='sortEndDate']");
+		  private  By filterActivityButton = By.xpath("//button[@id='btnSubmit'][contains(.,'Filter Activity')]");
+		  private  By resetButton = By.xpath("//button[@id='btnReset'][contains(.,'Reset')]");
+		  private By errorMsg=By.xpath("//label[contains(.,'Dates must be less than 30 days apart.')]");
+		  
+		  private By noRsultFoundMsg=By.xpath("//td[contains(.,'No account activity found')]");		  
+		  private By bonusTypeResult=By.xpath("//td[@class='type'][contains(.,'Bonus')]");
+		  private By depositTypeResult=By.xpath("//td[@class='type'][contains(.,'Deposit')]");
+		  private By WithdrawalTypeResult=By.xpath("//td[@class='type'][contains(.,'Withdrawal')]");
+		  private By WagersTypeResult=By.xpath("//td[@class='type']");
+			  
+		 public void  verifyAccountHistory()
+		 {
+			 objUtilities.logReporter("Click Account Menu", objWrapperFunctions.click(accountMenu),false);
+			 objUtilities.logReporter("Click Account History Tab", objWrapperFunctions.click(accounthistorytab),false);
+			 objUtilities.logReporter("Verify ' activity Type Label'  presence", objWrapperFunctions.verifyIsElementPresent(activityTypeLabel), false);
+			 objUtilities.logReporter("Verify ' activity Type Dropdown'  presence", objWrapperFunctions.verifyIsElementPresent(activityTypeDropdown), false);
+			 
+			 objUtilities.logReporter("Verify ' startDateLabel'  presence", objWrapperFunctions.verifyIsElementPresent(startDateLabel), false);
+			 objUtilities.logReporter("Verify ' startDateInputbox '  presence", objWrapperFunctions.verifyIsElementPresent(startDateInputbox ), false);
+			 objUtilities.logReporter("Verify ' endDateLabel'  presence", objWrapperFunctions.verifyIsElementPresent(endDateLabel), false);
+			 objUtilities.logReporter("Verify ' endDateInputbox'  presence", objWrapperFunctions.verifyIsElementPresent(endDateInputbox), false);
+			 
+			 objUtilities.logReporter("Verify ' filterActivityButton'  presence", objWrapperFunctions.verifyIsElementPresent(filterActivityButton), false);
+			 objUtilities.logReporter("Verify ' resetButton'  presence", objWrapperFunctions.verifyIsElementPresent(resetButton), false);
+			 
+			 startDate=objWrapperFunctions.getAttributeValue(startDateInputbox, "value");
+			 System.out.println(startDate);
+			 
+			 String dateToSet=objUtilities.modifyDaysFromDate(startDate, -1,"dd/mm/yyyy");
+			 System.out.println("dateToSet "+dateToSet);
+			
+			 objUtilities.logReporter("set start date ", objWrapperFunctions.setText(startDateInputbox, dateToSet), false); 
+			 objUtilities.logReporter("Verify 'errorMsg'  presence", objWrapperFunctions.verifyIsElementPresent(errorMsg), false);
+			 objUtilities.logReporter("Click reset button", objWrapperFunctions.click(resetButton),false);
+			 
+			 objUtilities.logReporter("Select Deposit option as activity type ", objWrapperFunctions.selectDropDownByIndex(activityTypeDropdown,1), false);
+			 objUtilities.logReporter("Click filterActivityButton", objWrapperFunctions.click(filterActivityButton),false);
+			 verifyResult(depositTypeResult);
+			 
+			 objUtilities.logReporter("Select Withdrawals option as activity type ", objWrapperFunctions.selectDropDownByIndex(activityTypeDropdown,2), false);
+			 objUtilities.logReporter("Click filterActivityButton", objWrapperFunctions.click(filterActivityButton),false);
+			 verifyResult(WithdrawalTypeResult);
+			
+			 objUtilities.logReporter("Select Bonuses option as activity type ", objWrapperFunctions.selectDropDownByIndex(activityTypeDropdown,3), false);
+			 objUtilities.logReporter("Click filterActivityButton", objWrapperFunctions.click(filterActivityButton),false);
+			 verifyResult(bonusTypeResult);
+			 
+			 objUtilities.logReporter("Select Wagers option as activity type ", objWrapperFunctions.selectDropDownByIndex(activityTypeDropdown,4), false);
+			 objUtilities.logReporter("Click filterActivityButton", objWrapperFunctions.click(filterActivityButton),false);
+			 verifyResult(WagersTypeResult);
+			 
+			 
+			 
+		 }
+		 
+		 public void verifyResult(By locator)
+		 {
+			// objWrapperFunctions.waitForElementPresence(locator);
+			 if(objWrapperFunctions.checkElementDisplyed(locator))
+			 {
+				 objUtilities.logReporter("Verify 'activity type'presence", objWrapperFunctions.verifyIsElementPresent(locator), false);
+			 }
+			 else
+			 {
+				 objUtilities.logReporter("Verify 'No account activity found message 'presence", objWrapperFunctions.verifyIsElementPresent(noRsultFoundMsg), false);
+			 }
+		 }
+		 
+		
+}

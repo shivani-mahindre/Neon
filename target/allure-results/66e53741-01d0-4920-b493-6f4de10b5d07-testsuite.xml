@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1495016657385" stop="1495016695781" version="1.4.4">
+    <name>Regression</name>
+    <title>Regression : Desktop</title>
+    <test-cases>
+        <test-case start="1495016657569" stop="1495016694589" status="passed">
+            <name>RegisterAndDeposit</name>
+            <steps>
+                <step start="1495016672846" stop="1495016672874" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495016674400" stop="1495016674405" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495016675259" stop="1495016675267" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D79167BS"/>
+                <label name="thread" value="4900@D79167BS.main"/>
+            </labels>
+        </test-case>
+        <test-case start="1495016657569" stop="1495016694589" status="passed">
+            <name>RegisterAndDeposit</name>
+            <steps>
+                <step start="1495016672846" stop="1495016672874" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495016674400" stop="1495016674405" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495016675259" stop="1495016675267" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D79167BS"/>
+                <label name="thread" value="4900@D79167BS.main"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

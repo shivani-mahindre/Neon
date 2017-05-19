@@ -1,0 +1,93 @@
+package com.pageFactory.PAM;
+
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class ChangeFlagFunctionality_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	String PAMUser,PAMPass;
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	
+	public ChangeFlagFunctionality_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		PAMUser=pojo.getPAMUser();
+		PAMPass=pojo.getPAMPassword();
+		System.out.println("Usernmme->>"+user +PAMUser+PAMPass);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By changeFlags=By.xpath("//span[contains(.,'Change Flags')]");
+	private By bonusAbuser_ON=By.xpath("//label[contains(.,'On')]//input[1][@data-name='BonusAbuser']");
+	private By bonusAbuser_Off=By.xpath("//label[contains(.,'Bonus abuser')]//..//input[1][@name='BonusAbuser'][@value='False']");
+	private By threeDSecure_ON=By.xpath("//label[contains(.,'3D Secure')]//..//input[@name='SkipSecure'][@value='On']");
+	private By textArea=By.xpath("//textarea[@id='playerNote']");
+	
+	private By nextButton=By.xpath("//a[contains(.,'Next')]");
+	private By backButton=By.xpath("//a[contains(.,'Back')]");
+	private By confirmBtn=By.xpath("//a[contains(.,'Confirm')]");
+	
+	
+	public void changeFlag()
+	{
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, PAMUser), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, PAMPass), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on changeFlags ", objWrapperFunctions.click(changeFlags), false);
+	    objUtilities.logReporter("Click on bonusAbuser_ON ", objWrapperFunctions.doubleClick(bonusAbuser_ON), false);
+	    if(objWrapperFunctions.verifyIsElementPresent(textArea))
+	    {
+	    	objUtilities.logReporter("Set playerNote ", objWrapperFunctions.setText(textArea, "Automation Change Flag"), false);	
+	    }
+	    objUtilities.logReporter("Click on nextButton ", objWrapperFunctions.click(nextButton), false);
+	    objUtilities.logReporter("Click on backButton ", objWrapperFunctions.click(backButton), false);
+	    objUtilities.logReporter("Click on bonusAbuser_Off ", objWrapperFunctions.click(bonusAbuser_Off), false);
+	    objUtilities.logReporter("Click on threeDSecure_ON ", objWrapperFunctions.click(threeDSecure_ON), false);
+	    if(objWrapperFunctions.verifyIsElementPresent(textArea))
+	    {
+	    	objUtilities.logReporter("Set playerNote ", objWrapperFunctions.setText(textArea, "Automation Change Flag"), false);	
+	    }
+	    objUtilities.logReporter("Click on nextButton ", objWrapperFunctions.click(nextButton), false);
+	    objUtilities.logReporter("Click on backButton ", objWrapperFunctions.click(backButton), false);  
+	    
+	 /*   objUtilities.logReporter("Set playerNote ", objWrapperFunctions.setText(textArea, "Automation Change Flag"), false);
+	    objUtilities.logReporter("Click on nextButton ", objWrapperFunctions.click(nextButton), false);
+	    objUtilities.logReporter("Click on backButton ", objWrapperFunctions.click(backButton), false);
+	    objUtilities.logReporter("Click on bonusAbuser_Off ", objWrapperFunctions.click(bonusAbuser_Off), false);
+	    objUtilities.logReporter("Click on threeDSecure_ON ", objWrapperFunctions.click(threeDSecure_ON), false);
+	    objUtilities.logReporter("Set playerNote ", objWrapperFunctions.setText(textArea, "Automation Change Flag"), false);
+	    objUtilities.logReporter("Click on nextButton ", objWrapperFunctions.click(nextButton), false);
+	    objUtilities.logReporter("Click on confirmBtn ", objWrapperFunctions.click(confirmBtn), false);  */
+	    
+	    
+	    
+	   
+}
+	
+	
+}

@@ -1,0 +1,68 @@
+package com.scripts.desktopMecca;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.GetTcStatus;
+import com.pageFactory.desktopMecca.PageValidation_Clubs_PF;
+import com.pageFactory.desktopMecca.PageValidation_PF;
+import com.views.desktopMecca.LoginView;
+
+/**
+ * @ScriptName    : Page Vlaidation
+ * @Description   : Page Validation
+ */
+
+public class PageValidation_Clubs extends BaseTest
+{
+	//private Utilities objUtilities;
+	private LoginView objLoginView ;
+	private PageValidation_Clubs_PF objPageValidation_Clubs_PF;
+	
+
+	// Initializing Environment 
+	@BeforeClass
+	private void setUp()
+	{
+	        initializeWebEnvironment("MB");
+	        objPageValidation_Clubs_PF =new PageValidation_Clubs_PF(this);
+	        objLoginView = new  LoginView(this);
+	}
+	
+ /* Validations Without login*/
+
+    @Title("Club Page Validations")
+    @Test
+    public void homePageValidationWOLogin()
+    {
+   	objPageValidation_Clubs_PF.checkPageWithoutLogin();
+	objLoginView.login();
+	objPageValidation_Clubs_PF.JoinYourLocalClub();
+	//objLoginView.logout();
+    }
+
+   
+    
+   /* @Title("Page Validations with Login ")
+    @Test
+    public void PageValidationWithLogin() {
+	// Login in to ACC
+	objLoginView.login();
+	objHomePageValidation_PF.PageValidationWithLogin();
+	
+	objLoginView.logout();
+    }*/
+	
+	// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		//uploadresult("28:1");
+		tearDownWebEnvironment();
+		objLoginView = null;
+	}
+}

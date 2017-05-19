@@ -1,0 +1,164 @@
+package com.view.desktopGNG;
+
+import java.util.Properties;
+
+import ru.yandex.qatools.allure.annotations.Step;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.pageFactory.desktopGNG.CSSPropertyPageFactory_homePage;
+
+public class CSSpropertyView {
+	// Local variables
+		private Pojo objPojo;
+		private String testDataHolder = "";
+		private Utilities objUtilities;
+		private Properties objConfig;
+		//page object declaration
+		private CSSPropertyPageFactory_homePage objCSSPropertyPageFactory;
+		
+		public CSSpropertyView(Pojo pojo)
+		{
+			this.objPojo = pojo;
+			objUtilities = pojo.getObjUtilities();
+			pojo.getObjWrapperFunctions();
+			objConfig = pojo.getObjConfig();
+		}
+
+		@Step("Login Mecca desktop site")
+		public void login() 
+		{
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			testDataHolder = objConfig.getProperty("web.username");
+			objCSSPropertyPageFactory.setUserName(testDataHolder);
+			testDataHolder = objConfig.getProperty("web.password");
+			objCSSPropertyPageFactory.setPassword(testDataHolder);
+			objCSSPropertyPageFactory.clickSignIn();
+			objCSSPropertyPageFactory=null;
+		}
+
+		/**
+		 * @Method: logout
+		 * @Description:  logout from the web site
+		 * @author Automation Tester (SQS) 
+		 * @Creation Date:  27 April 2015  @Modified Date:
+		 */
+		@Step("Log out from Mecca")
+		public void logout()
+		{
+			try {
+				Thread.sleep(8000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.clickLogOut();
+			objCSSPropertyPageFactory = null;
+		}
+
+		
+		/**
+		 * @Method: logout
+		 * @Description:  logout from the web site
+		 * @author Automation Tester (SQS) 
+		 * @Creation Date:  27 April 2015  @Modified Date:
+		 */
+		@Step("get properties values")
+		public void getPropertValues()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getProperty();
+			objCSSPropertyPageFactory = null;
+		}
+		
+		
+		/**
+		 * @Method: logout
+		 * @Description:  logout from the web site
+		 * @author Automation Tester (SQS) 
+		 * @Creation Date:  27 April 2015  @Modified Date:
+		 */
+		@Step("get homePage background color")
+		public void getBgColor()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getbgcolor();
+			objCSSPropertyPageFactory = null;
+		}
+		
+		/**
+		 * @Method: logout
+		 * @Description:  logout from the web site
+		 * @author Automation Tester (SQS) 
+		 * @Creation Date:  27 April 2015  @Modified Date:
+		 */
+		@Step("get homebtn page font proprty")
+		public void getfont()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getFont();
+			objCSSPropertyPageFactory = null;
+		}
+		
+		
+		/**
+		 * @Method: footer Color proprty
+		 * @Description:  footer Color proprty
+		 * @author Automation Tester (SQS) 
+		 * @Creation Date:  27 April 2015  @Modified Date:
+		 */
+		@Step("get footer Color proprty")
+		public void getFooterColor()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getFooterColor();
+			objCSSPropertyPageFactory = null;
+		}
+		
+		@Step("get game Search Box proprty")
+		public void getGameSearchBoxProperty()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getFooterColor();
+			objCSSPropertyPageFactory = null;
+		}
+		
+		
+
+		/**
+		 * @Method: footer Color proprty
+		 * @Description:  footer Color proprty
+		 * @author Automation Tester (SQS) 
+		 * @Creation Date:  27 April 2015  @Modified Date:
+		 */
+		@Step("get Mainmenu bg color")
+		public void getMenuProperty()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getMainMenuPanelbgcolor();
+			objCSSPropertyPageFactory.getMenubgcolor();
+			objCSSPropertyPageFactory.getMenufontcolor();
+			objCSSPropertyPageFactory = null;
+		}
+		
+		
+		@Step("get getsearchboxprop")
+		public void getsearchboxprop()
+		{
+			
+			objCSSPropertyPageFactory = new CSSPropertyPageFactory_homePage(objPojo);
+			objCSSPropertyPageFactory.getSearchBoxBgColour();
+		}
+		
+		
+		
+		
+		
+}

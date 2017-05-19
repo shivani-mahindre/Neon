@@ -1,0 +1,53 @@
+package com.views.desktopMecca;
+
+import java.util.Properties;
+
+import ru.yandex.qatools.allure.annotations.Step;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.pageFactory.desktopMecca.CSSPropertyPF_homePage;
+
+public class CSSPropertyViewMb
+{
+	// Local variables
+			private Pojo objPojo;
+			private String testDataHolder = "";
+			private Utilities objUtilities;
+			private Properties objConfig;
+			//page object declaration
+			private CSSPropertyPF_homePage objCSSPropertyPageFactory;
+			
+			public CSSPropertyViewMb(Pojo pojo)
+			{
+				this.objPojo = pojo;
+				objUtilities = pojo.getObjUtilities();
+				pojo.getObjWrapperFunctions();
+				objConfig = pojo.getObjConfig();
+			}
+
+		
+	
+			/**
+			 * @Method: logout
+			 * @Description:  logout from the web site
+			 * @author Automation Tester (SQS) 
+			 * @Creation Date:  27 April 2015  @Modified Date:
+			 */
+			@Step("get home page font proprty")
+			public void getfont()
+			{
+				
+				objCSSPropertyPageFactory = new CSSPropertyPF_homePage(objPojo);
+				objCSSPropertyPageFactory.getFontHome();
+				objCSSPropertyPageFactory.getFontBingo();
+				objCSSPropertyPageFactory = null;
+			}
+			
+	
+
+			
+			
+			
+
+}

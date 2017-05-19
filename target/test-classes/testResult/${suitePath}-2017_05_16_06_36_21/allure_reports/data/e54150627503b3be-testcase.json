@@ -1,0 +1,340 @@
+{
+  "uid" : "e54150627503b3be",
+  "name" : "RegisterAndDeposit",
+  "title" : "Register and deposit",
+  "time" : {
+    "start" : 1494916589830,
+    "stop" : 1494916658592,
+    "duration" : 68762
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 20
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "steps" : [ {
+    "name" : "logReporter[Enter username, true, false]",
+    "title" : "Enter username",
+    "time" : {
+      "start" : 1494916596174,
+      "stop" : 1494916596184,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter password, true, false]",
+    "title" : "Enter password",
+    "time" : {
+      "start" : 1494916596806,
+      "stop" : 1494916596816,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on signBtn, true, false]",
+    "title" : "Click on signBtn",
+    "time" : {
+      "start" : 1494916597136,
+      "stop" : 1494916597146,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on customer tab, true, false]",
+    "title" : "Click on customer tab",
+    "time" : {
+      "start" : 1494916617495,
+      "stop" : 1494916617495,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on registartion tab, true, false]",
+    "title" : "Click on registartion tab",
+    "time" : {
+      "start" : 1494916618148,
+      "stop" : 1494916618158,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter username, true, false]",
+    "title" : "Enter username",
+    "time" : {
+      "start" : 1494916623402,
+      "stop" : 1494916623402,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on customer tab, true, false]",
+    "title" : "Click on customer tab",
+    "time" : {
+      "start" : 1494916625448,
+      "stop" : 1494916625448,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on customer tab, true, false]",
+    "title" : "Click on customer tab",
+    "time" : {
+      "start" : 1494916627190,
+      "stop" : 1494916627197,
+      "duration" : 7
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter forename, true, false]",
+    "title" : "Enter forename",
+    "time" : {
+      "start" : 1494916628004,
+      "stop" : 1494916628014,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter DateOfBirth, true, false]",
+    "title" : "Enter DateOfBirth",
+    "time" : {
+      "start" : 1494916628727,
+      "stop" : 1494916628737,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[select gender, true, false]",
+    "title" : "select gender",
+    "time" : {
+      "start" : 1494916630163,
+      "stop" : 1494916630163,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter street, true, false]",
+    "title" : "Enter street",
+    "time" : {
+      "start" : 1494916633773,
+      "stop" : 1494916633780,
+      "duration" : 7
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter City, true, false]",
+    "title" : "Enter City",
+    "time" : {
+      "start" : 1494916635985,
+      "stop" : 1494916635989,
+      "duration" : 4
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on card number, true, false]",
+    "title" : "Click on card number",
+    "time" : {
+      "start" : 1494916636681,
+      "stop" : 1494916636685,
+      "duration" : 4
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter street, true, false]",
+    "title" : "Enter street",
+    "time" : {
+      "start" : 1494916637231,
+      "stop" : 1494916637231,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on Save btn, true, false]",
+    "title" : "Click on Save btn",
+    "time" : {
+      "start" : 1494916639640,
+      "stop" : 1494916639640,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[ click on No Match Btn, true, false]",
+    "title" : " click on No Match Btn",
+    "time" : {
+      "start" : 1494916642212,
+      "stop" : 1494916642222,
+      "duration" : 10
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[ click on No Match Btn, true, false]",
+    "title" : " click on No Match Btn",
+    "time" : {
+      "start" : 1494916653370,
+      "stop" : 1494916653375,
+      "duration" : 5
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[ click on yesBtn, true, false]",
+    "title" : " click on yesBtn",
+    "time" : {
+      "start" : 1494916657448,
+      "stop" : 1494916657448,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[ click on ok Btn, true, false]",
+    "title" : " click on ok Btn",
+    "time" : {
+      "start" : 1494916658361,
+      "stop" : 1494916658361,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "D90D3CQ1"
+  }, {
+    "name" : "thread",
+    "value" : "7200@D90D3CQ1.main"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

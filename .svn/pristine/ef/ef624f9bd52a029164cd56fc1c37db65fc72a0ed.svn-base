@@ -1,0 +1,66 @@
+package com.views.desktopGCasino;
+
+import java.util.Properties;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.pageFactory.desktopGcasino.Footer_PF;
+import com.pageFactory.desktopGcasino.LocalCasinos;
+import com.pageFactory.desktopGcasino.Registration;
+
+public class LocalCasinoView {
+
+	private Pojo objPojo;
+	private String testDataHolder = "";
+	private Utilities objUtilities;
+	private Properties objConfig;
+	//page object declaration
+	private LocalCasinos objLocalCasinos;
+	
+	
+	public LocalCasinoView(Pojo pojo)
+	{
+		this.objPojo = pojo;
+		objUtilities = pojo.getObjUtilities();
+		pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+	}
+	
+	public void checkLocalCasinoTab()
+	{
+		objLocalCasinos = new LocalCasinos(objPojo);
+		objLocalCasinos.checkLocalCasinoTab();
+	}
+		
+	public void checkFindCasinoSubTab()
+	{
+		objLocalCasinos = new LocalCasinos(objPojo);
+		objLocalCasinos.checkFindCasinoSubTab();
+	}
+	
+	public void checkLatestNewsSubTab()
+	{
+		objLocalCasinos = new LocalCasinos(objPojo);
+		objLocalCasinos.checkLatestNewsSubTab();
+	}
+	public void checkAllOurCasinoSubTab()
+	{
+		objLocalCasinos = new LocalCasinos(objPojo);
+		objLocalCasinos.checkAllOurCasinoSubTab();
+	}
+	public void checkCasinoFinder()
+	{
+		objLocalCasinos = new LocalCasinos(objPojo);
+		objLocalCasinos.checkCasinoFinder();
+	}
+	
+	public void checkCasinoDetailsPage()
+	
+	{
+		objLocalCasinos = new LocalCasinos(objPojo);
+		objLocalCasinos.checkCasinoDetailsPage();
+	}
+
+	
+}
+

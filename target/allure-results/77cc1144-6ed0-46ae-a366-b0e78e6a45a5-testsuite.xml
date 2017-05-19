@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1494586273869" stop="1494586338818" version="1.4.4">
+    <name>Default suite</name>
+    <title>Default suite : Default test</title>
+    <test-cases>
+        <test-case start="1494586273921" stop="1494586337999" status="passed">
+            <name>RegisterAndDeposit</name>
+            <steps>
+                <step start="1494586278024" stop="1494586278072" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586278609" stop="1494586278619" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586278943" stop="1494586278952" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586298931" stop="1494586298939" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586299408" stop="1494586299417" status="passed">
+                    <name>logReporter[Click on registartion tab, true, false]</name>
+                    <title>Click on registartion tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586303617" stop="1494586303624" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586305349" stop="1494586305357" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586307013" stop="1494586307026" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586307720" stop="1494586307729" status="passed">
+                    <name>logReporter[Enter forename, true, false]</name>
+                    <title>Enter forename</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586308326" stop="1494586308335" status="passed">
+                    <name>logReporter[Enter DateOfBirth, true, false]</name>
+                    <title>Enter DateOfBirth</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586309672" stop="1494586309680" status="passed">
+                    <name>logReporter[select gender, true, false]</name>
+                    <title>select gender</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586312847" stop="1494586312860" status="passed">
+                    <name>logReporter[Enter street, true, false]</name>
+                    <title>Enter street</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586314991" stop="1494586315001" status="passed">
+                    <name>logReporter[Enter City, true, false]</name>
+                    <title>Enter City</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586315651" stop="1494586315659" status="passed">
+                    <name>logReporter[Click on card number, true, false]</name>
+                    <title>Click on card number</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586316105" stop="1494586316113" status="passed">
+                    <name>logReporter[Enter street, true, false]</name>
+                    <title>Enter street</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586318504" stop="1494586318514" status="passed">
+                    <name>logReporter[Click on Save btn, true, false]</name>
+                    <title>Click on Save btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586320735" stop="1494586320744" status="passed">
+                    <name>logReporter[ click on No Match Btn, true, false]</name>
+                    <title> click on No Match Btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586331104" stop="1494586331112" status="passed">
+                    <name>logReporter[ click on No Match Btn, true, false]</name>
+                    <title> click on No Match Btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586337013" stop="1494586337021" status="passed">
+                    <name>logReporter[ click on yesBtn, true, false]</name>
+                    <title> click on yesBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586337890" stop="1494586337899" status="passed">
+                    <name>logReporter[ click on ok Btn, true, false]</name>
+                    <title> click on ok Btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D90D3CQ1"/>
+                <label name="thread" value="7876@D90D3CQ1.main"/>
+            </labels>
+        </test-case>
+        <test-case start="1494586273921" stop="1494586337999" status="passed">
+            <name>RegisterAndDeposit</name>
+            <steps>
+                <step start="1494586278024" stop="1494586278072" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586278609" stop="1494586278619" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586278943" stop="1494586278952" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586298931" stop="1494586298939" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586299408" stop="1494586299417" status="passed">
+                    <name>logReporter[Click on registartion tab, true, false]</name>
+                    <title>Click on registartion tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586303617" stop="1494586303624" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586305349" stop="1494586305357" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586307013" stop="1494586307026" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586307720" stop="1494586307729" status="passed">
+                    <name>logReporter[Enter forename, true, false]</name>
+                    <title>Enter forename</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586308326" stop="1494586308335" status="passed">
+                    <name>logReporter[Enter DateOfBirth, true, false]</name>
+                    <title>Enter DateOfBirth</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586309672" stop="1494586309680" status="passed">
+                    <name>logReporter[select gender, true, false]</name>
+                    <title>select gender</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586312847" stop="1494586312860" status="passed">
+                    <name>logReporter[Enter street, true, false]</name>
+                    <title>Enter street</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586314991" stop="1494586315001" status="passed">
+                    <name>logReporter[Enter City, true, false]</name>
+                    <title>Enter City</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586315651" stop="1494586315659" status="passed">
+                    <name>logReporter[Click on card number, true, false]</name>
+                    <title>Click on card number</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586316105" stop="1494586316113" status="passed">
+                    <name>logReporter[Enter street, true, false]</name>
+                    <title>Enter street</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586318504" stop="1494586318514" status="passed">
+                    <name>logReporter[Click on Save btn, true, false]</name>
+                    <title>Click on Save btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586320735" stop="1494586320744" status="passed">
+                    <name>logReporter[ click on No Match Btn, true, false]</name>
+                    <title> click on No Match Btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586331104" stop="1494586331112" status="passed">
+                    <name>logReporter[ click on No Match Btn, true, false]</name>
+                    <title> click on No Match Btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586337013" stop="1494586337021" status="passed">
+                    <name>logReporter[ click on yesBtn, true, false]</name>
+                    <title> click on yesBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494586337890" stop="1494586337899" status="passed">
+                    <name>logReporter[ click on ok Btn, true, false]</name>
+                    <title> click on ok Btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D90D3CQ1"/>
+                <label name="thread" value="7876@D90D3CQ1.main"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

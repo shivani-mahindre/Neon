@@ -1,0 +1,99 @@
+package com.pageFactory.desktopGcasino;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class FLOG {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	private Properties objConfig;
+	private String user;
+	
+	
+	public FLOG(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig=pojo.getObjConfig();
+	}
+	
+	
+	
+	private By forgotten_username=By.xpath("//a[@class='forgot-username'][contains(text(),'Forgotten Username?')]");
+	private By enter_emailID=By.xpath("//input[@id='forgottenUsernameEmail']");
+	private By select_DOBday=By.xpath("//select[@id='forgottenUsernameDOBDay']");
+	private By select_DOBMonth=By.xpath("//select[@id='forgottenUsernameDOBMonth']");
+	private By select_DOBYear=By.xpath("//select[@id='forgottenUsernameDOBYear']");
+	private By button_reqstUsername=By.xpath("//button[@id='requestUsernameButton']");
+	private By confirmation_msg=By.xpath("//p[contains(text(),'We have successfully sent an')]");
+	
+	private By gamil_username=By.xpath("//input[@id='Email']");
+	private By gmail_next=By.xpath("//input[@id='next']");
+	private By gmail_password=By.xpath("//input[@id='Passwd']");
+	private By gmail_signin=By.xpath("//input[@id='signIn']");
+	
+	
+
+	
+	private By forgotten_password=By.xpath("//a[@class='forgot-password'][contains(text(),'Forgotten Password?')]");
+	private By enter_username=By.xpath("//input[@id='requestPasswordReset']");
+	private By button_requestResetPasswrd=By.xpath("//button[@id='requestPasswordResetSubmit']");
+	private By success_msg_resetPaswwd=By.xpath("//p[contains(text(),': Please check your emails for ')]");
+//	private By gmail_signin=By.xpath("//input[@id='signIn']");
+	
+	
+	private By gmail_inboxFirstRow=By.xpath("//td[@id=':3m']");
+	
+
+	
+	public void forgotten_username()
+	{
+		 objUtilities.logReporter("shortcut", objWrapperFunctions.verifyIsElementPresent(forgotten_username), false);
+		 objUtilities.logReporter("shortcut", objWrapperFunctions.click(forgotten_username), false);
+		 objUtilities.logReporter("shortcut", objWrapperFunctions.setText(enter_emailID, "sqsdarwin@gmail.com"), false);
+		 objUtilities.logReporter("Select DOB day", objWrapperFunctions.selectDropDownByIndex(select_DOBday,5), false);
+		 objUtilities.logReporter("Select DOB Month", objWrapperFunctions.selectDropDownByIndex(select_DOBMonth,5), false);
+		 objUtilities.logReporter("Select DOB year", objWrapperFunctions.selectDropDownByIndex(select_DOBYear,5), false);
+		 objUtilities.logReporter("click on request username", objWrapperFunctions.click(button_reqstUsername), false);
+		 objUtilities.logReporter("check confirmation message", objWrapperFunctions.verifyIsElementPresent(confirmation_msg), false);
+		
+		 
+		 objUtilities.logReporter("navigate to gmail", objWrapperFunctions.navigateToURL("https://accounts.google.com/ServiceLogin?sacu=1&scc=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=en&service=mail#identifier"), false);
+		 objUtilities.logReporter("enter username", objWrapperFunctions.setText(gamil_username, "sqsdarwin"), false);
+		 objUtilities.logReporter("click next", objWrapperFunctions.click(gmail_next), false);
+		 objUtilities.logReporter("enter passsword", objWrapperFunctions.setText(gmail_password, "Darwin@123"), false);
+		 objUtilities.logReporter("click sign in", objWrapperFunctions.click(gmail_signin), false);
+		 
+	
+		 
+		 objUtilities.logReporter("navigate to grosvenor", objWrapperFunctions.navigateToURL("https://np01-bede.grosvenorcasinos.com"), false);
+	//	 objUtilities.logReporter("", objWrapperFunctions.verifyIsElementPresent(), false);
+	//	 objUtilities.logReporter("", objWrapperFunctions.verifyIsElementPresent(), false);
+
+	}
+	
+	
+	public void forgotten_password()
+	{
+		 objUtilities.logReporter("verify forgotten_password", objWrapperFunctions.verifyIsElementPresent(forgotten_password), false);
+		 objUtilities.logReporter("forgotten_password", objWrapperFunctions.click(forgotten_password), false);
+		 objUtilities.logReporter("enter username", objWrapperFunctions.setText(enter_username, "testflog"), false);
+		 objUtilities.logReporter("button", objWrapperFunctions.click(button_requestResetPasswrd), false);
+		 objUtilities.logReporter("verify success msg", objWrapperFunctions.verifyIsElementPresent(success_msg_resetPaswwd), false);
+		 
+		 objUtilities.logReporter("navigate to gmail", objWrapperFunctions.navigateToURL("https://accounts.google.com/ServiceLogin?sacu=1&scc=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&hl=en&service=mail#identifier"), false);
+		 objUtilities.logReporter("enter username", objWrapperFunctions.setText(gamil_username, "sqsdarwin"), false);
+		 objUtilities.logReporter("click next", objWrapperFunctions.click(gmail_next), false);
+		 objUtilities.logReporter("enter passsword", objWrapperFunctions.setText(gmail_password, "Darwin@123"), false);
+		 objUtilities.logReporter("click sign in", objWrapperFunctions.click(gmail_signin), false);
+		 
+		 objUtilities.logReporter("click 1st mail", objWrapperFunctions.click(gmail_inboxFirstRow), false);
+		 
+		 
+	}
+	
+}

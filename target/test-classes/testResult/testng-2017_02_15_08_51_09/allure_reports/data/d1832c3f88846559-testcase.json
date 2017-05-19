@@ -1,0 +1,280 @@
+{
+  "uid" : "d1832c3f88846559",
+  "name" : "depositPayPal",
+  "title" : "Deposit using Netteller",
+  "time" : {
+    "start" : 1487148783067,
+    "stop" : 1487148844328,
+    "duration" : 61261
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 16
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "steps" : [ {
+    "name" : "login",
+    "title" : "Login Mecca desktop site",
+    "time" : {
+      "start" : 1487148783068,
+      "stop" : 1487148789010,
+      "duration" : 5942
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 3
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Set 'UserName'., mb_test005, true, false]",
+      "title" : "Set 'UserName'. - mb_test005",
+      "time" : {
+        "start" : 1487148783234,
+        "stop" : 1487148783254,
+        "duration" : 20
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Set 'Password'., Test1234, true, false]",
+      "title" : "Set 'Password'. - Test1234",
+      "time" : {
+        "start" : 1487148783538,
+        "stop" : 1487148783552,
+        "duration" : 14
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Click 'Sign In'., true, false]",
+      "title" : "Click 'Sign In'.",
+      "time" : {
+        "start" : 1487148783990,
+        "stop" : 1487148784010,
+        "duration" : 20
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "logReporter[Click on 'Deposit' menu , true, false]",
+    "title" : "Click on 'Deposit' menu ",
+    "time" : {
+      "start" : 1487148795343,
+      "stop" : 1487148795355,
+      "duration" : 12
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on '$10' button , true, false]",
+    "title" : "Click on '$10' button ",
+    "time" : {
+      "start" : 1487148805646,
+      "stop" : 1487148805676,
+      "duration" : 30
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'submit' button , true, false]",
+    "title" : "Click on 'submit' button ",
+    "time" : {
+      "start" : 1487148805900,
+      "stop" : 1487148805927,
+      "duration" : 27
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Choose payment method', true, false]",
+    "title" : "Click on 'Choose payment method'",
+    "time" : {
+      "start" : 1487148812433,
+      "stop" : 1487148812454,
+      "duration" : 21
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Selected Netteller option', true, false]",
+    "title" : "Click on 'Selected Netteller option'",
+    "time" : {
+      "start" : 1487148812871,
+      "stop" : 1487148812888,
+      "duration" : 17
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter Account ID , true, false]",
+    "title" : "Enter Account ID ",
+    "time" : {
+      "start" : 1487148813110,
+      "stop" : 1487148813126,
+      "duration" : 16
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter Secure ID , true, false]",
+    "title" : "Enter Secure ID ",
+    "time" : {
+      "start" : 1487148813312,
+      "stop" : 1487148813326,
+      "duration" : 14
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Deposit' button , true, false]",
+    "title" : "Click on 'Deposit' button ",
+    "time" : {
+      "start" : 1487148813592,
+      "stop" : 1487148813642,
+      "duration" : 50
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Verify Succes Message, true, false]",
+    "title" : "Verify Succes Message",
+    "time" : {
+      "start" : 1487148830243,
+      "stop" : 1487148830307,
+      "duration" : 64
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Verify Deposited Amount, true, false]",
+    "title" : "Verify Deposited Amount",
+    "time" : {
+      "start" : 1487148830480,
+      "stop" : 1487148830491,
+      "duration" : 11
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logout",
+    "title" : "Log out from Mecca",
+    "time" : {
+      "start" : 1487148830492,
+      "stop" : 1487148844328,
+      "duration" : 13836
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Click 'LogOut'., true, false]",
+      "title" : "Click 'LogOut'.",
+      "time" : {
+        "start" : 1487148836298,
+        "stop" : 1487148836327,
+        "duration" : 29
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "D90D3CQ1"
+  }, {
+    "name" : "thread",
+    "value" : "3776@D90D3CQ1.main"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

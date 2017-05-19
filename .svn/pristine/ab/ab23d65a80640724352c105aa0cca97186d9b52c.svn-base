@@ -1,0 +1,43 @@
+package com.pageFactory.desktopGames;
+import org.openqa.selenium.By;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.XMLInterface;
+
+public class LaunchGameFromFavoriteBar_PF
+{
+	// Local Variables
+	private WrapperFunctions objWrapperFunctions;
+	private Utilities objUtilities;
+	
+	XMLInterface objXML  = new XMLInterface();
+
+	public LaunchGameFromFavoriteBar_PF(Pojo objPojo)
+	{
+		objUtilities = objPojo.getObjUtilities();
+		objWrapperFunctions = objPojo.getObjWrapperFunctions();
+	}
+	
+	  	  private  By slotsNGamesTab = By.xpath("//article//a[contains(.,'Slots')]");
+	  	  private  By accountTAB = By.xpath("//span[contains(.,'Account')]");
+	  	  private  By viewAllNGamesTab = By.xpath("//a[1][contains(.,'View All Games')][@parent='2']");
+		  private  By crystalClearGameFavoriteBtn = By.xpath("//li[@class='game-details-part']//a[@data-favorite-id='Crystal Clear']");
+		  private  By favoritesHeader = By.xpath("//span[contains(.,'Favourites')]");
+		  
+		  private  By favoritesHeader_CrystalClearGame_PlayNow= By.xpath("//a[@data-gamename='Crystal Clear'][contains(.,'Play now')]");
+	 
+	public void launchFavoriteGame()
+	{
+		  objWrapperFunctions.waitForElementPresence(favoritesHeader);
+	      objUtilities.logReporter("Click 'slotsNGamesTab' Tab", objWrapperFunctions.click(slotsNGamesTab), false);
+	      objUtilities.logReporter("Click 'viewAllNGamesTab' Tab", objWrapperFunctions.click(viewAllNGamesTab), false);
+	      objUtilities.logReporter("Click 'crystalClearGameFavoriteBtn' Tab", objWrapperFunctions.click(crystalClearGameFavoriteBtn), false);
+	      objWrapperFunctions.waitForElementPresence(favoritesHeader);
+	      objUtilities.logReporter("Click 'favoritesHeader' Tab", objWrapperFunctions.click(favoritesHeader), false);
+	      objWrapperFunctions.waitForElementPresence(favoritesHeader_CrystalClearGame_PlayNow);
+	      objUtilities.logReporter("Click 'favorited Crystal Clear Game Play now button' Tab", objWrapperFunctions.click(favoritesHeader_CrystalClearGame_PlayNow), false);
+	            
+	}
+	
+}

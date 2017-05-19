@@ -1,0 +1,136 @@
+package com.pageFactory.desktopMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class CSSPropertyPF_homePage
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	String fontValue="Arial";
+	
+		//constructor
+		public CSSPropertyPF_homePage(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+		
+		  private  By btnJoin = By.xpath("//button[@class='btn btn-green btn-bold btn-registration reg-button login-join-now js-login-join-now']");
+		  private  By SignInBtn = By.xpath("//button[@class='btn btn-orange btn-bold login-button js-login-button js-login-submit login-sign-in']");
+		  private  By homeBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target selected'][contains(.,'Home')]"); 
+		  private  By bingoBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Bingo')]");
+		  private  By slotsNGameBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Slots')]");
+		  private  By appsBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Apps')]");
+		  private  By vipBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Clubs')]");
+		  private  By promotionsBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Promotions')]");
+		  private  By clubsBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Clubs')]");
+		  private  By communityBtn = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Community')]");
+		  
+		  private  By forgotPasswordLink = By.xpath("//div[@class='forgotten-details']//a[contains(.,'Forgotten Password')]");
+		  private  By forgotUsernameLink = By.xpath("//div[@class='forgotten-details']//a[contains(.,'Forgotten Username')]");
+		  
+	
+		  // Bingo Page
+
+		  private  By bingoTab = By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'Bingo')]");
+		  private  By bingo_bingoScheduletab = By.xpath("//a[contains(.,'Bingo Schedule')]");	  
+		  private  By bingo_bingoRoomstab = By.xpath("//a[contains(.,'Bingo Rooms')]");	  
+		  private  By bingo_bingoFeatureTab = By.xpath("//a[contains(.,'Bingo Features')]");	  
+		  private  By bingo_meccaPromiseTab = By.xpath("//a[contains(.,'Mecca Promise')]");
+
+		  
+		  private  By slotsNGamesTab = By.xpath("//article//a[contains(.,'Slots')]");
+		  private  By viewAllNGamesTab = By.xpath("//a[1][contains(.,'View All Games')][@parent='2']");	 
+		  private  By promotionTab = By.xpath("//div[@class='menubar-item-target-wrapper']//a[contains(.,'Promotions')]");	
+		  private  By promotionTab_latestOnlinePromotions = By.xpath("//a[contains(.,'Latest Online Promotions')] ");	
+		  private  By promotionTab_playPointsTab = By.xpath("//a[contains(.,'Play Points')]");
+		  
+		  private  By clubsTab = By.xpath("//a[contains(.,'Clubs')][@href='/bingo-clubs']");
+		  private  By clubsTab_JoinYourLocalClubTab = By.xpath("//a[contains(.,'Join Your Local Club')]");
+		  private  By clubsTab_ClubA2ZTab = By.xpath("//a[contains(.,'Clubs A - Z')]");
+		  private  By clubsTab_MeccaGiftVoucherTab = By.xpath("//a[contains(.,'Mecca Gift Vouchers')]");
+		  private  By clubsTab_TalkToUstab = By.xpath("//ul[@class='menubar-list-centered']//a[contains(.,'Talk to us')]");
+		  private  By clubsTab_payInCashTab = By.xpath("//a[contains(.,'Pay In & Cash Out In Club')]");
+		  private  By clubsTab_NewMaxTab = By.xpath("//a[contains(.,'New MAX')]");
+		  private  By CommunityTab= By.xpath("//a[contains(.,'Community')]");		  
+		  private  By CommunityTab_CMOfTheMonthTab= By.xpath("//a[contains(.,'CM of the Month')]");
+		  private  By CommunityTab_WinnersTab= By.xpath("//a[contains(.,'Winners')]");
+		  private  By CommunityTab_RoomieOfTheWeekTab= By.xpath("//a[contains(.,'Roomie Of The Week')]");
+		  private  By CommunityTab_RankCaresTab= By.xpath("//a[contains(.,'Rank Cares')]");	 
+		  private  By CommunityTab_TellMeccaTab= By.xpath("//a[contains(.,'Tell Mecca')]");
+		  private  By CommunityTab_helpCenterTab= By.xpath("//ul[@class='menubar-list-centered']//a[contains(.,'Help Centre')]");
+	
+ 
+		  private By instantWinTab=By.xpath("//a[contains(.,'Instant Win')]");
+	
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : getProperty */
+		  public void getFontHome()
+		  {
+			  objUtilities.logReporter("verify 'font proprty' of home btton",objWrapperFunctions.getFont(homeBtn,fontValue), false); 
+			 objUtilities.logReporter("verify 'font proprty' of Join btton", objWrapperFunctions.getFont(btnJoin,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of SignIn btton", objWrapperFunctions.getFont(SignInBtn,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of Forgotten Password", objWrapperFunctions.getFont(forgotPasswordLink,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of Forgotten Username", objWrapperFunctions.getFont(forgotUsernameLink,fontValue), false);		 
+			  objUtilities.logReporter("verify 'font proprty' of bingo Button", objWrapperFunctions.getFont(bingoBtn,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of slotsNGameBtn", objWrapperFunctions.getFont(slotsNGameBtn,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of appsBtn Button", objWrapperFunctions.getFont(appsBtn,fontValue), false);			
+			  objUtilities.logReporter("verify 'font proprty' of InstantWin Button", objWrapperFunctions.getFont(instantWinTab,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of promotions Button", objWrapperFunctions.getFont(promotionsBtn,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of clubs", objWrapperFunctions.getFont(clubsBtn,fontValue), false);
+			  objUtilities.logReporter("verify 'font proprty' of community Button", objWrapperFunctions.getFont(communityBtn,fontValue), false);
+			  
+			  
+		  }
+		  public void getFontBingo()
+		  {
+		      objUtilities.logReporter("Click 'Bingo Tab'", objWrapperFunctions.click(bingoBtn), false); 
+		      objUtilities.logReporter("verify 'font proprty' of Bingo Schedule",objWrapperFunctions.getFont(bingo_bingoScheduletab,fontValue), false); 
+			  objUtilities.logReporter("verify 'font proprty' of bingo Rooms tab", objWrapperFunctions.getFont(bingo_bingoRoomstab,fontValue), false);		      
+			  objUtilities.logReporter("verify 'font proprty' of bingo Feature Tab",objWrapperFunctions.getFont(bingo_bingoFeatureTab,fontValue), false); 
+			  objUtilities.logReporter("verify 'font proprty' of mecca Promise Tab",objWrapperFunctions.getFont(bingo_meccaPromiseTab,fontValue), false);
+		  }
+		  public void getFontSlot()
+		  {
+		      objUtilities.logReporter("Click 'slotsNGamesTab'", objWrapperFunctions.click(slotsNGamesTab), false); 
+			  objUtilities.logReporter("verify 'font proprty' of view all games tab", objWrapperFunctions.getFont(viewAllNGamesTab,fontValue), false);		      
+			 
+		  }
+		 
+		  public void getFontPromotion()
+		  {
+			  objUtilities.logReporter("Click 'promotionTab' Tab", objWrapperFunctions.click(promotionTab), false);
+			  objUtilities.logReporter("verify 'font proprty' of latest Online Promotions tab", objWrapperFunctions.getFont(promotionTab_latestOnlinePromotions,fontValue), false);		      
+			  objUtilities.logReporter("verify 'font proprty' of Play Points tab", objWrapperFunctions.getFont(promotionTab_playPointsTab,fontValue), false);		      
+		  }
+		
+		  public void getFontClubs()
+		  {
+			  objUtilities.logReporter("Click 'clubsTab' Tab", objWrapperFunctions.click(clubsTab), false);
+			  objUtilities.logReporter("verify 'font proprty' of Join your local club tab", objWrapperFunctions.getFont(clubsTab_JoinYourLocalClubTab,fontValue), false);		      
+			  objUtilities.logReporter("verify 'font proprty' of Club A-Z",objWrapperFunctions.getFont(clubsTab_ClubA2ZTab,fontValue), false); 
+			  objUtilities.logReporter("verify 'font proprty' of Mecca Gift Voucher Tab",objWrapperFunctions.getFont(clubsTab_MeccaGiftVoucherTab,fontValue), false);			  
+			  objUtilities.logReporter("verify 'font proprty' of Talk to us", objWrapperFunctions.getFont(clubsTab_TalkToUstab,fontValue), false);		      
+			  objUtilities.logReporter("verify 'font proprty' of Play In & Cash out in Club ",objWrapperFunctions.getFont(clubsTab_payInCashTab,fontValue), false); 
+			  objUtilities.logReporter("verify 'font proprty' of New Max",objWrapperFunctions.getFont(clubsTab_NewMaxTab,fontValue), false);
+		  }
+		  public void getFontCommunity()
+		  {
+			  objUtilities.logReporter("Click 'CommunityTab' Tab", objWrapperFunctions.click(CommunityTab), false);			  
+			  objUtilities.logReporter("verify 'font proprty' of CMOfTheMonthTab", objWrapperFunctions.getFont(CommunityTab_CMOfTheMonthTab,fontValue), false);		      
+			  objUtilities.logReporter("verify 'font proprty' of WinnersTab",objWrapperFunctions.getFont(CommunityTab_WinnersTab,fontValue), false); 
+			  objUtilities.logReporter("verify 'font proprty' of RoomieOfTheWeekTab",objWrapperFunctions.getFont(CommunityTab_RoomieOfTheWeekTab,fontValue), false);			  
+			  objUtilities.logReporter("verify 'font proprty' of RankCaresTab", objWrapperFunctions.getFont(CommunityTab_RankCaresTab,fontValue), false);		      
+			  objUtilities.logReporter("verify 'font proprty' of helpCenterTab ",objWrapperFunctions.getFont(CommunityTab_helpCenterTab,fontValue), false); 
+			  objUtilities.logReporter("verify 'font proprty' of TellMeccaTab",objWrapperFunctions.getFont(CommunityTab_TellMeccaTab,fontValue), false);
+		  }
+	
+		  
+		
+}

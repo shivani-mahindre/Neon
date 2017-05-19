@@ -1,0 +1,65 @@
+package com.scripts.mobileMecca;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.pageFactory.mobileMecca.AccountPageValidation_MB_PF;
+import com.pageFactory.mobileMecca.PageValidation_MB_PF;
+import com.views.mobileMecca.MobileLoginView;
+
+/**
+ * @ScriptName    : CreateNewCustomer
+ * @Description   : Create new customer
+ */
+public class AccountPageValidation_MB extends BaseTest
+{
+	
+	private MobileLoginView objMobileLoginView;
+	private AccountPageValidation_MB_PF objAccountPageValidation_MB_PF;
+	
+	@Title("Mobile Account front end validation")
+	@Test
+	public void accountFrontEnd() 
+	{
+		initializeAndroidEnvironment("MB");
+		objMobileLoginView = new MobileLoginView(this);
+		objAccountPageValidation_MB_PF= new AccountPageValidation_MB_PF(this);
+		objMobileLoginView.login();	
+		objAccountPageValidation_MB_PF.accountFE();
+		objMobileLoginView.logout();
+		tearDownAndroidEnvironment();
+		
+	}
+	
+	@Title("Account back end validation")
+	@Test
+	public void accountbackEnd() 
+	{
+		initializePAMEnvironment("MB");
+		objAccountPageValidation_MB_PF= new AccountPageValidation_MB_PF(this);
+		objAccountPageValidation_MB_PF.accountBE();
+	
+		tearDown();
+		
+	}
+	
+	@Title("Account back end validation")
+	@Test
+	public void compareAccounts() 
+	{
+		objAccountPageValidation_MB_PF= new AccountPageValidation_MB_PF(this);
+		objAccountPageValidation_MB_PF.compare();
+		
+	}
+	
+	// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		tearDownWebEnvironment();
+		objAccountPageValidation_MB_PF = null;
+	}
+}

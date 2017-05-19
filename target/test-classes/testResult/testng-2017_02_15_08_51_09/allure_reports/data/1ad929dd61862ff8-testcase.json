@@ -1,0 +1,310 @@
+{
+  "uid" : "1ad929dd61862ff8",
+  "name" : "depositCreditCard",
+  "title" : "Deposit using Credit Card",
+  "time" : {
+    "start" : 1487148696943,
+    "stop" : 1487148769382,
+    "duration" : 72439
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 18
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "steps" : [ {
+    "name" : "login",
+    "title" : "Login Mecca desktop site",
+    "time" : {
+      "start" : 1487148697046,
+      "stop" : 1487148703066,
+      "duration" : 6020
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 3
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Set 'UserName'., mb_test005, true, false]",
+      "title" : "Set 'UserName'. - mb_test005",
+      "time" : {
+        "start" : 1487148697218,
+        "stop" : 1487148697251,
+        "duration" : 33
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Set 'Password'., Test1234, true, false]",
+      "title" : "Set 'Password'. - Test1234",
+      "time" : {
+        "start" : 1487148697523,
+        "stop" : 1487148697546,
+        "duration" : 23
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Click 'Sign In'., true, false]",
+      "title" : "Click 'Sign In'.",
+      "time" : {
+        "start" : 1487148698035,
+        "stop" : 1487148698065,
+        "duration" : 30
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "logReporter[Click on 'Deposit' menu , true, false]",
+    "title" : "Click on 'Deposit' menu ",
+    "time" : {
+      "start" : 1487148725824,
+      "stop" : 1487148725837,
+      "duration" : 13
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on '$10' button , true, false]",
+    "title" : "Click on '$10' button ",
+    "time" : {
+      "start" : 1487148736086,
+      "stop" : 1487148736114,
+      "duration" : 28
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'submit' button , true, false]",
+    "title" : "Click on 'submit' button ",
+    "time" : {
+      "start" : 1487148736318,
+      "stop" : 1487148736341,
+      "duration" : 23
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Choose payment method', true, false]",
+    "title" : "Click on 'Choose payment method'",
+    "time" : {
+      "start" : 1487148741619,
+      "stop" : 1487148741650,
+      "duration" : 31
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Selected Credit card option', true, false]",
+    "title" : "Click on 'Selected Credit card option'",
+    "time" : {
+      "start" : 1487148741923,
+      "stop" : 1487148741936,
+      "duration" : 13
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter Card Number, true, false]",
+    "title" : "Enter Card Number",
+    "time" : {
+      "start" : 1487148742158,
+      "stop" : 1487148742173,
+      "duration" : 15
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Select expiry Month , true, false]",
+    "title" : "Select expiry Month ",
+    "time" : {
+      "start" : 1487148742458,
+      "stop" : 1487148742474,
+      "duration" : 16
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Select expiry year, true, false]",
+    "title" : "Select expiry year",
+    "time" : {
+      "start" : 1487148742769,
+      "stop" : 1487148742780,
+      "duration" : 11
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter CVV2 number, true, false]",
+    "title" : "Enter CVV2 number",
+    "time" : {
+      "start" : 1487148743029,
+      "stop" : 1487148743041,
+      "duration" : 12
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Deposit' button , true, false]",
+    "title" : "Click on 'Deposit' button ",
+    "time" : {
+      "start" : 1487148743287,
+      "stop" : 1487148743326,
+      "duration" : 39
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Verify Succes Message, true, false]",
+    "title" : "Verify Succes Message",
+    "time" : {
+      "start" : 1487148759081,
+      "stop" : 1487148759129,
+      "duration" : 48
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Verify Deposited Amount, true, false]",
+    "title" : "Verify Deposited Amount",
+    "time" : {
+      "start" : 1487148759252,
+      "stop" : 1487148759270,
+      "duration" : 18
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logout",
+    "title" : "Log out from Mecca",
+    "time" : {
+      "start" : 1487148759326,
+      "stop" : 1487148767492,
+      "duration" : 8166
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Click 'LogOut'., true, false]",
+      "title" : "Click 'LogOut'.",
+      "time" : {
+        "start" : 1487148759476,
+        "stop" : 1487148759492,
+        "duration" : 16
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "D90D3CQ1"
+  }, {
+    "name" : "thread",
+    "value" : "3776@D90D3CQ1.main"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

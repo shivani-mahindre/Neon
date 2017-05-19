@@ -1,0 +1,104 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class AccountPageValidation_MB_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	static String  fName_FE="",dob_FE="",emailId_FE="",phoneNo_FE="",fName_BE="",dob_BE="",emailId_BE="",phoneNo_BE="";
+	String user="",PAMUser,PAMPass;; 
+	
+	//constructor
+		public AccountPageValidation_MB_PF(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+			user=pojo.getUser();
+			PAMUser=pojo.getPAMUser();
+			PAMPass=pojo.getPAMPassword();
+		}
+	
+		private By homePageLogo = By.xpath("//div[@class='header-logo']");
+		private By homebtn = By.xpath("//*[@id='header-id']/div[2]/div[2]/div/article/div[2]/button");
+		private By accountTab = By.xpath("//a[@href='/User/Profile/Edit']");
+		private By firstName_FE = By.xpath("//p[@id='summaryName']");
+		private By DOB_FE = By.xpath("//input[@id='dateOfBirth']");
+		private By email_FE = By.xpath("//input[@id='email']");
+		private By phone_FE = By.xpath(".//*[@id='summaryPhone']");
+	
+		private By PAMUsername = By.xpath("//input[@id='usernameEmail']");
+		private By PAMpassword = By.xpath("//input[@id='password']");
+		private By loginSubmitBtn = By.xpath("//button[@id='loginSubmit']");
+	
+		private By searchBox = By.xpath("//input[@id='unifiedSearch']");
+		private By searchButton = By.xpath("//button[@id='unifiedSubmit']");
+		private By viewYourProfileLink = By.xpath("//span[contains(.,'View full profile')]");
+		private By firstName_BE = By.xpath("//a[@data-name='Name']");
+		private By DOB_BE = By.xpath("//a[@data-name='DateOfBirth']");
+		private By email_BE = By.xpath("//a[@data-name='Email']");
+		private By phone_BE = By.xpath("//a[@data-name='Telephone']");
+		  
+	
+		  
+		  public void accountFE()
+		  {
+			  objWrapperFunctions.waitForMobileElementPresence(homePageLogo);
+			//  objUtilities.logReporter("Check 'Home Page Logo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homePageLogo), false);
+			  
+			   objUtilities.logReporter("Check 'accountTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(accountTab), false);
+			   objUtilities.logReporter("Click 'accountTab'  presence", objWrapperFunctions.mobileClick(accountTab), false);
+			   objWrapperFunctions.waitForMobileElementPresence(firstName_FE);
+			   fName_FE= objWrapperFunctions.getmobileText(firstName_FE);
+			   dob_FE= objWrapperFunctions.getmobileText(DOB_FE);
+			   emailId_FE= objWrapperFunctions.getmobileText(email_FE);
+			   phoneNo_FE= objWrapperFunctions.getmobileText(phone_FE);
+			 
+		 }
+		 
+		  public void accountBE()
+		  {
+			   objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, PAMUser), false);
+			    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, PAMPass), false);
+			    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+			    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+			    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+			  
+			  objUtilities.logReporter("Check 'viewYourProfileLink'  presence", objWrapperFunctions.click(viewYourProfileLink), false);
+			  
+			   fName_BE= objWrapperFunctions.getText(firstName_BE);
+			   dob_BE= objWrapperFunctions.getText(DOB_BE);
+			   emailId_BE= objWrapperFunctions.getText(email_BE);
+			   phoneNo_BE= objWrapperFunctions.getText(phone_BE);
+		  }
+		  
+		 public void compare()
+		 {
+			 if(fName_FE.contains(fName_BE))
+			 {
+				 objUtilities.logReporter("FE and BE Name matches", objWrapperFunctions.success(firstName_BE), false);
+			 }
+			 
+			 if(dob_FE.contains(dob_BE))
+			 {
+				 objUtilities.logReporter("FE and BE DOB matches", objWrapperFunctions.success(DOB_BE), false);
+			 }
+			 if(emailId_FE.contains(emailId_BE))
+			 {
+				 objUtilities.logReporter("FE and BE emailID  matches", objWrapperFunctions.success(email_BE), false);
+			 }
+			 
+			 if(phoneNo_FE.contains(phoneNo_BE))
+			 {
+				 objUtilities.logReporter("FE and BE phone matches", objWrapperFunctions.success(phone_BE), false);
+			 }
+		 
+		 }
+		  
+		  
+		  
+}

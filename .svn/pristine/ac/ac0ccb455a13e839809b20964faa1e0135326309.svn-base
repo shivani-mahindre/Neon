@@ -1,0 +1,49 @@
+{
+  "time" : {
+    "start" : 1482231738392,
+    "stop" : 1482231739568,
+    "duration" : 1176
+  },
+  "testSuites" : [ {
+    "uid" : "64b0568caa1723a7",
+    "name" : "Regression_TestSuite",
+    "title" : "Regression_TestSuite : Regression_FrontEnd",
+    "time" : {
+      "start" : 1482231738392,
+      "stop" : 1482231739568,
+      "duration" : 1176
+    },
+    "statistic" : {
+      "total" : 2,
+      "passed" : 0,
+      "pending" : 0,
+      "canceled" : 2,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "f62ff2ef992c4a4f",
+      "name" : "changeIdstatus",
+      "title" : "Change ID status",
+      "time" : {
+        "start" : 1482231739497,
+        "stop" : 1482231739503,
+        "duration" : 6
+      },
+      "severity" : "NORMAL",
+      "status" : "CANCELED"
+    }, {
+      "uid" : "6657ef224e27290d",
+      "name" : "withdrawPayPal",
+      "title" : "Withdraw using Credit Card",
+      "time" : {
+        "start" : 1482231739540,
+        "stop" : 1482231739541,
+        "duration" : 1
+      },
+      "severity" : "NORMAL",
+      "status" : "CANCELED"
+    } ]
+  } ]
+}

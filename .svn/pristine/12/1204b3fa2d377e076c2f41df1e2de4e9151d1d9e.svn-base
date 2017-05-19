@@ -1,0 +1,176 @@
+package com.pageFactory.PAM;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class PlayerMessenger
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	private Properties objConfig;
+	private String user;
+	Date date = new Date();
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
+
+	public PlayerMessenger(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+	}
+
+	private By player_messenger = By.xpath("//a[@id='menu-link'][contains(text(),'Player Messenger')]");
+	private By search = By.xpath("//input[@id='Filter']");
+	private By create_new = By.xpath("//a[contains(text(),'Create New')]");
+
+	private By internal_name = By.xpath("//input[@id='InternalName']");
+	private By from_name = By.xpath("//input[@id='From']");
+	private By subject = By.xpath("//input[@id='Subject']");
+	private By ifame_id = By.cssSelector("iframe#Body_ifr");
+	private By msg_body = By.cssSelector("#tinymce");
+	private By main_body = By.cssSelector(".panel-body");
+
+	private By select_site = By.xpath("//select[@id='SiteCode']");
+
+	private By select_sendOption = By.xpath("//body[@id='tinymce']");
+	private By send_time = By.xpath("//input[@id='datetimepickerStartDate']");
+	private By send_time_up = By.xpath("//a[@data-action='incrementMinutes']");
+	private By sendDate = By.xpath("//input[@id='datetimepickerStartDate']");
+	private By save_schedule = By.xpath("//input[@id='create-button']");
+
+	private By mb_GoToSite = By.xpath("//a[contains(text(),'Go to site')]");
+	private By mb_username = By.xpath("//input[@name='vm.UsernameOrEmail']");
+	private By mb_password = By.xpath("//input[@id='loginPassword_106']");
+	private By mb_sign_in = By.xpath("//button[contains(text(),'Sign in')]");
+	private By mb_myaccount = By.xpath("//span[contains(text(),'Account')]");
+	private By mb_message = By.xpath("//a[contains(text(),'Messages')]");
+	private By mb_inbox_unread_messages_row = By.xpath("//tr[@class='snippet unread fade-in']");
+	private By mb_inbox_unread_messages = By.xpath("//tr[@class='snippet unread fade-in']//div[@class='snippet-subject']");
+	private By mb_inbox_openmsg_contents = By.xpath("//p[contains(text(),'This is auto generated test message')]");
+
+	private By gc_username = By.xpath("//input[@id='loginUsername_2469']");
+	private By gc_password = By.xpath("//input[@id='loginPassword_2469']");
+	private By gc_signIN = By.xpath("//button[@id='loginFormWidget_2469']");
+	private By inbox = By.xpath("//li[@class='nav-item inbox-icon last']");
+
+	public void sendMessage(String site)
+	{
+		int random_num = objWrapperFunctions.getRandBet(1000, 10);
+
+		String msg_sub = "TestMessage" + random_num;
+		objUtilities.logReporter("Player messenger on Dasboard", objWrapperFunctions.verifyIsElementPresent(player_messenger), false);
+		objUtilities.logReporter("click on Player messenger", objWrapperFunctions.click(player_messenger), false);
+		objUtilities.logReporter("verify search", objWrapperFunctions.verifyIsElementPresent(search), false);
+		objUtilities.logReporter("verify create new", objWrapperFunctions.verifyIsElementPresent(create_new), false);
+		objUtilities.logReporter("click on create new", objWrapperFunctions.click(create_new), false);
+		objUtilities.logReporter("message internal name", objWrapperFunctions.setText(internal_name, "Test Message"), false);
+		objUtilities.logReporter("message from", objWrapperFunctions.setText(from_name, "From_Test"), false);
+
+		objUtilities.logReporter("message subject", objWrapperFunctions.setText(subject, msg_sub), false);
+		objWrapperFunctions.switchToFrameUsingIframe_Element(ifame_id);
+		objUtilities.logReporter("message Body", objWrapperFunctions.setText(msg_body, "This is auto generated test message."), false);
+		objWrapperFunctions.switchToDefaultContent();
+		objUtilities.logReporter("verify Select site", objWrapperFunctions.verifyIsElementPresent(select_site), false);
+
+		switch (site)
+		{
+		case "GC":
+			objUtilities.logReporter("Select site GC", objWrapperFunctions.selectDropDownByIndex(select_site, 1), false);
+			break;
+
+		case "MB":
+			objUtilities.logReporter("Select site MB", objWrapperFunctions.selectDropDownByIndex(select_site, 2), false);
+
+			break;
+		default:
+			break;
+		}
+
+		objUtilities.logReporter("select send option ", objWrapperFunctions.click(send_time), false);
+
+		try
+		{
+			Thread.sleep(10000);
+			String finalDateToBeSet = objUtilities.getRequiredMinute(1, "yyyy-MM-dd HH:mm:ss", "UTC");
+			System.out.println("finalDateToBeSet :" + finalDateToBeSet);
+		}
+
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		String finalDateToBeSet = objUtilities.getRequiredMinute(1, "yyyy-MM-dd HH:mm:ss", "UTC");
+		System.out.println("finalDateToBeSet :" + finalDateToBeSet);
+		objUtilities.logReporter("increase send time by 1 minute", objWrapperFunctions.setText(send_time, finalDateToBeSet), false);
+
+		objUtilities.logReporter("click save_schedule", objWrapperFunctions.click(save_schedule), false);
+		try
+		{
+			Thread.sleep(60000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		switch (site)
+		{
+		case "GC":
+			checkInboxAtFrontEndGCasino(msg_sub);
+			break;
+
+		case "MB":
+			checkInboxAtFrontEndMecca(msg_sub);
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	public void checkInboxAtFrontEndMecca(String msg)
+	{
+		objWrapperFunctions.navigateToURL("https://np01-bede.meccabingo.com");
+
+		String username = objConfig.getProperty("web.username_mb");
+		String password = objConfig.getProperty("web.password_mb");
+		objUtilities.logReporter("Mecca username", objWrapperFunctions.click(mb_GoToSite), false);
+		objUtilities.logReporter("Mecca username", objWrapperFunctions.setText(mb_username, username), false);
+		objUtilities.logReporter("Mecca Password", objWrapperFunctions.setText(mb_password, password), false);
+		objUtilities.logReporter("click sign in", objWrapperFunctions.click(mb_sign_in), false);
+		objUtilities.logReporter("click mb_myaccount", objWrapperFunctions.click(mb_myaccount), false);
+		objUtilities.logReporter("click mb_message", objWrapperFunctions.click(mb_message), false);
+		objUtilities.logReporter("getting unread messages", objWrapperFunctions.verifyNumberOfElementPresent(mb_inbox_unread_messages_row), false);
+		objUtilities.logReporter("checking messsage", objWrapperFunctions.checkMsgInInbox(mb_inbox_unread_messages, msg), false);
+		objUtilities.logReporter("click on mesasge", true, false);
+
+		objWrapperFunctions.clickOnMsgElementInInbox(mb_inbox_unread_messages, msg);
+		objUtilities.logReporter("Read the message contents", objWrapperFunctions.verifyIsElementPresent(mb_inbox_openmsg_contents), false);
+
+	}
+
+	public void checkInboxAtFrontEndGCasino(String msg)
+	{
+		objWrapperFunctions.navigateToURL("https://np01-bede.grosvenorcasinos.com");
+
+		String username = objConfig.getProperty("web.username");
+		String password = objConfig.getProperty("web.password");
+		objUtilities.logReporter("Gro username", objWrapperFunctions.setText(gc_username, username), false);
+		objUtilities.logReporter("Gro Password", objWrapperFunctions.setText(gc_password, password), false);
+
+		objUtilities.logReporter("click sign in", objWrapperFunctions.click(gc_signIN), false);
+		objUtilities.logReporter("click inbox", objWrapperFunctions.click(inbox), false);
+
+	}
+
+}

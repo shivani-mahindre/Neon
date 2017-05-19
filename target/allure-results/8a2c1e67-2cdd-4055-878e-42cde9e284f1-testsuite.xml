@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1494583919533" stop="1494584028113" version="1.4.4">
+    <name>Regression</name>
+    <title>Regression : Desktop</title>
+    <test-cases>
+        <test-case start="1494583919579" stop="1494584024705" status="passed">
+            <name>RegisterAndDeposit</name>
+            <steps>
+                <step start="1494583924400" stop="1494583924865" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583925396" stop="1494583925413" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583925732" stop="1494583925743" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583945803" stop="1494583945820" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583946320" stop="1494583946330" status="passed">
+                    <name>logReporter[Click on registartion tab, true, false]</name>
+                    <title>Click on registartion tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583950431" stop="1494583950440" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583952177" stop="1494583952187" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583952746" stop="1494583952754" status="passed">
+                    <name>logReporter[Click on customer tab, true, false]</name>
+                    <title>Click on customer tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583953499" stop="1494583953514" status="passed">
+                    <name>logReporter[Enter forename, true, false]</name>
+                    <title>Enter forename</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583954049" stop="1494583954058" status="passed">
+                    <name>logReporter[Enter DateOfBirth, true, false]</name>
+                    <title>Enter DateOfBirth</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583955400" stop="1494583955409" status="passed">
+                    <name>logReporter[select gender, true, false]</name>
+                    <title>select gender</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583958649" stop="1494583958658" status="passed">
+                    <name>logReporter[Enter street, true, false]</name>
+                    <title>Enter street</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583960646" stop="1494583960661" status="passed">
+                    <name>logReporter[Enter City, true, false]</name>
+                    <title>Enter City</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583961430" stop="1494583961438" status="passed">
+                    <name>logReporter[Click on card number, true, false]</name>
+                    <title>Click on card number</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583961820" stop="1494583961831" status="passed">
+                    <name>logReporter[Enter street, true, false]</name>
+                    <title>Enter street</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1494583964273" stop="1494583964283" status="passed">
+                    <name>logReporter[Click on Save btn, true, false]</name>
+                    <title>Click on Save btn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D90D3CQ1"/>
+                <label name="thread" value="7924@D90D3CQ1.main"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

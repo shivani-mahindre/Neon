@@ -1,0 +1,62 @@
+package com.views.mobileMecca;
+
+import java.util.Properties;
+
+import ru.yandex.qatools.allure.annotations.Step;
+
+import com.generic.Pojo;
+import com.pageFactory.mobileMecca.LoginLogout;
+
+public class MobileLoginView 
+{
+	// Local variables
+	private Pojo objPojo;
+	private String testDataHolder = "";
+	private Properties objConfig;
+	//page object declaration
+	private LoginLogout objHomePage;
+	
+	public MobileLoginView(Pojo pojo)
+	{
+		this.objPojo = pojo;
+		pojo.getObjUtilities();
+		pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+	}
+
+	
+	/**
+	 * @Method: login
+	 * @Description:  Login to mecca mobile site
+	 * @author Swapnil Mane 
+	 * @Creation Date:  23 November 2016  
+	 * @Modified Date:
+	 */
+	@Step("Login To MobileMecca")
+	public void login() 
+	{
+		objHomePage = new LoginLogout(objPojo);
+			
+		objHomePage.clickLogin();
+		testDataHolder = objConfig.getProperty("web.username_mb");
+		objHomePage.setUserName(testDataHolder);
+		testDataHolder = objConfig.getProperty("web.password_mb");
+		objHomePage.setPassword(testDataHolder);
+		objHomePage.clickSignIn();
+	}
+
+	/**
+	 * @Method: logout
+	 * @Description:  logout from the web site
+	 * @author Swapnil Mane 
+	 * @Creation Date:  23 November 2016 
+	 * @Modified Date:
+	 */
+	@Step("Log out from MobileMecca")
+	public void logout()
+	{
+		objHomePage.clickLogOut();
+		objHomePage = null;
+	}
+
+}

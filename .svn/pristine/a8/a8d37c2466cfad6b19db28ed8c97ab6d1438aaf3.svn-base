@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression_TestSuite" parallel="false">
+	<!--- Pass test data file name at run time which get captured in test case 
+		with data provider -->
+	<listeners>
+		<listener class-name="com.generic.GetTcStatus" />
+		
+	</listeners>
+	<parameter name="TestFileName" value="projectModule1/SmokeSuite" />
+	<test name="Regression_FrontEnd">
+	<classes>
+	 <class name="com.scripts.mobileMecca.AndroidAppBannerValidation_MB"/>
+	<!--  <class name="com.scripts.desktopMecca.Register_MB" /> -->
+	
+<!-- Mecca -->
+	<!-- <class name="com.scripts.mobileMecca.Register_MB"/>
+    <class name="com.scripts.desktopMecca.LogIn_LogOut"/> 
+   	<class name="com.scripts.desktopMecca.Deposit__Credit_Card" />
+	<class name="com.scripts.desktopMecca.Deposit__NetTeller" />
+	<class name="com.scripts.desktopMecca.Deposit__PayPal" />
+	<class name="com.scripts.desktopMecca.Deposit__PaySafe" />
+	<class name="com.scripts.desktopMecca.Deposit__Skrill" />
+	<class name="com.scripts.desktopMecca.Withdraw__Credit_Card" />
+	
+	<class name="com.scripts.desktopMecca.TransactionHistory_FE_BE"/>
+	<class name="com.scripts.desktopMecca.BonusHistory_FE_BE"/>
+	<class name="com.scripts.desktopMecca.Messages_SendUnread_BE_FE"/>
+	<class name="com.scripts.desktopMecca.PageValidation"/>
+	<class name="com.scripts.desktopMecca.PageValidation_Clubs"/>
+	<class name="com.scripts.desktopMecca.TakeABreak_BE_FE"/>
+	<class name="com.scripts.desktopMecca.SelfExclusion_BE"/> 
+	<class name="com.scripts.desktopMecca.LiveChat_functionality"/>
+	<class name="com.scripts.desktopMecca.DepositWithdraw_TransactionLimitValidation_FE_BE"/>		
+	<class name="com.scripts.desktopGames.LaunchGameFromFavoriteBar" />	
+	 -->
+	
+<!--   PAM  -->
+	<!-- <class name="com.scripts.PAM.CreateClaim_dpeositBonus" />
+	<class name="com.scripts.PAM.ChangeStatusFunctionality" />
+	<class name="com.scripts.PAM.ChangeLimitsFunctionality"/>
+	<class name="com.scripts.PAM.FinanceFunctionality"/>
+	<class name="com.scripts.PAM.ChangeFlagFunctionality"/>
+	<class name="com.scripts.PAM.PlayerMessenger"/>
+	<class name="com.scripts.PAM.AddNotesFunctionality"/>
+	<class name="com.scripts.PAM.ManageBalanceFunctionality"/> 
+	<class name="com.scripts.PAM.RetrieveMessageFunctionality"/> 	 
+
+	<class name="com.scripts.desktopGCasino.Register"/>
+	<class name="com.scripts.PAM.ChangeLimitsFunctionality" />
+	<class name="com.scripts.PAM.FinanceFunctionality" />
+	<class name="com.scripts.PAM.ChangeFlagFunctionality" />
+	<class name="com.scripts.PAM.PlayerMessenger"/>
+	<class name="com.scripts.PAM.AdvanceUserSearch_Functionality" /> 
+    <class name="com.scripts.PAM.TranxHistory_PinnedNotes_TwoUsers_BE"/>
+	 -->
+	
+<!-- GC -->
+	<!--  <class name="com.scripts.desktopGCasino.LiveChat_functionality"/>	 
+	 <class name="com.scripts.desktopGCasino.Footer"/> -->
+
+<!-- Games  -->
+<!-- 	<class name="com.scripts.desktopGames.GamePlay_MB" />
+ -->
+
+<!-- Mobile  -->
+ 	 <!-- <class name="com.scripts.mobileMecca.LoginLogout_MB"/>
+	 <class name="com.scripts.mobileMecca.PageValidations_MB"/>  
+     <class name="com.scripts.mobileMecca.AccountPageValidation_MB"/>
+     <class name="com.scripts.mobileMecca.Deposit__Credit_Card"/>
+     <class name="com.scripts.mobileMecca.Deposit__PayPal"/>
+     <class name="com.scripts.mobileMecca.Deposit__Skrill"/>
+     <class name="com.scripts.mobileMecca.Deposit__PaySafe"/>
+     <class name="com.scripts.mobileMecca.Deposit__NetTeller"/>
+     <class name="com.scripts.mobileMecca.Withdraw__Credit_Card"/>
+     <class name="com.scripts.mobileMecca.SelfExclusion_ErrorMessages_FE"/>
+     <class name="com.scripts.mobileMecca.TakeABreak_ErrorMessages_FE"/>
+    -->
+		</classes>
+	</test>
+</suite> 

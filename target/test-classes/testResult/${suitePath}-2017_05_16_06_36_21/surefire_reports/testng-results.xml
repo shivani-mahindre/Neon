@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Step >> Enter username]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter password]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on signBtn]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on customer tab]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on registartion tab]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter username]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on customer tab]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on customer tab]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter forename]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter DateOfBirth]]>
+    </line>
+    <line>
+      <![CDATA[Step >> select gender]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter street]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter City]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on card number]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter street]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click on Save btn]]>
+    </line>
+    <line>
+      <![CDATA[Step >>  click on No Match Btn]]>
+    </line>
+    <line>
+      <![CDATA[Step >>  click on No Match Btn]]>
+    </line>
+    <line>
+      <![CDATA[Step >>  click on yesBtn]]>
+    </line>
+    <line>
+      <![CDATA[Step >>  click on ok Btn]]>
+    </line>
+  </reporter-output>
+  <suite name="Regression" duration-ms="69918" started-at="2017-05-16T06:36:29Z" finished-at="2017-05-16T06:37:39Z">
+    <groups>
+    </groups>
+    <test name="Desktop" duration-ms="69918" started-at="2017-05-16T06:36:29Z" finished-at="2017-05-16T06:37:39Z">
+      <class name="com.scripts.desktopGNG.neonReg">
+        <test-method status="PASS" signature="RegisterAndDeposit()[pri:0, instance:com.scripts.desktopGNG.neonReg@4e8fdf]" name="RegisterAndDeposit" duration-ms="68792" started-at="2017-05-16T12:06:29Z" finished-at="2017-05-16T12:07:38Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step >> Enter username]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter password]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on signBtn]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on customer tab]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on registartion tab]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter username]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on customer tab]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on customer tab]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter forename]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter DateOfBirth]]>
+            </line>
+            <line>
+              <![CDATA[Step >> select gender]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter street]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter City]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on card number]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter street]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click on Save btn]]>
+            </line>
+            <line>
+              <![CDATA[Step >>  click on No Match Btn]]>
+            </line>
+            <line>
+              <![CDATA[Step >>  click on No Match Btn]]>
+            </line>
+            <line>
+              <![CDATA[Step >>  click on yesBtn]]>
+            </line>
+            <line>
+              <![CDATA[Step >>  click on ok Btn]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RegisterAndDeposit -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.scripts.desktopGNG.neonReg@4e8fdf]" name="tearDown" is-config="true" duration-ms="1076" started-at="2017-05-16T12:07:38Z" finished-at="2017-05-16T12:07:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.scripts.desktopGNG.neonReg -->
+    </test> <!-- Desktop -->
+  </suite> <!-- Regression -->
+</testng-results>

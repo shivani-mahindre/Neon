@@ -1,0 +1,14 @@
+{
+  "testCases" : [ {
+    "uid" : "d412bd81b26252cf",
+    "name" : "withdrawPayPal",
+    "title" : "Withdraw using Credit Card",
+    "time" : {
+      "start" : 1482232009626,
+      "stop" : 1482232129271,
+      "duration" : 119645
+    },
+    "severity" : "NORMAL",
+    "status" : "BROKEN"
+  } ]
+}

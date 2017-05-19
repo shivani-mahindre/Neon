@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 84.101 sec <<< FAILURE!
+RegisterAndDeposit(com.scripts.desktopGNG.neonReg)  Time elapsed: 80.686 sec  <<< FAILURE!
+java.lang.NullPointerException: null
+	at com.generic.ExcelIterator.createCustomerExcel(ExcelIterator.java:192)
+	at com.pageFactory.desktopGNG.neonReg_PF.registration(neonReg_PF.java:145)
+	at com.scripts.desktopGNG.neonReg.RegisterAndDeposit(neonReg.java:22)
+

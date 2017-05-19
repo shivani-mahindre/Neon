@@ -1,0 +1,189 @@
+package com.pageFactory.desktopGcasino;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class LocalCasinos {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	private Properties objConfig;
+	private String user;
+	
+	
+	public LocalCasinos(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig=pojo.getObjConfig();
+	}
+	
+	private By local_casino_tab=By.xpath("//a[contains(text(),'Local Casinos')]");
+	
+	//subtab on local casino 
+	private By findCasino=By.xpath("//a[contains(text(),'Find a Casino')]");
+	private By latestNews=By.xpath("//a[contains(text(),'Latest News')]");
+	private By AllOurCasinos=By.xpath("//a[contains(text(),'All our Casinos')]");
+	private By experiencePackages=By.xpath("//a[contains(text(),'Experience Packages')]");
+	
+	//details on find a casino
+	private By header_CasinoFinder=By.xpath("//h2[contains(text(),'CASINO FINDER')]");
+	private By label_findNearest=By.xpath("//label[contains(text(),'FIND YOUR NEAREST CASINO')]");
+	private By textbox_casinoSearch=By.xpath("//input[@id='findACasino'][@class='casino-finder-search']");
+	private By button_findCasino=By.xpath("//button[contains(text(),'Find Casino')]");
+	private By but_listOfCasinos=By.xpath("//a[contains(text(),'List of casinos')]");
+	
+	//details on latest news
+	private By latest_news_header=By.xpath("//h2[contains(text(),'LATEST NEWS')]");
+	private By news_area_1=By.xpath("//a[contains(text(),'Every Visit Counts')]");
+	private By news_area_2=By.xpath("//a[contains(text(),'Grosvenor Ace King Suited')]");
+	private By news_area_3=By.xpath("//a[contains(text(),'Upped the Ante!')]");
+	private By casino_finder_title=By.xpath("//article[@class='widget-inside-content-right widget-html-widget widget']//h4[contains(text(),'CASINO FINDER')]");
+	private By casino_finder_input=By.xpath("//article[@class='widget-inside-content-right widget-html-widget widget']//input[@id='findACasino']");
+	private By casino_finder_button=By.xpath("	//article[@class='widget-inside-content-right widget-html-widget widget']//button[contains(text(),'Find A Casino')]");
+
+	//details on All our Casinos
+	private By AllOurCasinos_header=By.xpath("//h1[contains(text(),'ALL CASINOS')]");
+	private By Scotland=By.xpath("//h2[contains(text(),'SCOTLAND')]");
+	private By north_east=By.xpath("//h2[contains(text(),'NORTH EAST')]");
+	private By NewCastle=By.xpath("//a[contains(text(),'Grosvenor Casino Newcastle')]");
+	private By casino_finder_title_allCasino=By.xpath("//article[@class='widget-inside-content-right widget-html-widget widget']//h4[contains(text(),'CASINO FINDER')]");
+	private By casino_finder_input_allCasino=By.xpath("//article[@class='widget-inside-content-right widget-html-widget widget']//input[@id='findACasino']");
+	private By casino_finder_button_allCasino=By.xpath("//article[@class='widget-inside-content-right widget-html-widget widget']//button[contains(text(),'Find A Casino')]");
+
+	
+	//details on NewCastle                            
+	private By casino_finder_title_newcastle=By.xpath("//article[@class='widget-findcasino widget-content-right widget-html-widget widget']//h4[contains(text(),'CASINO FINDER')]");
+	private By casino_finder_input_newcastle=By.xpath("//article[@class='widget-findcasino widget-content-right widget-html-widget widget']//input[@id='findACasino']");
+	private By casino_finder_button_newcastle=By.xpath("//article[@class='widget-findcasino widget-content-right widget-html-widget widget']//button[contains(text(),'Find A Casino')]");
+	private By Casino_title=By.xpath("//h1[contains(text(),'Grosvenor Casino Newcastle')]");
+	private By Casino_photos=By.xpath("//img[@class='casino-photo']"); //5
+	private By casino_thumbnails=By.xpath("//img[@alt='Thumbnail']"); //6
+	private By casino_details=By.xpath("//h4[contains(text(),'Casino Details')]");
+	private By contact_us=By.xpath("//p[contains(text(),'Contact us')]");
+	private By contact_num=By.xpath("//span[contains(text(),'T: 01912 603303')]");
+	private By where_we_are=By.xpath("//p[contains(text(),'Where we are')]");
+	private By address=By.xpath("//p[contains(text(),'100 St. James Boulevard, Newcastle Upon Tyne, NE1 4BN')]");
+	private By opening_hours=By.xpath("//p[contains(text(),'Opening hours')]");
+	private By timings=By.xpath("//p[contains(text(),'24 hours')]");
+	private By manager_pic=By.xpath("//img[@class='manager-picture']");
+	private By mgr_name=By.xpath("//span[@class='manager-name']");
+	private By mgr_description=By.xpath("//span[@class='manager-description']");
+	private By club_description=By.xpath("//div[@class='casino-description col-xs-9']");
+	private By Bar_menu_button=By.xpath("//a[contains(text(),'Bar Menu')]");
+	private By restaurant_menu_button=By.xpath("//a[contains(text(),'Restaurant Menu')]");
+	private By BookTable_button=By.xpath("//a[contains(text(),'Book a Table')]");
+	private By learn_to_play=By.xpath("//a[contains(text(),'Learn to Play')]");
+	private By whats_going_on=By.xpath("//h1[contains(text(),' going on')]");
+	private By poker_schedule=By.xpath("//a[contains(text(),'Poker Schedule')]");
+	private By poker_cashGames=By.xpath("//a[contains(text(),'Poker Cash Games')]");
+	private By facilitiesAndServices=By.xpath("//h1[contains(text(),'Our Facilities & Services')]");
+	private By Bars=By.xpath("//li[contains(text(),'Bars')]");
+	
+	public void checkLocalCasinoTab()
+	{
+		objUtilities.logReporter("click on local_casino_tab", objWrapperFunctions.click(local_casino_tab), false);
+		objUtilities.logReporter("findCasino", objWrapperFunctions.verifyIsElementPresent(findCasino), false);
+		 objUtilities.logReporter("latestNews", objWrapperFunctions.verifyIsElementPresent(latestNews), false);
+		 objUtilities.logReporter("AllOurCasinos", objWrapperFunctions.verifyIsElementPresent(AllOurCasinos), false);
+		 objUtilities.logReporter("experiencePackages", objWrapperFunctions.verifyIsElementPresent(experiencePackages), false);
+	}
+	
+	public void checkFindCasinoSubTab()
+	{
+		objUtilities.logReporter("click on local_casino_tab", objWrapperFunctions.click(local_casino_tab), false);
+		objUtilities.logReporter("click on findCasino", objWrapperFunctions.click(findCasino), false);
+		 objUtilities.logReporter("label_findNearest", objWrapperFunctions.verifyIsElementPresent(label_findNearest), false);
+		 objUtilities.logReporter("textbox_casinoSearch", objWrapperFunctions.verifyIsElementPresent(textbox_casinoSearch), false);
+		 objUtilities.logReporter("button_findCasino", objWrapperFunctions.verifyIsElementPresent(button_findCasino), false);
+		 objUtilities.logReporter("but_listOfCasinos", objWrapperFunctions.verifyIsElementPresent(but_listOfCasinos), false);
+
+	}
+	
+	public void checkLatestNewsSubTab()
+	{
+		objUtilities.logReporter("click on local_casino_tab", objWrapperFunctions.click(local_casino_tab), false);
+		 objUtilities.logReporter("latestNews", objWrapperFunctions.click(latestNews), false);
+		 objUtilities.logReporter("latest_news_header", objWrapperFunctions.verifyIsElementPresent(latest_news_header), false);
+		 objUtilities.logReporter("news_area_1", objWrapperFunctions.verifyIsElementPresent(news_area_1), false);
+		 objUtilities.logReporter("news_area_2", objWrapperFunctions.verifyIsElementPresent(news_area_2), false);
+		 objUtilities.logReporter("news_area_3", objWrapperFunctions.verifyIsElementPresent(news_area_3), false);
+		 objUtilities.logReporter("casino_finder_title", objWrapperFunctions.verifyIsElementPresent(casino_finder_title), false);
+		 objUtilities.logReporter("casino_finder_input", objWrapperFunctions.verifyIsElementPresent(casino_finder_input), false);
+		 objUtilities.logReporter("casino_finder_button", objWrapperFunctions.verifyIsElementPresent(casino_finder_button), false);
+	}
+	public void checkAllOurCasinoSubTab()
+	{
+		objUtilities.logReporter("click on local_casino_tab", objWrapperFunctions.click(local_casino_tab), false);
+		 objUtilities.logReporter("AllOurCasinos", objWrapperFunctions.click(AllOurCasinos), false); 
+		 objUtilities.logReporter("AllOurCasinos_header", objWrapperFunctions.verifyIsElementPresent(AllOurCasinos_header), false);
+		 objUtilities.logReporter("Scotland", objWrapperFunctions.verifyIsElementPresent(Scotland), false);
+		 objUtilities.logReporter("north_east", objWrapperFunctions.verifyIsElementPresent(north_east), false);
+		 objUtilities.logReporter("NewCastle", objWrapperFunctions.verifyIsElementPresent(NewCastle), false);
+		 objUtilities.logReporter("casino_finder_title_allCasino", objWrapperFunctions.verifyIsElementPresent(casino_finder_title_allCasino), false);
+		 objUtilities.logReporter("casino_finder_input_allCasino", objWrapperFunctions.verifyIsElementPresent(casino_finder_input_allCasino), false);
+		 objUtilities.logReporter("casino_finder_button_allCasino", objWrapperFunctions.verifyIsElementPresent(casino_finder_button_allCasino), false);	 
+	}
+	public void checkCasinoFinder()
+	{
+		objUtilities.logReporter("click on local_casino_tab", objWrapperFunctions.click(local_casino_tab), false);
+		objUtilities.logReporter("click on findCasino", objWrapperFunctions.click(findCasino), false);
+		 objUtilities.logReporter("label_findNearest", objWrapperFunctions.verifyIsElementPresent(label_findNearest), false);
+		 objUtilities.logReporter("textbox_casinoSearch", objWrapperFunctions.verifyIsElementPresent(textbox_casinoSearch), false);
+		 objUtilities.logReporter("enter name textbox_casinoSearch", objWrapperFunctions.setText(textbox_casinoSearch, "NewCastle"), false);
+		 objUtilities.logReporter("button_findCasino", objWrapperFunctions.click(button_findCasino), false);
+		 
+		 objUtilities.logReporter("enter pincode textbox_casinoSearch", objWrapperFunctions.setText(textbox_casinoSearch, "PA756PB"), false);
+		 objUtilities.logReporter("button_findCasino", objWrapperFunctions.click(button_findCasino), false);
+		 
+		 objUtilities.logReporter("enter area textbox_casinoSearch", objWrapperFunctions.setText(textbox_casinoSearch, "Leeds"), false);
+		 objUtilities.logReporter("button_findCasino", objWrapperFunctions.click(button_findCasino), false);
+	
+		 objUtilities.logReporter("but_listOfCasinos", objWrapperFunctions.verifyIsElementPresent(but_listOfCasinos), false);
+		 objUtilities.logReporter("but_listOfCasinos", objWrapperFunctions.click(but_listOfCasinos), false);
+		 objUtilities.logReporter("NewCastle", objWrapperFunctions.verifyIsElementPresent(NewCastle), false);
+	}
+	
+	public void checkCasinoDetailsPage()
+	{
+		objUtilities.logReporter("click on local_casino_tab", objWrapperFunctions.click(local_casino_tab), false);
+		 objUtilities.logReporter("AllOurCasinos", objWrapperFunctions.click(AllOurCasinos), false); 
+		 objUtilities.logReporter("AllOurCasinos_header", objWrapperFunctions.verifyIsElementPresent(AllOurCasinos_header), false);
+		 objUtilities.logReporter("NewCastle", objWrapperFunctions.verifyIsElementPresent(NewCastle), false);
+		 objUtilities.logReporter("click on NewCastle", objWrapperFunctions.click(NewCastle), false);
+		 
+		 objUtilities.logReporter("casino_finder_title_newcastle", objWrapperFunctions.verifyIsElementPresent(casino_finder_title_newcastle), false);
+		 objUtilities.logReporter("casino_finder_input_newcastle", objWrapperFunctions.verifyIsElementPresent(casino_finder_input_newcastle), false);
+		 objUtilities.logReporter("casino_finder_button_newcastle", objWrapperFunctions.verifyIsElementPresent(casino_finder_button_newcastle), false);
+		 objUtilities.logReporter("Casino_title", objWrapperFunctions.verifyIsElementPresent(Casino_title), false);
+		 objUtilities.logReporter("Casino_photos", objWrapperFunctions.verifyNumberOfElementPresent(Casino_photos, 5), false);
+		 objUtilities.logReporter("casino_thumbnails", objWrapperFunctions.verifyNumberOfElementPresent(casino_thumbnails,6), false);
+		 objUtilities.logReporter("casino_details", objWrapperFunctions.verifyIsElementPresent(casino_details), false);
+		 objUtilities.logReporter("contact_us", objWrapperFunctions.verifyIsElementPresent(contact_us), false);
+		 objUtilities.logReporter("contact_num", objWrapperFunctions.verifyIsElementPresent(contact_num), false);
+		 objUtilities.logReporter("where_we_are", objWrapperFunctions.verifyIsElementPresent(where_we_are), false);
+		 objUtilities.logReporter("address", objWrapperFunctions.verifyIsElementPresent(address), false);
+		 objUtilities.logReporter("opening_hours", objWrapperFunctions.verifyIsElementPresent(opening_hours), false);
+		 objUtilities.logReporter("timings", objWrapperFunctions.verifyIsElementPresent(timings), false);
+		 objUtilities.logReporter("manager_pic", objWrapperFunctions.verifyIsElementPresent(manager_pic), false);
+		 objUtilities.logReporter("mgr_name", objWrapperFunctions.verifyIsElementPresent(mgr_name), false);
+		 objUtilities.logReporter("mgr_description", objWrapperFunctions.verifyIsElementPresent(mgr_description), false);
+		 objUtilities.logReporter("club_description", objWrapperFunctions.verifyIsElementPresent(club_description), false);
+		 objUtilities.logReporter("Bar_menu_button", objWrapperFunctions.verifyIsElementPresent(Bar_menu_button), false);
+		 objUtilities.logReporter("restaurant_menu_button", objWrapperFunctions.verifyIsElementPresent(restaurant_menu_button), false);
+		 objUtilities.logReporter("BookTable_button", objWrapperFunctions.verifyIsElementPresent(BookTable_button), false); 
+		 objUtilities.logReporter("whats_going_on", objWrapperFunctions.verifyIsElementPresent(whats_going_on), false);
+		 objUtilities.logReporter("poker_schedule", objWrapperFunctions.verifyIsElementPresent(poker_schedule), false);
+		 objUtilities.logReporter("poker_cashGames", objWrapperFunctions.verifyIsElementPresent(poker_cashGames), false);
+		 objUtilities.logReporter("facilitiesAndServices", objWrapperFunctions.verifyIsElementPresent(facilitiesAndServices), false);
+		 objUtilities.logReporter("Bars", objWrapperFunctions.verifyIsElementPresent(Bars), false);
+		 
+		 
+	}
+	
+	
+
+}

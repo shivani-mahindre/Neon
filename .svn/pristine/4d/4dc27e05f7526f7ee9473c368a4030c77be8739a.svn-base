@@ -1,0 +1,103 @@
+package com.pageFactory.mobileMecca;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.sun.jna.platform.unix.X11.Screen;
+
+public class TranscationHistory_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	Properties objConfig=new Properties();
+	String user="";
+	Screen objScreen;
+	
+	static String refId_FE="",refId_BE="";
+	
+	public TranscationHistory_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();		
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+	// Front end account
+	  private  By accountMenu = By.xpath("//a[@href='/User/Profile/Edit']");
+	  private  By myAccountMenu = By.xpath("//a[contains(.,'My Account Menu')]");
+	  private  By accounthistorytab = By.xpath("//a[@href='/User/Account/Activity']");
+	  private By plusSign=By.xpath("//a[@class='btn btn-round icon plus']"); 
+	 // private  By refID_FE = By.xpath("//div[@class='responsive-table']//tr[2]//td[3]");
+	  private  By refID_FE = By.xpath("//div[@id='ref1']/dl/dd[2]");
+	  
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By transactionTAb=By.xpath("//a[contains(.,'Transactions')]");
+	private By applyButton=By.xpath("//button[@class='btn btn-primary js-transactions-filter-submit']");
+	private By firstTarnsactionId=By.xpath("//tbody//tr[1]//td[5]");
+	  
+	public void transactioHistoryFE()
+	 {
+		 objUtilities.logReporter("Check 'accountTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(accountMenu), false);
+		objUtilities.logReporter("Click Account", objWrapperFunctions.mobileClick(accountMenu),false);
+	    objUtilities.logReporter("Click Account Menu", objWrapperFunctions.mobileClick(myAccountMenu),false);
+	   // objUtilities.logReporter("Check 'accountTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(accounthistorytab), false);
+	    objWrapperFunctions.waitForMobileElementPresence(accounthistorytab);
+	  
+	    try
+		{
+			Thread.sleep(10000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    objUtilities.logReporter("Click Account History", objWrapperFunctions.mobileClick(accounthistorytab),false);
+	    objUtilities.logReporter("Click plus sign", objWrapperFunctions.mobileClick(plusSign),false);
+	    objUtilities.logReporter("Check 'accountTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(refID_FE), false);
+	    
+	    refId_FE=objWrapperFunctions.getmobileText(refID_FE);
+	    System.out.println("text "+refId_FE);
+	    
+	 }
+	public void transactioHistoryBE() 
+	{
+	    objUtilities.logReporter("Enter username :", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+	    objUtilities.logReporter("Enter Password :", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on Transaction Tab", objWrapperFunctions.click(transactionTAb), false);
+	    objUtilities.logReporter("Click on apply Button", objWrapperFunctions.click(applyButton), false);
+	    refId_BE=objWrapperFunctions.getText(firstTarnsactionId);
+	    System.out.println("text "+refId_BE);
+    }
+	public void compareTransactions()
+	{
+		
+		 System.out.println("FE text "+refId_FE);
+		 System.out.println("BE text "+refId_BE);
+		 
+	    if(refId_FE.contentEquals(refId_BE))
+	    {
+		System.out.println("FE transaction history matches with BE");
+	    }
+	    else
+	    {
+		System.out.println("FE transaction history do not matches with BE");
+	    }
+		
+	}
+}

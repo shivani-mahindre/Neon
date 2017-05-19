@@ -1,0 +1,23 @@
+package com.pageFactory.desktopGcasino;
+
+import java.util.Properties;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class TableAndCard {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	private Properties objConfig;
+	private String user;
+	
+	
+	public TableAndCard(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig=pojo.getObjConfig();
+	}
+	
+	
+}

@@ -1,0 +1,60 @@
+package com.scripts.desktopGCasino;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.pageFactory.desktopGcasino.Footer_PF;
+import com.pageFactory.desktopGcasino.LiveChat_functionality_PF;
+import com.views.desktopGCasino.LoginView;
+
+
+public class LiveChat_functionality extends BaseTest
+{
+	private LiveChat_functionality_PF objLiveChat_functionality_PF;
+	private Footer_PF objfooter;
+
+	private LoginView objLoginView ;
+	
+	@BeforeClass
+	private void setUp()
+	{
+		initializeWebEnvironment("GC");
+		objLiveChat_functionality_PF= new LiveChat_functionality_PF(this);
+		 objfooter =new Footer_PF(this);
+		objLoginView = new  LoginView(this);
+	}
+	@Title("Live Chat functionality")
+    @Test
+    public void liveChat()
+    {
+    try
+	{
+    	System.out.println("Waiting");
+		Thread.sleep(30000);
+		System.out.println("Wait complete");
+	
+	} catch (InterruptedException e)
+	{
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		objLoginView.login();
+        objLiveChat_functionality_PF.liveChat();
+       System.out.println("In footer");
+        objfooter.checkFooter();
+    //	objLoginView.logout();
+    }
+	
+	
+	
+    private void tearDown()
+    {
+	tearDownWebEnvironment();
+
+    }
+	
+}

@@ -1,0 +1,41 @@
+package com.scripts.PAM;
+
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.pageFactory.PAM.AddNotesFunctionality_PF;
+import com.pageFactory.PAM.AdvanceUserSearchFunctionality_PF;
+import com.views.desktopMecca.LoginView;
+
+/**
+ * @ScriptName : Verify that additional Details field is added in the search feature of user in PAM
+ * @Description :Verify that additional Details field is added in the search feature of user in PAM
+ */
+
+public class AdvanceUserSearch_Functionality extends BaseTest {
+
+    private AdvanceUserSearchFunctionality_PF objAdvanceUserSearchFunctionality_PF;
+    LoginView objLoginView;
+
+    @Title("Advance Search using additional details field ")
+    @Test
+    public void advanceSearch() 
+    {
+    	initializePAMEnvironment("MB");
+    	objAdvanceUserSearchFunctionality_PF = new AdvanceUserSearchFunctionality_PF(this);
+    	objAdvanceUserSearchFunctionality_PF.advanceSearch();
+    	tearDown();
+
+    }
+    // Closing the browser
+    @AfterClass
+    private void tearDown()
+    {
+	tearDownWebEnvironment();
+
+    }
+}

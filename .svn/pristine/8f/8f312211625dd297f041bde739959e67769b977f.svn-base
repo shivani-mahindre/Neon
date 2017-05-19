@@ -1,0 +1,160 @@
+package com.pageFactory.desktopGames;
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.XMLInterface;
+
+public class GamePlay_MB_PF
+{
+	// Local Variables
+	private WrapperFunctions objWrapperFunctions;
+	private Utilities objUtilities;
+	private String appId,spinBtn;
+	XMLInterface           objXML  = new XMLInterface();
+
+	public GamePlay_MB_PF(Pojo objPojo)
+	{
+		objUtilities = objPojo.getObjUtilities();
+		objWrapperFunctions = objPojo.getObjWrapperFunctions();
+	}
+
+	// buttons
+	private  By btnSignIn = By.xpath("//button[contains(.,'Sign in')]");
+	//private  By btnSignIn = By.id("loginFormWidget_106");
+	// Link
+	private  By linkLogOut = By.partialLinkText("Logout");
+	//private  By linkLogOut = By.xpath("//a[contains(.,'Logout')]");
+	// Inputs
+	private  By inptUserName = By.id("loginUsername_106");
+	private  By inptPassword = By.id("loginPassword_106");
+	private  By searchbox = By.id("search-field");
+	private  By	closePopUp=By.id("mm_exit");
+	
+	public void closePopUp()
+	{
+		System.out.println("in Close pop up");
+		objUtilities.logReporter("Click 'Sign In'.", objWrapperFunctions.click(closePopUp), false);
+	}
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : set user name */
+	
+	public void setUserName(String userName)
+	{
+		objUtilities.logReporter("Set user name.", userName, objWrapperFunctions.setText(inptUserName, userName), false);
+	}
+
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Set password */
+	public void setPassword(String userPassword)
+	{
+		objUtilities.logReporter("Set password.", userPassword, objWrapperFunctions.setText(inptPassword, userPassword), false);
+	}
+
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Click on Sign in button */
+	
+	
+	
+	public void clickSignIn()
+	{
+		objUtilities.logReporter("Click 'Sign In'.", objWrapperFunctions.click(btnSignIn), false);
+	}
+
+	public void searchGame(String gameName)
+	{
+		//objUtilities.waitForElementWeb(linkLogOut);
+		objUtilities.logReporter("Set game name.", gameName, objWrapperFunctions.setText(searchbox, gameName), false);
+	}
+
+	public void clickRealPlay(String valueForXpath)
+	{
+		By realPlay = By.xpath("//li//span[contains(.,'Play Now')][@data-gamename='"+valueForXpath+"']");
+		objUtilities.logReporter("Click real play.", objWrapperFunctions.click(realPlay), false);
+	}
+	
+	public void clickDemoPlay(String valueForXpath)
+	{
+		String gameName=valueForXpath.toLowerCase();
+		gameName=gameName.replaceAll("\\s+","-");
+		System.out.println("Game Name"+gameName);
+		By iInfoBtn = By.xpath("//a[@href='/Games/"+gameName+"']");
+		By demoPlay = By.xpath("//span[contains(.,'Free play')]");
+		
+		objUtilities.logReporter("Click iInfoBtn play.", objWrapperFunctions.click(iInfoBtn), false);
+		objUtilities.logReporter("Click demoPlay play.", objWrapperFunctions.click(demoPlay), false);
+	}
+	
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Click on Sign in button */
+	public void clickLogOut()
+	{
+		System.out.println("********************** Into clickLogOut()");
+		objUtilities.logReporter("Click logout.", objWrapperFunctions.click(linkLogOut), false);
+	}
+	
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Check logout link available */
+	public boolean isLogOutLinkAvailable()
+	{
+		return objWrapperFunctions.checkElementDisplyed(linkLogOut);
+	}
+	
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Check close pop up at starting of loading page available*/
+	public boolean isPopUpAvailable()
+	{
+		return objWrapperFunctions.checkElementDisplyed(closePopUp);
+	}
+	
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Connect to Game */
+	public void connectApp(String gameName)
+		  {
+			//  return objWrapperFunctions.isConnectToApp(app);
+			appId = objXML.getOrVariables(gameName,"AppId");
+	     	System.out.println("testHodler connect app"+appId);
+			  objUtilities.logReporter("Connect to the App.", objWrapperFunctions.isConnectToApp(appId), false);
+
+		  }
+	
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Click on Spin Button */
+	public void playTheGame(String gameName)
+	{
+		spinBtn = objXML.getOrVariables(gameName,"objSpinBtn");
+		 objUtilities.logReporter("Click Spin button.", objWrapperFunctions.isplayTheGame(gameName,spinBtn), false);
+		
+	}
+	
+	/**
+	 * @author : Automation Tester(SQS) 
+	 * @Description : Click on Spin Button */
+	public void switchToChildWindow()
+	{
+		objWrapperFunctions.switchToChildWindow();
+		
+	}
+	
+	public void switchTomainWindow()
+	{
+		objWrapperFunctions.switchMainWindow();	
+	}
+	
+	public void loginDemoPLay()
+	{
+		 objUtilities.logReporter("Pass- Demo Play Asking for Login ", objWrapperFunctions.verifyIsElementPresent(btnSignIn), false);
+		
+		 
+	}
+	
+}

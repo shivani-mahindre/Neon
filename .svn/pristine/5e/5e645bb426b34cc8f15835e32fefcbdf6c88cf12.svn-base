@@ -1,0 +1,91 @@
+package com.pageFactory.desktopMecca;
+import org.jfree.chart.plot.ThermometerPlot;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+
+public class Deposit_PaySafe_PF {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver driver;
+	
+        
+	public Deposit_PaySafe_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+	
+	// buttons
+	  private  By depositMenu = By.xpath("//a[@class='btn btn-transparent control-panel-button ']");
+	  private  By iAgreeBtn = By.xpath("//button[@id='fundsDisclaimerBtn'][contains(.,'I agree')]");
+	
+	  private  By depositTen = By.xpath("//label//input[@id='predefinedValue-10']/../span[contains(.,'10')]");
+	  private  By submitBtn = By.xpath("//input[contains(@id,'FormSubmitBtn')]");
+	  
+	  private By paymentMethodContainerFrame=By.cssSelector("iframe#cashierPaymentIframe.payment-iframe");
+	  private By cardMethodDropDown=By.xpath("//b[@class='button']");
+	  private By selectPaySafeOption=By.xpath("//span[@title='PaySafeCard']");
+	  private By depositButton=By.xpath("//input[@id='continueButton']");
+	  private By pinTextBox=By.xpath("//input[@id='classicPin-addPinField']");
+	  
+	  private By checkBox=By.xpath("//input[@id='acceptTerms']");
+	  private By payBtn=By.xpath("//a[@id='payBtn']");
+	  
+	  private By depositSuccessMsg=By.xpath("//h2[contains(.,'Deposit Success')]");
+	  
+	  
+    public void depositPaySafe() 
+    {
+	objUtilities.logReporter("Click on 'Deposit' menu ", objWrapperFunctions.click(depositMenu), false);
+	
+	try
+	{
+	try {
+	    Thread.sleep(10000);
+	    if (objWrapperFunctions.verifyIsElementPresent(iAgreeBtn) == true) {
+		System.out.println("i agree button found");
+		objUtilities.logReporter("Click on 'I Agree' button", objWrapperFunctions.click(iAgreeBtn), false);
+	    } else 
+	    {
+		System.out.println("'I Agree' button not found");
+	    }
+	} catch (Exception e) 
+	{
+	    e.printStackTrace();
+	}
+	
+	objUtilities.logReporter("Click on '$10' button ", objWrapperFunctions.click(depositTen), false);
+	objUtilities.logReporter("Click on 'submit' button ", objWrapperFunctions.click(submitBtn), false);
+
+	objWrapperFunctions.switchToFrameUsingIframe_Element(paymentMethodContainerFrame);
+
+	objUtilities.logReporter("Click on 'Choose payment method'", objWrapperFunctions.click(cardMethodDropDown),
+		false);
+	objUtilities.logReporter("Click on 'Selected Credit card option'",
+		objWrapperFunctions.click(selectPaySafeOption), false);
+	objUtilities.logReporter("Click on 'Deposit' button ", objWrapperFunctions.click(depositButton), false);
+	objWrapperFunctions.switchToChildWindow();
+	objUtilities.logReporter("Enter 16 digit pin number ", objWrapperFunctions.setText(pinTextBox, "0000 0000 0990 3207"), false);
+	objUtilities.logReporter("Click on 'Agree' CheckBox ", objWrapperFunctions.click(checkBox), false);
+	objUtilities.logReporter("Click on 'Pay' button ", objWrapperFunctions.click(payBtn), false);
+	objWrapperFunctions.switchMainWindow();
+	objWrapperFunctions.waitForElementPresence(depositSuccessMsg);
+	objUtilities.logReporter("Verify Succes Message",
+		objWrapperFunctions.verifyIsElementPresent(depositSuccessMsg), false);
+	
+	}
+	catch(Exception e)
+	{
+	    e.printStackTrace();
+	}
+    }
+		
+	
+	 
+	
+}

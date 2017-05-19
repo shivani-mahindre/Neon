@@ -1,0 +1,25 @@
+{
+  "testCases" : [ {
+    "uid" : "f62ff2ef992c4a4f",
+    "name" : "changeIdstatus",
+    "title" : "Change ID status",
+    "time" : {
+      "start" : 1482231739497,
+      "stop" : 1482231739503,
+      "duration" : 6
+    },
+    "severity" : "NORMAL",
+    "status" : "CANCELED"
+  }, {
+    "uid" : "6657ef224e27290d",
+    "name" : "withdrawPayPal",
+    "title" : "Withdraw using Credit Card",
+    "time" : {
+      "start" : 1482231739540,
+      "stop" : 1482231739541,
+      "duration" : 1
+    },
+    "severity" : "NORMAL",
+    "status" : "CANCELED"
+  } ]
+}

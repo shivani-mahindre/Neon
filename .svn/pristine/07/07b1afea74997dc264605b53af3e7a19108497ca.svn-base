@@ -1,0 +1,40 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class LoginMobile_MB_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	//constructor
+		public LoginMobile_MB_PF(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+			  private  By btnLogin = By.xpath("//p[contains(.,'Login')]");
+	
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : set user name */
+		 
+		 public void login()
+		 {
+			 try
+			{
+				Thread.sleep(10000);
+			} catch (InterruptedException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 objUtilities.logReporter("Click 'Log In'.", objWrapperFunctions.mobileClick(btnLogin), false);
+			 
+		 }
+}

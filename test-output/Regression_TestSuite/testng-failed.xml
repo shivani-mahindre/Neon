@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression_TestSuite]">
+  <parameter name="TestFileName" value="projectModule1/SmokeSuite"/>
+  <listeners>
+    <listener class-name="com.generic.GetTcStatus"/>
+  </listeners>
+  <test name="Regression_FrontEnd(failed)">
+    <classes>
+      <class name="com.scripts.desktopMecca.SelfExclusion_ErrorMessages_FE">
+        <methods>
+          <include name="selfExcluseion"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.scripts.desktopMecca.SelfExclusion_ErrorMessages_FE -->
+    </classes>
+  </test> <!-- Regression_FrontEnd(failed) -->
+</suite> <!-- Failed suite [Regression_TestSuite] -->

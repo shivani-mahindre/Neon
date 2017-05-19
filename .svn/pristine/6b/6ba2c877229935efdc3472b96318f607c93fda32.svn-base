@@ -1,0 +1,14 @@
+{
+  "testCases" : [ {
+    "uid" : "2d029fed61f48a17",
+    "name" : "loginMobile",
+    "title" : "Android App Download & instructions Validation ",
+    "time" : {
+      "start" : 1482321388472,
+      "stop" : 1482321436721,
+      "duration" : 48249
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  } ]
+}

@@ -1,0 +1,168 @@
+package com.scripts.desktopMecca;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.GetTcStatus;
+import com.pageFactory.desktopMecca.PageValidation_PF;
+import com.views.desktopMecca.LoginView;
+
+/**
+ * @ScriptName    : Page Validations
+ * @Description   : page Validation + added checking of corosoul/Slider
+ * 
+ */
+
+@Listeners({GetTcStatus.class})
+public class PageValidation extends BaseTest
+{
+	//private Utilities objUtilities;
+	private LoginView objLoginView ;
+	private PageValidation_PF objHomePageValidation_PF;
+	
+
+	// Initializing Environment 
+	@BeforeClass
+	private void setUp()
+	{
+	        initializeWebEnvironment("MB");
+		objHomePageValidation_PF =new PageValidation_PF(this);
+		objLoginView = new  LoginView(this);
+	}
+	
+ /* Validations Without login*/
+
+   /* @Title("Page Validations without Login ")
+    @Test(priority=1)
+    public void homePageValidationWOLogin()
+    {
+	objHomePageValidation_PF.PageValidationLogin();
+    }
+
+   /* @Title("Bingo Page Validations without Login ")
+    @Test(priority=2)
+    public void bingoPageValidationWOLogin()
+    {
+	objHomePageValidation_PF.bingoLogin();
+    }
+    
+    @Title("Slots and games Page Validations without Login ")
+    @Test(priority=3)
+    public void slotsNGamesWOLogin()
+    {
+	objHomePageValidation_PF.slotsNGamesLogin();
+    }
+    
+    @Title("Apps games Page Validations without Login ")
+    @Test(priority=4)
+    public void AppTabWOLogin()
+    {
+	objHomePageValidation_PF.AppTabLogin();
+    }
+    
+    @Title("Promotion Page Validations without Login ")
+    @Test(priority=5)
+    public void PromotionWOLogin()
+    {
+	objHomePageValidation_PF.PromotionLogin();
+    }
+    
+    @Title("Clubs Page Validations without Login ")
+    @Test(priority=6)
+    public void ClubsWOLogin()
+    {
+	objHomePageValidation_PF.ClubsLogin();
+    }
+    
+    
+    @Title("Community Page Validations without Login ")
+    @Test(priority=7)
+    public void CommunityWOLogin()
+    {
+	objHomePageValidation_PF.CommunityLogin();
+
+    }*/
+    
+	@Title("VIP Page Validations without Login ")
+    @Test(priority=1)
+    public void vipPageValidationWOLogin()
+    {
+	objHomePageValidation_PF.vipLogin();
+    }
+     
+   /* @Title("Page Validations  Login ")
+    @Test(priority=8)
+    public void homePageValidationWOLogin()
+    {
+   	objLoginView.login();
+	objHomePageValidation_PF.PageValidationWithLogin();
+    }
+    
+    @Title("Bingo Page Validations  Login ")
+    @Test(priority=9)
+    public void bingoPageValidationWOLogin()
+    {
+	objHomePageValidation_PF.bingoWithLogin();
+    }
+    
+    @Title("Slots and games Page Validations  Login ")
+    @Test(priority=10)
+    public void slotsNGamesWOLogin()
+    {
+	objHomePageValidation_PF.slotsNGamesLogin();
+    }
+    
+    @Title("Apps games Page Validations  Login ")
+    @Test(priority=11)
+    public void AppTabWOLogin()
+    {
+	objHomePageValidation_PF.AppTabLogin();
+    }
+    
+    @Title("instat win Page Validations  ")
+    @Test(priority=12)
+    public void instantWin()
+    {
+	objHomePageValidation_PF.instantWinWithLogin();
+	objLoginView.logout();
+
+    }
+    
+    @Title("Promotion Page Validations  Login ")
+    @Test(priority=13)
+    public void PromotionWOLogin()
+    {
+	objHomePageValidation_PF.PromotionLogin();
+    }
+    
+    @Title("Clubs Page Validations  Login ")
+    @Test(priority=14)
+    public void ClubsWOLogin()
+    {
+	objHomePageValidation_PF.ClubsLogin();
+    }
+    
+    
+    @Title("Community Page Validations  Login ")
+    @Test(priority=15)
+    public void CommunityWOLogin()
+    {
+	objHomePageValidation_PF.CommunityLogin();
+	objLoginView.logout();
+
+    }
+    */
+     
+	// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		
+		tearDownWebEnvironment();
+		objLoginView = null;
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "defectsList" : [ {
+    "title" : "Test defects",
+    "status" : "BROKEN",
+    "defects" : [ {
+      "uid" : "da104be53958c34a",
+      "failure" : {
+        "message" : "TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //b[@class='button']\nBuild info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'\nSystem info: host: 'D9B167BS', ip: '192.168.156.185', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_51'\nSession ID: de1617bf-1d8f-4861-a72a-f15330fa2448\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.1}]",
+        "stackTrace" : null
+      },
+      "testCases" : [ {
+        "uid" : "d412bd81b26252cf",
+        "name" : "withdrawPayPal",
+        "title" : "Withdraw using Credit Card",
+        "time" : {
+          "start" : 1482232009626,
+          "stop" : 1482232129271,
+          "duration" : 119645
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
+      } ]
+    } ]
+  } ]
+}

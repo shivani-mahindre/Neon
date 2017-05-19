@@ -1,0 +1,74 @@
+package com.pageFactory.desktopGcasino;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class HomePage_GC
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+		//constructor
+		public HomePage_GC(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+		// buttons
+		  private  By btnSignIn = By.xpath("//div[@class='form-elements']//button[contains(.,'Login')]");
+		  private  By btnCloseCookie = By.xpath("//button[@class='js-cookie-close-btn cookie-close-btn btn']");
+		  
+		// Link
+		  private  By userNameHeader = By.xpath("//li[@class='nav-item menu-header-user dropdown first']");
+		  private  By linkLogOut = By.xpath("//a[contains(.,'Logout')]");
+		// Inputs
+		  private  By inptUserName = By.id("loginUsername_2469");
+		  private  By inptPassword = By.id("loginPassword_2469");
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : set user name */
+		  public void setUserName(String userName)
+		  {
+			  objUtilities.logReporter("Set 'UserName'.", userName, objWrapperFunctions.setText(inptUserName, userName), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Set password */
+		  public void setPassword(String userPassword)
+		  {
+			  objUtilities.logReporter("Set 'Password'.", userPassword, objWrapperFunctions.setText(inptPassword, userPassword), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickCloseCookie()
+		  {
+			  objUtilities.logReporter("Click 'Close cookie Button'.", objWrapperFunctions.click(btnCloseCookie), false);
+		    
+		  }
+		  	  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickSignIn()
+		  {
+			  objUtilities.logReporter("Click 'Sign In'.", objWrapperFunctions.click(btnSignIn), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogOut()
+		  {
+		          objUtilities.logReporter("hover user header'.", objWrapperFunctions.mouseHover(userNameHeader), false);
+			  objUtilities.logReporter("Click 'LogOut'.", objWrapperFunctions.click(linkLogOut), false);
+		  }
+		  
+}

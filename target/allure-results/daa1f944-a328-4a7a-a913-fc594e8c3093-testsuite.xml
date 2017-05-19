@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1495097955014" stop="1495097996486" version="1.4.4">
+    <name>Regression</name>
+    <title>Regression : Desktop</title>
+    <test-cases>
+        <test-case start="1495097963382" stop="1495097995624" status="passed">
+            <name>checkBalanceDetails</name>
+            <steps>
+                <step start="1495097965446" stop="1495097965472" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097966883" stop="1495097966886" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097973243" stop="1495097973245" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097994869" stop="1495097994871" status="passed">
+                    <name>logReporter[Click on view tab, true, false]</name>
+                    <title>Click on view tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097995617" stop="1495097995619" status="passed">
+                    <name>logReporter[Click on Balance Menu, true, false]</name>
+                    <title>Click on Balance Menu</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D79167BS"/>
+                <label name="thread" value="5132@D79167BS.main"/>
+            </labels>
+        </test-case>
+        <test-case start="1495097963382" stop="1495097995624" status="passed">
+            <name>checkBalanceDetails</name>
+            <steps>
+                <step start="1495097965446" stop="1495097965472" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097966883" stop="1495097966886" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097973243" stop="1495097973245" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097994869" stop="1495097994871" status="passed">
+                    <name>logReporter[Click on view tab, true, false]</name>
+                    <title>Click on view tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495097995617" stop="1495097995619" status="passed">
+                    <name>logReporter[Click on Balance Menu, true, false]</name>
+                    <title>Click on Balance Menu</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D79167BS"/>
+                <label name="thread" value="5132@D79167BS.main"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

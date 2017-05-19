@@ -1,0 +1,70 @@
+package com.views.desktopGames;
+
+import java.util.Properties;
+
+import ru.yandex.qatools.allure.annotations.Step;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.XMLInterface;
+//import com.kudo.automation.pagefactory.mecca.HomePage;
+import com.pageFactory.desktopGames.GamePlay_MB_PF;
+
+public class GameView 
+{
+	// Local variables
+	private Pojo objPojo;
+	private Utilities objUtilities;
+	private Properties objConfig;
+	private WrapperFunctions objWrapperFunctions ; 
+	private GamePlay_MB_PF objWinstar;
+	private String appId;
+	
+	XMLInterface           objXML           = new XMLInterface();
+	public GameView(Pojo objPojo)
+	{
+		this.objPojo = objPojo;
+		objUtilities = objPojo.getObjUtilities();
+		objWrapperFunctions = objPojo.getObjWrapperFunctions();
+		objConfig = objPojo.getObjConfig();
+	}
+
+	@Step("Login To Mecca")
+	public void login() 
+	{
+		objWinstar = new GamePlay_MB_PF(objPojo); 
+		if(objWinstar.isPopUpAvailable())
+		{
+			objWinstar.closePopUp();
+		}
+		objWinstar.setUserName(objConfig.getProperty("web.username_mb"));
+		objWinstar.setPassword(objConfig.getProperty("web.password_mb"));
+		objWinstar.clickSignIn();
+		objWinstar = null;
+	}
+
+	@Step("Connect to Game")	
+	public void connectApp(String gameName)
+	{
+		appId = objXML.getOrVariables(gameName,"AppId");
+		System.out.println("testHodler connect app"+appId);
+		objWinstar.connectApp(appId);
+		
+		
+	}
+
+	
+	@Step("Logout")
+	public void logout() 
+	{
+		objWinstar = new GamePlay_MB_PF(objPojo);
+		System.out.println("objWinstar.isLogOutLinkAvailable()---------------->" + objWinstar.isLogOutLinkAvailable());
+		if(objWinstar.isLogOutLinkAvailable())
+		{
+			
+			objWinstar.clickLogOut();
+		}
+		objWinstar = null;
+	}
+}

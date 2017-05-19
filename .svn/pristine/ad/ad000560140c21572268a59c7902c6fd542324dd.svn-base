@@ -1,0 +1,135 @@
+package com.pageFactory.desktopMecca;
+
+import org.openqa.selenium.By;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class PageValidation_Clubs_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	public PageValidation_Clubs_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+ 
+	
+	  private  By clubsTab = By.xpath("//a[contains(.,'Clubs')][@href='/bingo-clubs']");
+	  private  By clubsHeader = By.xpath("//h1[contains(.,'Bingo Clubs')]");
+	  private  By clubsTab_JoinYourLocalClubTab = By.xpath("//a[contains(.,'Join Your Local Club')]");
+	  private  By clubsTab_JoinYourLocalClubheader = By.xpath("//h1[contains(.,'Join Your Local Club')]");
+	  private  By clubsTab_ChooseYourClubDropDown = By.xpath("//select[@id='club-select']");
+	  private  By clubsTab_AberDeenClub = By.xpath("//option[contains(.,'Mecca Aberdeen')]");
+	  private  By clubsTab_AndoverClub = By.xpath("//option[contains(.,'Mecca Andover')]");
+	  private  By Title = By.xpath("//select[@id='join-club-title']");
+	  private  By Title_Mr = By.xpath("//select[@id='join-club-title']//option[@value='Mr']");
+	  private  By Title_Mrs = By.xpath("//select[@id='join-club-title']//option[contains(.,'Mrs')]");
+	  private  By Title_Miss = By.xpath("//select[@id='join-club-title']//option[@value='Miss']");
+	  private  By Title_Ms = By.xpath("//select[@id='join-club-title']//option[@value='Ms']");
+	  private  By LastName = By.xpath("//input[@id='join-club-last-name']");
+	  private  By FirstName = By.xpath("//input[@id='join-club-first-name']");
+	  private  By DOB_day = By.xpath("//select[@id='dob-select-day']");
+	  private  By DOB_day_two = By.xpath("//select[@id='dob-select-day']//option[@value='2']");
+	  
+	  private  By DOB_month = By.xpath("//select[@id='dob-select-month']");
+	  private  By DOB_month_two = By.xpath("//select[@id='dob-select-month']//option[@value='2']");
+	  
+	  private  By DOB_year = By.xpath("//select[@id='dob-select-year']");
+	  private  By DOB_year_eighty = By.xpath("//select[@id='dob-select-year']//option[@value='1980']");
+	  
+	  private  By postCode = By.xpath("//input[@id='lookupPostcode']");
+	  
+	  private  By houseNo = By.xpath("//input[@id='regAddressLine1']");
+	  private  By streetAdress = By.xpath("//input[@id='regAddressLine2']");
+	  private  By town = By.xpath("//input[@id='regTown']");
+	  private  By email = By.xpath("//input[@id='join-club-email']");
+	  private  By confirmEmail = By.xpath("//input[@id='join-club-confirm-email']");
+	  private  By mobileNumber = By.xpath("//input[@id='join-club-mobile-number']");
+	  private  By HomeMobileNumber = By.xpath("//input[@id='join-club-home-number']");
+	  private  By iAmAgedCheckBox = By.xpath(".//*[@id='join-club-tac-accept']");
+	  private  By joinClubBtn = By.xpath("//button[@id='SubmitJoinLocalClubForm']");
+	  
+	  private  By clubsTab_ClubA2ZTab = By.xpath("//a[contains(.,'Clubs A - Z')]");
+	  private  By clubsTab_ClubA2ZTab_A2D = By.xpath("//span[contains(.,'A-D')]");
+	  private  By clubsTab_ClubA2ZTab_E2L = By.xpath("//span[contains(.,'E-L')]");
+	  private  By clubsTab_ClubA2ZTab_M2Z = By.xpath("//span[contains(.,'M-Z')]");
+	  
+	  private  By clubs_MeccaOldBurry = By.xpath("//a[contains(.,'Mecca Oldbury')]");	
+	//  private  By clubs_Image = By.xpath("//img[@class='cgi-img']");
+	  private  By clubs_Name = By.xpath("//h1[contains(.,'Mecca Oldbury')]");
+	  private  By clubs_OpeningTiming = By.xpath("//div[@class='cd-opening-times-block']//div[contains(.,'Opening times')]");
+	 
+	  
+	  public void checkPageWithoutLogin()
+	  {
+		  objUtilities.logReporter("Click 'clubsTab' Tab", objWrapperFunctions.click(clubsTab), false);
+	      objUtilities.logReporter("Check 'clubsHeader' text presence on promotion page", objWrapperFunctions.verifyIsElementPresent(clubsHeader), false);
+
+	      objUtilities.logReporter("Click 'clubsTab_JoinYourLocalClubTab' Tab", objWrapperFunctions.click(clubsTab_JoinYourLocalClubTab), false);
+	      objUtilities.logReporter("Check 'clubsTab_JoinYourLocalClubheader' text presence on promotion page", objWrapperFunctions.verifyIsElementPresent(clubsTab_JoinYourLocalClubheader), false);
+	     
+	  }
+	  
+	  // Verify that after Login the user stays on the page they are viewing.
+	  
+	  public void JoinYourLocalClub()
+	  {
+	  /*    objUtilities.logReporter("Click 'clubsTab' Tab", objWrapperFunctions.click(clubsTab), false);
+	      objUtilities.logReporter("Check 'clubsHeader' text presence on promotion page", objWrapperFunctions.verifyIsElementPresent(clubsHeader), false);
+	      objUtilities.logReporter("Click 'clubsTab_JoinYourLocalClubTab' Tab", objWrapperFunctions.click(clubsTab_JoinYourLocalClubTab), false);*/
+	     
+		  
+		  objUtilities.logReporter("Check 'clubsTab_JoinYourLocalClubheader' text presence on promotion page", objWrapperFunctions.verifyIsElementPresent(clubsTab_JoinYourLocalClubheader), false);
+	      objUtilities.logReporter("Click 'Choose Your Club Drop Down' ", objWrapperFunctions.click(clubsTab_ChooseYourClubDropDown), false);
+	      objUtilities.logReporter("Check 'Aberdeen' Club under DropDown ", objWrapperFunctions.verifyIsElementPresent(clubsTab_AberDeenClub), false);
+	      objUtilities.logReporter("Check 'Andover' Club under DropDown ", objWrapperFunctions.verifyIsElementPresent(clubsTab_AndoverClub), false);
+	      objUtilities.logReporter("Click 'Andover' Club under DropDown ", objWrapperFunctions.click(clubsTab_AndoverClub), false);
+	      objUtilities.logReporter("Click on Title ", objWrapperFunctions.click(Title), false);
+	      objUtilities.logReporter("Check Mr. title ", objWrapperFunctions.verifyIsElementPresent(Title_Mr), false);
+	      objUtilities.logReporter("Click Mrs. Title ", objWrapperFunctions.verifyIsElementPresent(Title_Mrs), false);
+	      objUtilities.logReporter("Click Miss. Title ", objWrapperFunctions.verifyIsElementPresent(Title_Miss), false);
+	      objUtilities.logReporter("Click Ms. Title ", objWrapperFunctions.verifyIsElementPresent(Title_Ms), false);
+	      objUtilities.logReporter("Click Ms. Title ", objWrapperFunctions.click(Title_Ms), false);
+	      
+	      objUtilities.logReporter("Enter last name ", objWrapperFunctions.setText(LastName, "SQS"), false);
+	      objUtilities.logReporter("Enter first name ", objWrapperFunctions.setText(FirstName, "Test"), false);
+	      
+	      objUtilities.logReporter("Click DOB_DAY ", objWrapperFunctions.click(DOB_day), false);
+	      objUtilities.logReporter("Click DOB_DAY day 2 ", objWrapperFunctions.click(DOB_day_two), false);
+	      
+	      objUtilities.logReporter("Click month ", objWrapperFunctions.click(DOB_month), false);
+	      objUtilities.logReporter("Click month feb ", objWrapperFunctions.click(DOB_month_two), false);
+	      
+	      objUtilities.logReporter("Click year ", objWrapperFunctions.click(DOB_year), false);
+	      objUtilities.logReporter("Click year 1980 ", objWrapperFunctions.click(DOB_year_eighty), false);
+	      
+	      objUtilities.logReporter("Enter postcode name ", objWrapperFunctions.setText(postCode, "pa756pb"), false);
+	      objUtilities.logReporter("Enter house no name ", objWrapperFunctions.setText(houseNo, "568945"), false);
+	      objUtilities.logReporter("Enter Street name ", objWrapperFunctions.setText(streetAdress, "testStreet"), false);
+	      objUtilities.logReporter("Enter town  name ", objWrapperFunctions.setText(town, "Amerstedam"), false);
+	      objUtilities.logReporter("Enter email address", objWrapperFunctions.setText(email, "testSQS@hotmail.com"), false);
+	      objUtilities.logReporter("Enter confirmEmail address", objWrapperFunctions.setText(confirmEmail, "testSQS@hotmail.com"), false);
+	      objUtilities.logReporter("Enter mobileNumber ", objWrapperFunctions.setText(mobileNumber, "0123456789"), false);
+	      objUtilities.logReporter("Enter home number ", objWrapperFunctions.setText(HomeMobileNumber, "0020456789"), false);
+	      objUtilities.logReporter("Click on checkBox age 18 ", objWrapperFunctions.click(iAmAgedCheckBox), false);
+	      objUtilities.logReporter("Click Join Now button ", objWrapperFunctions.click(joinClubBtn), false);
+	      
+	      
+	      objUtilities.logReporter("Click Club a-z ", objWrapperFunctions.click(clubsTab_ClubA2ZTab), false);
+	      objUtilities.logReporter("Click Club a-z, A-D ", objWrapperFunctions.click(clubsTab_ClubA2ZTab_A2D), false);
+	      objUtilities.logReporter("Click Club a-z, E-L ", objWrapperFunctions.click(clubsTab_ClubA2ZTab_E2L), false);
+	      objUtilities.logReporter("Click Club a-z, M-Z ", objWrapperFunctions.click(clubsTab_ClubA2ZTab_M2Z), false);
+	      
+	      objUtilities.logReporter("Click clubs_MeccaOldBurry ", objWrapperFunctions.click(clubs_MeccaOldBurry), false); 
+	  //    objUtilities.logReporter("Verify 'image on page", objWrapperFunctions.verifyIsElementPresent(clubs_Image), false);
+	      objUtilities.logReporter("Verify 'Club Name on page", objWrapperFunctions.verifyIsElementPresent(clubs_Name), false);
+	      objUtilities.logReporter("Verify 'clubs_OpeningTiming on page", objWrapperFunctions.verifyIsElementPresent(clubs_OpeningTiming), false);
+	     
+	  }
+	 
+        
+	  
+}

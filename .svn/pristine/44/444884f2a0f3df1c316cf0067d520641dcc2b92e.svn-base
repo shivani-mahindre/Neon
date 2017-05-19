@@ -1,0 +1,100 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class TakeABreak_ErrorMessages_FE_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	Screen objScreen;
+	String password = "",user="";
+
+	public TakeABreak_ErrorMessages_FE_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objScreen = new Screen();
+		password = pojo.getPass();
+		user=pojo.getUser();
+	}
+
+	private By accountMenu = By.xpath("//a[@href='/User/Profile/Edit']");
+	private By accountMenuDropDown = By.xpath(".//*[@id='accountMenu']/div/article[1]/p/a");
+	private By responsibleGamingTab = By.xpath("//li[7]//a[contains(.,'Responsible Gaming')]");
+	private By responsibleGamingTab_takeABreak = By.xpath(".//*[@id='accountMenu']/div/article[2]/nav/ul/li[7]/ul/li[2]");
+
+	private By selectDurationDropdown = By.xpath("//select[@id='tbreakDuration']");
+	private By selectOneDay = By.xpath("//option[@value='1']");
+	private By iUnderStoodCheckBox = By.xpath(".//*[@id='tbreakConfirm']");
+	private By takeABreakPassword = By.xpath(".//*[@id='tbreakPassword']");
+	private By cancelBtn = By.xpath("//button[contains(.,'Cancel')]");
+	private By applyBtnTakeABreak=By.xpath("//a[contains(.,'Apply')]");
+	private By takeBrkNLogoutBtn = By.xpath(".//*[@id='tbreakForm']/button");
+	private By doneBtn = By.xpath("//button[contains(.,'Done')]");
+	
+	//PAM
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By accountOnBreakStatus=By.xpath(".//*[@id='ContentMain']/div/div/main/player-summary/div/div[4]/div[1]/div/dl[1]/div[2]/a/span[2]");
+	private By endBreakBtn=By.xpath(".//*[@id='changePlayerStatus']/div[1]/div/label[1]");
+	private By reasonTextArea=By.xpath(".//*[@id='playerStatusNote']");
+	private By applyBtn=By.xpath("//a[contains(.,'Apply')]");
+	private By confirmBtn=By.xpath("//button[contains(.,'Confirm')]");
+	
+	private By changeStatus=By.xpath("//player-summary//span[contains(.,'Change Status')]");
+	private By changeStatus_TakeABreak=By.xpath("//label[contains(.,'Take A Break')]");
+	
+	
+	public void takeABreak()
+	{
+		objUtilities.logReporter("Click on 'accountMenu' menu ", objWrapperFunctions.mobileClick(accountMenu), true);
+		objUtilities.logReporter("Click on 'accountMenuDropDown' menu ", objWrapperFunctions.mobileClick(accountMenuDropDown), true);
+		objUtilities.logReporter("Click on 'responsibleGamingTab' menu ", objWrapperFunctions.mobileClick(responsibleGamingTab), true);
+		objWrapperFunctions.waitForMobileElementPresence(responsibleGamingTab_takeABreak);
+		objUtilities.logReporter("Click on 'responsibleGamingTab_selfExclusion' menu ", objWrapperFunctions.mobileClick(responsibleGamingTab_takeABreak), true);
+		objUtilities.logReporter("Click on 'selectDurationDropdown' menu ", objWrapperFunctions.mobileClick(selectDurationDropdown), true);
+		objUtilities.logReporter("Click on 'selfExclusionNLogoutBtn' menu ", objWrapperFunctions.mobileClick(takeBrkNLogoutBtn), true);
+		objUtilities.logReporter("Click on 'selectSixMonths' menu ", objWrapperFunctions.mobileClick(selectOneDay), true);
+		objUtilities.logReporter("Click on 'iUnderStoodCheckBox' menu ", objWrapperFunctions.mobileClick(iUnderStoodCheckBox), true);
+		objUtilities.logReporter("Set 'selfExcludePassword' ", objWrapperFunctions.mobileSetText(takeABreakPassword, password), true);
+		objUtilities.logReporter("Click on 'selfExclusionNLogoutBtn' menu ", objWrapperFunctions.mobileClick(takeBrkNLogoutBtn), true);
+		objWrapperFunctions.waitForMobileElementPresence(confirmBtn);
+		objUtilities.logReporter("Verify Cancel button ", objWrapperFunctions.verifymobileIsElementPresent(cancelBtn), true);
+		objUtilities.logReporter("Verify confirmBtn  button ", objWrapperFunctions.verifymobileIsElementPresent(confirmBtn), true);
+		objUtilities.logReporter("Click on 'confirmBtn' menu ", objWrapperFunctions.mobileClick(confirmBtn), true);
+		objUtilities.logReporter("Click on 'doneBtn' menu ", objWrapperFunctions.mobileClick(doneBtn), true);
+	
+	}
+	
+	public void removetakeABreak()
+	{
+		
+		String date=objUtilities.getRequiredDay(1,"dd/MM/yyyy","IST");
+		System.out.println("date : "+date);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), true);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), true);
+	    objUtilities.logReporter("Verify Account Status: "+objWrapperFunctions.getText(accountOnBreakStatus), objWrapperFunctions.verifyIsElementPresent(accountOnBreakStatus), true);
+	    objUtilities.logReporter("Click on accountOnBreakStatus", objWrapperFunctions.click(accountOnBreakStatus), true);
+	    objUtilities.logReporter("Click on endBreakBtn", objWrapperFunctions.click(endBreakBtn), true);
+	    objUtilities.logReporter("Enter Reason for end break", objWrapperFunctions.setText(reasonTextArea, "Automation Exclusion Test"), true);
+	    
+	    objUtilities.logReporter("Click on applyBtn", objWrapperFunctions.click(applyBtn), true);
+	    objUtilities.logReporter("Click on confirmBtn", objWrapperFunctions.click(confirmBtn), true);
+	
+	    objUtilities.logReporter("Verify Account Status: "+objWrapperFunctions.getText(accountOnBreakStatus), objWrapperFunctions.verifyIsElementPresent(accountOnBreakStatus), true);
+	
+	
+	
+	
+	}
+
+	
+	
+	
+
+}

@@ -1,0 +1,21 @@
+package com.pageFactory.desktopGcasino;
+
+import java.util.Properties;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class SlotAndGames {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	private Properties objConfig;
+	private String user;
+	
+	
+	public SlotAndGames(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig=pojo.getObjConfig();
+	}
+}

@@ -1,0 +1,69 @@
+package com.scripts.desktopGCasino;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+import com.generic.BaseTest;
+import com.views.desktopGCasino.FlogView;
+import com.views.desktopGCasino.LocalCasinoView;
+
+public class Flog_functionality  extends BaseTest {
+	private FlogView objFlogView;
+  @Test
+  public void check_username() {
+	  objFlogView.username();
+	  
+  }
+  
+  @Test
+  public void check_password() {
+	  objFlogView.password();
+	  
+  }
+  @BeforeMethod
+  public void beforeMethod() {
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+  }
+
+
+ 
+  @BeforeClass
+  public void beforeClass() {
+	  initializeWebEnvironment("GC");
+		//objUtilities = this.getObjUtilities();
+	  objFlogView = new  FlogView(this);
+  }
+
+  @AfterClass
+  public void afterClass() {
+	  tearDownWebEnvironment();
+  }
+
+  @BeforeTest
+  public void beforeTest() {
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+  @BeforeSuite
+  public void beforeSuite() {
+  }
+
+  @AfterSuite
+  public void afterSuite() {
+  }
+
+}

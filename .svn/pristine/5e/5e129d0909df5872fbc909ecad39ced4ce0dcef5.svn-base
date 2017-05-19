@@ -1,0 +1,82 @@
+package com.pageFactory.PAM;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class PAMLoginLogout
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	//constructor
+		public PAMLoginLogout(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+		private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+		private  By PAMpassword =By.xpath("//input[@id='password']");
+		private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+		private  By logOut =By.xpath("//a[@class='logout']");
+		// buttons
+		  private  By btnSignIn = By.xpath("//button[contains(.,'Sign in')]");
+		  private  By btnCloseCookie = By.xpath("//button[@class='js-cookie-close-btn cookie-close-btn btn']");
+		  
+		// Link
+		  private  By linkLogOut = By.xpath("//a[contains(.,'Logout')]");
+		  
+		  
+			  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : set user name */
+		  public void setUserName(String userName)
+		  {
+			  objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, userName), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Set password */
+		  public void setPassword(String userPassword)
+		  {
+			  objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, userPassword), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickCloseCookie()
+		  {
+			  objUtilities.logReporter("Click 'Close cookie Button'.", objWrapperFunctions.mobileClick(btnCloseCookie), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogin()
+		  {
+			  try
+			{
+				Thread.sleep(5000);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			  objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+		  }
+
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogOut()
+		  {
+			  objWrapperFunctions.verifymobileIsElementPresent(linkLogOut);
+			  objUtilities.logReporter("Click 'LogOut'.", objWrapperFunctions.mobileClick(logOut), false);
+		  }
+		  
+}

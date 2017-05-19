@@ -1,0 +1,34 @@
+package com.scripts.desktopGCasino;
+	
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterClass;
+
+import com.generic.BaseTest;
+import com.generic.WrapperFunctions;
+import com.pageFactory.desktopGcasino.Footer_PF;
+
+
+public class Footer extends BaseTest 
+{
+	
+	private Footer_PF objfooter;
+	WrapperFunctions objwrapper;
+	@Test
+	public void footerGrosvenor()
+	{
+		objwrapper= new WrapperFunctions(this);
+	//	initializeSecondWebEnvironment("GC");
+		
+	//	objwrapper.selectWindow("The Biggest Casino Brand in the UK - Online Casino");
+		objfooter =new Footer_PF(this);
+		objfooter.checkFooter();
+	}
+
+	/*@AfterClass
+	private void tearDown()
+	{
+		tearDownWebEnvironment();
+		objfooter = null;
+	}*/
+  
+}

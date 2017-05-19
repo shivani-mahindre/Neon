@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Step >> Enter username]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Enter password]]>
+    </line>
+  </reporter-output>
+  <suite name="Regression" duration-ms="175851" started-at="2017-05-17T10:22:06Z" finished-at="2017-05-17T10:25:02Z">
+    <groups>
+    </groups>
+    <test name="Desktop" duration-ms="175851" started-at="2017-05-17T10:22:06Z" finished-at="2017-05-17T10:25:02Z">
+      <class name="com.scripts.desktopGNG.neonReg">
+        <test-method status="PASS" signature="RegisterAndDeposit()[pri:0, instance:com.scripts.desktopGNG.neonReg@5fef2aac]" name="RegisterAndDeposit" duration-ms="173410" started-at="2017-05-17T15:52:06Z" finished-at="2017-05-17T15:55:00Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step >> Enter username]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Enter password]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- RegisterAndDeposit -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.scripts.desktopGNG.neonReg@5fef2aac]" name="tearDown" is-config="true" duration-ms="2348" started-at="2017-05-17T15:55:00Z" finished-at="2017-05-17T15:55:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.scripts.desktopGNG.neonReg -->
+    </test> <!-- Desktop -->
+  </suite> <!-- Regression -->
+</testng-results>

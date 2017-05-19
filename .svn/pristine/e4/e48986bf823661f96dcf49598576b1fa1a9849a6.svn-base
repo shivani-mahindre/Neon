@@ -1,0 +1,88 @@
+package com.pageFactory.PAM;
+
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class FinanceFunctionality_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	String PAMUser,PAMPass;
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	
+	public FinanceFunctionality_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		PAMUser=pojo.getPAMUser();
+		PAMPass=pojo.getPAMPassword();
+		System.out.println("Usernmme->> "+user +" "+PAMUser+" "+PAMPass);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By financesTAB=By.xpath("//a[contains(.,'Finances')]");
+	private By financialSummary=By.xpath("//h5[contains(.,'Financial summary')]");
+	private By activePayemtnMethods=By.xpath("//h5[contains(.,'Active payment methods')]");
+	private By financialSummary_Type=By.xpath("//div/./h5[contains(.,'Financial summary')]/..//th[contains(.,'Type')]");
+	private By financialSummary_Last24hrs=By.xpath("//div/./h5[contains(.,'Financial summary')]/..//th[contains(.,'Last 24')]");
+	private By financialSummary_Last7=By.xpath("//div/./h5[contains(.,'Financial summary')]/..//th[contains(.,'Last 7')]");
+	private By financialSummary_Last30=By.xpath("//div/./h5[contains(.,'Financial summary')]/..//th[contains(.,'Last 30')]");
+	private By financialSummary_LastAll=By.xpath("//div/./h5[contains(.,'Financial summary')]/..//th[contains(.,'All Time')]");
+	private By activePayemtnMethods_paymentType=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Payment Type')]");
+	private By activePayemtnMethods_Details=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Details')]");
+	private By activePayemtnMethods_Name=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Name')]");
+	private By activePayemtnMethods_Expiry=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Expiry')]");
+	private By activePayemtnMethods_Status=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Status')]");
+	private By activePayemtnMethods_Deposits=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Deposits')]");
+	private By activePayemtnMethods_Withdrawals=By.xpath("//div/./h5[contains(.,'Active payment methods')]/..//th[contains(.,'Withdrawals')]");
+	
+	
+	public void finance()
+	{
+	    String noteText=objWrapperFunctions.generateRandomChars("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 17);
+	    System.out.println("Random Text"+noteText);
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, PAMUser), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, PAMPass), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on financesTAB ", objWrapperFunctions.click(financesTAB), false);
+	    objUtilities.logReporter("Check on financialSummary ", objWrapperFunctions.verifyIsElementPresent(financialSummary), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods), false);
+	    objUtilities.logReporter("Check on financialSummary_Type ", objWrapperFunctions.verifyIsElementPresent(financialSummary_Type), false);
+	    objUtilities.logReporter("Check on financialSummary_Last24hrs ", objWrapperFunctions.verifyIsElementPresent(financialSummary_Last24hrs), false);
+	    objUtilities.logReporter("Check on financialSummary_Last7 ", objWrapperFunctions.verifyIsElementPresent(financialSummary_Last7), false);
+	    objUtilities.logReporter("Check on financialSummary_Last30 ", objWrapperFunctions.verifyIsElementPresent(financialSummary_Last30), false);
+	    objUtilities.logReporter("Check on financialSummary_LastAll ", objWrapperFunctions.verifyIsElementPresent(financialSummary_LastAll), false);
+	
+	    objUtilities.logReporter("Check on activePayemtnMethods_paymentType ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_paymentType), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods_Details ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_Details), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods_Name ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_Name), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods_Expiry ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_Expiry), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods_Status ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_Status), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods_Deposits ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_Deposits), false);
+	    objUtilities.logReporter("Check on activePayemtnMethods_Withdrawals ", objWrapperFunctions.verifyIsElementPresent(activePayemtnMethods_Withdrawals), false);
+	}
+	
+	
+}

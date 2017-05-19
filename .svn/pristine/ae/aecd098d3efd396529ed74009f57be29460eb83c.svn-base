@@ -1,0 +1,88 @@
+package com.pageFactory.desktopMecca;
+
+import java.awt.print.Printable;
+import java.util.Properties;
+import java.util.Random;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.FindElement;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.itextpdf.text.log.SysoCounter;
+import com.sun.jna.platform.unix.X11.Screen;
+
+public class TransactionHistory_PF {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	public TransactionHistory_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		//System.out.println("Usernmme->>"+user);
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+	// Front end account
+	  private  By accountMenu = By.xpath("//span[contains(.,'Account')]");
+	  private  By accounthistorytab = By.xpath("//a[contains(.,'Account History')]");
+	  private  By refID_FE = By.xpath("//div[@class='responsive-table']//tr[2]//td[3]");
+	  
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By transactionTAb=By.xpath("//a[contains(.,'Transactions')]");
+	private By firstTarnsactionId=By.xpath("//tbody//tr[1]//td[5]");
+	  
+	public void transactioHistoryFE()
+	 {
+	    objUtilities.logReporter("Clcik Account Menu", objWrapperFunctions.click(accountMenu),false);
+	    objUtilities.logReporter("Clcik Account Menu", objWrapperFunctions.click(accounthistorytab),false);
+	    refId_FE=objWrapperFunctions.getText(refID_FE);
+	    System.out.println("text"+refId_FE);
+	    
+	 }
+	public void transactioHistoryBE() 
+	{
+	    objUtilities.logReporter("Enter username :", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+	    objUtilities.logReporter("Enter Password :", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on Transaction Tab", objWrapperFunctions.click(transactionTAb), false);
+	    refId_BE=objWrapperFunctions.getText(firstTarnsactionId);
+	    System.out.println("text"+refId_BE);
+    }
+	public void CompareTransactions()
+	{
+		
+		 System.out.println("text"+refId_FE);
+	    if(refId_FE.equals(refId_BE))
+	    {
+		System.out.println("FE transaction history matches with BE");
+	    }
+	    else
+	    {
+		System.out.println("FE transaction history do not matches with BE");
+	    }
+		
+	}
+	
+}

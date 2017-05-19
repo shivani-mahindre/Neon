@@ -1,0 +1,116 @@
+package com.pageFactory.PAM;
+
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class AddNotesFunctionality_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	String PAMUser,PAMPass;
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	public AddNotesFunctionality_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		PAMUser=pojo.getPAMUser();
+		PAMPass=pojo.getPAMPassword();
+		System.out.println("Usernmme->>"+user +PAMUser+PAMPass);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By addNoteTab=By.xpath("//span[contains(.,'Add Note')]");
+	private By noteTextArea=By.xpath("//div//textarea");
+	private By yesButton=By.xpath("//input[@class='js-note-input js-radio-input'][@value='true']");
+	private By addNoteButton=By.xpath("//a[contains(.,'Add note')]");
+	private By confirmBtn=By.xpath("//a[contains(.,'Confirm')]");
+	private By notesTAB=By.xpath("//a[contains(.,'Notes')]");
+	
+	private By noteTextAddedOnSite=By.xpath("//div[@class='js-player-notes table-region']//table[1]//tr[1]//td[2]");
+	
+	
+	private By cashDefault=By.xpath("//div[1][contains(.,'Cash Default')]");
+	private By amount=By.xpath("//input[@id='adjustmentAmount']");
+	private By reason=By.xpath("//span[contains(.,'Please select the reason')]");
+	private By manualCasinoTransfer=By.xpath("//ul//div[contains(.,'Manual Casino Transfer')]");
+	private By playerNoteTextArea=By.xpath("//textarea[@id='playerNote']");
+	private By nextBtn=By.xpath("//a[contains(.,'Next')]");
+	private By totalBalance=By.xpath("//h2[@class='total-balance-value']");
+	
+	public void addNotes()
+	{
+	    String noteText=objWrapperFunctions.generateRandomChars("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 17);
+	    System.out.println("Random Text"+noteText);
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, PAMUser), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, PAMPass), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on addNoteTab ", objWrapperFunctions.click(addNoteTab), false);
+	    objUtilities.logReporter("Enter 'What note would you like add'", objWrapperFunctions.setText(noteTextArea, noteText), false);
+	    objUtilities.logReporter("Click on yesButton ", objWrapperFunctions.click(yesButton), false);
+	    objUtilities.logReporter("Click on addNoteButton ", objWrapperFunctions.click(addNoteButton), false);
+	    objUtilities.logReporter("Click on confirmBtn ", objWrapperFunctions.click(confirmBtn), false);
+	    try {
+		Thread.sleep(10000);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	    
+	    objUtilities.logReporter("Click on notesTAB ", objWrapperFunctions.click(notesTAB), false);
+	    objWrapperFunctions.verifyIsElementPresent(noteTextAddedOnSite);
+	    String addedNoteTextOnsite=objWrapperFunctions.getText(noteTextAddedOnSite);
+	    
+	    if(noteText.equals(addedNoteTextOnsite))
+	    {
+		 objUtilities.logReporter("Note added succesfully: Added & Present note matched", objWrapperFunctions.verifyIsElementPresent(noteTextAddedOnSite), false);
+		 
+	    }
+	    else
+	    {
+		 objUtilities.logReporter("Note failed to add: Added & Present note do not match ", objWrapperFunctions.verifyIsElementPresent(noteTextAddedOnSite), false);
+	    }
+	    
+	    /* try {
+		Thread.sleep(9000);
+		objScreen.click("/src/main/resources/images/ManageBalance.PNG");
+	    } catch (Exception e) {
+		e.printStackTrace();
+	  
+	    }*/
+	    //  objUtilities.logReporter("Click on manageBalanceTab ", objWrapperFunctions.click(manageBalanceTab), false);
+	    // objUtilities.logReporter("Click on selectWallet  ", objWrapperFunctions.click(selectWallet), false);
+	    /*objUtilities.logReporter("Click on cashDefault  ", objWrapperFunctions.click(cashDefault), false);
+	    objUtilities.logReporter("Set Amount", objWrapperFunctions.setText(amount,"10"), false); 
+	    objUtilities.logReporter("Click on reason  ", objWrapperFunctions.click(reason), false);
+	    objUtilities.logReporter("Click on manualCasinoTransfer  ", objWrapperFunctions.click(manualCasinoTransfer), false);
+	    objUtilities.logReporter("Set playerNoteTextArea", objWrapperFunctions.setText(playerNoteTextArea,"Autoamtion Test Note"), false);
+	    objUtilities.logReporter("Click on nextBtn  ", objWrapperFunctions.click(nextBtn), false);
+	    objUtilities.logReporter("Click on confirmBtn  ", objWrapperFunctions.click(confirmBtn), false);
+	    */
+	    
+}
+	
+	
+}

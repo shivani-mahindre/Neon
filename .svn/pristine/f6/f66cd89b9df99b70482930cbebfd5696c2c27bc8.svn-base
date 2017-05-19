@@ -1,0 +1,172 @@
+package com.pageFactory.desktopGcasino;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class Footer_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	private Properties objConfig;
+	private String user;
+	
+	public Footer_PF(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig=pojo.getObjConfig();
+	}
+	
+	
+	private By shortcut=By.xpath("//h4[contains(text(),'SHORTCUTS')]");
+	private By recommended_links=By.xpath("//h4[contains(text(),'RECOMMENDED LINKS')]");
+	private By help_and_advice=By.xpath("//h4[contains(text(),'HELP AND ADVICE')]");
+	private By casino_finder=By.xpath("//h4[contains(text(),'CASINO FINDER')]");
+	
+	private By play_slots=By.xpath("//a[contains(text(),'Play Slots')]");
+	private By play_slots_detail_AllSlot =By.xpath("//span[contains(text(),'All Slots')]");
+	private By play_slot_details_ViewOptions= By.xpath("//div[@class='view-options']");
+	
+	
+	private By livecasino=By.xpath("//a[contains(text(),'Live Casino')]");
+	private By livecasino_liveroulette= By.xpath("//a[contains(text(),'Live Roulette')]");
+	private By livecasino_liveBlackjack= By.xpath("//a[contains(text(),'Live Blackjack')]");
+	
+	private By online_poker=By.xpath("//a[contains(text(),'Online Poker')]");
+	private By online_poker_PokerTitle=By.xpath("//h2[contains(text(),'POKER')]");
+	
+	private By mobile_casino_app=By.xpath("//a[contains(text(),'Mobile Casino App')]");
+	private By mob_app_pageHeader=By.xpath("//h1[contains(text(),'Grosvenor Casino - Play Roulette, Blackjack, Slots')]");
+	
+	private By goliath=By.xpath("//a[contains(text(),'Goliath 2016')]");
+	private By goliath_schedule=By.xpath("//h3[contains(text(),'Goliath Schedule')]");
+	
+	private By gros_blog=By.xpath("//a[contains(text(),'Grosvenor Blog')]");
+	
+	private By online_VIP=By.xpath("//a[contains(text(),'Become an online VIP')]");
+	
+	private By join_affiliate=By.xpath("//a[contains(text(),'Join our affiliate programme')]");
+	
+	
+	private By this_monthPromo=By.xpath("//a[contains(text(),'This mont')]");
+	private By play_points=By.xpath("//a[contains(text(),'Play Points')][@title='Play Points']");
+	private By sports_betting=By.xpath("//a[contains(text(),'Sports betting')]");
+	private By play_bingo=By.xpath("//a[contains(text(),'Play bingo at Mecca Bingo')]");
+	 
+	private By contact_us=By.xpath("//a[contains(text(),'Contact Us - 0800 083 1990')]");
+	private By need_help=By.xpath("//a[contains(text(),'Need more help?')]");
+	
+	private By responsible_gambling=By.xpath("//a[contains(text(),'Responsible Gambling')]");
+	private By terms_conditions=By.xpath("//a[contains(text(),'Terms and Conditions')]");
+	private By privacy_policy=By.xpath("//a[@class='menu-item-link'][contains(text(),'Privacy Policy')]");
+	private By carers_trust=By.xpath("//a[contains(text(),'Carers Trust')][@class='menu-item-link']");
+	
+	private By inSafeHands=By.xpath("//h5[contains(text(),'in safe hands')]");
+	private By accepted_payment_methods=By.xpath("//h5[contains(text(),'Accepted payment methods')]");
+	private By License=By.xpath("//h5[contains(text(),'Licence')]");
+	
+	private By input_casinoFinder=By.xpath("//input[@id='findACasino']");
+	private By button_findCasino=By.xpath("//button[contains(text(),'Find A Casino')]");
+	private By link_viewAllCasino=By.xpath("//a[contains(text(),'View all casinos')]");
+	
+	private By rankGroupLogo=By.xpath("//img[@alt='The Rank Group Presents']");
+	
+	private By gameCare3=By.xpath("	//img[@alt='Gamcare 3 Star Certification']");
+	private By gambling_commission=By.xpath("//img[@alt='Gambling Commission']");
+	private By Gamcare=By.xpath("//img[@alt='Gamcare']");
+	private By Alderney=By.xpath("//img[@alt='Alderney']");
+	private By VerifiedSecure=By.xpath("//img[@alt='VeriSign Secured']");
+	private By keepItFun=By.xpath("//img[@alt='Keep it Fun']");
+	private By res_gambg_details_keepitFun=By.xpath("//h1[contains(text(),'Keep it fun')]");
+	
+
+	
+	public void checkFooter()
+	{
+		
+		 objUtilities.logReporter("shortcut", objWrapperFunctions.verifyIsElementPresent(shortcut), false);
+		 objUtilities.logReporter("recommended_links", objWrapperFunctions.verifyIsElementPresent(recommended_links), false);
+		 objUtilities.logReporter("help_and_advice", objWrapperFunctions.verifyIsElementPresent(help_and_advice), false);
+		 objUtilities.logReporter("casino_finder", objWrapperFunctions.verifyIsElementPresent(casino_finder), false);
+		 
+		 objUtilities.logReporter("play_slots", objWrapperFunctions.verifyIsElementPresent(play_slots), false);
+		 objUtilities.logReporter("click on play_slots", objWrapperFunctions.click(play_slots), false);
+		 objUtilities.logReporter("play_slots details : All slots", objWrapperFunctions.verifyIsElementPresent(play_slots_detail_AllSlot), false);
+		 objUtilities.logReporter("play_slots details : View option", objWrapperFunctions.verifyIsElementPresent(play_slot_details_ViewOptions), false);
+		 
+		 objUtilities.logReporter("Click on live casino link", objWrapperFunctions.click(livecasino), false);
+		 objUtilities.logReporter("Live casino live roulette", objWrapperFunctions.verifyIsElementPresent(livecasino_liveroulette), false);
+		 objUtilities.logReporter("Live casino live blackjack", objWrapperFunctions.verifyIsElementPresent(livecasino_liveBlackjack), false);
+		 
+		 objUtilities.logReporter("click on online_poker", objWrapperFunctions.click(online_poker), false);
+		 objUtilities.logReporter("Online poker page details", objWrapperFunctions.verifyIsElementPresent(online_poker_PokerTitle), false);
+		 
+		 objUtilities.logReporter("click on mobile casino app", objWrapperFunctions.click(mobile_casino_app), false);
+		 objUtilities.logReporter("Mobile Casino app details page- Header ", objWrapperFunctions.verifyIsElementPresent(mob_app_pageHeader), false);
+		 
+		 objWrapperFunctions.navigateToBackPage();
+	
+		 objUtilities.logReporter("click on responsible_gambling", objWrapperFunctions.click(responsible_gambling), false);
+		 objUtilities.logReporter("responsible_gambling details page: Keep it fun ", objWrapperFunctions.verifyIsElementPresent(res_gambg_details_keepitFun), false);
+		
+		 objWrapperFunctions.navigateToBackPage();
+		 
+		verifyRedirection(gros_blog, "blog");
+		 
+		verifyRedirection(online_VIP, "vip");
+		 
+		//verifyRedirection(join_affiliate, "grosvenoraffiliates");
+		
+		verifyRedirection(this_monthPromo, "promotions");
+		
+		verifyRedirection(play_points, "play-points");
+		
+		verifyRedirection(sports_betting, "sport");
+		
+		//verifyRedirection(play_bingo, "meccabingo");
+		
+		verifyRedirection(contact_us, "contactus");
+		
+		objWrapperFunctions.switchToAdditionalTab();
+		verifyRedirection(need_help, "Grosvenor");
+		objWrapperFunctions.switchToMainTab();
+		
+											 
+
+		 
+		verifyRedirection(terms_conditions, "termsandconditions");
+		verifyRedirection(privacy_policy, "termsandconditions#privacy");
+		verifyRedirection(carers_trust, "carers-trust");
+		
+		
+		 objUtilities.logReporter("You are in safe hands title ", objWrapperFunctions.verifyIsElementPresent(inSafeHands), false);
+		 objUtilities.logReporter("Accepted payment methods", objWrapperFunctions.verifyIsElementPresent(accepted_payment_methods), false);
+		 objUtilities.logReporter("License title", objWrapperFunctions.verifyIsElementPresent(License), false);
+		 objUtilities.logReporter("Casino finder: Input text Box", objWrapperFunctions.verifyIsElementPresent(input_casinoFinder), false);
+		 objUtilities.logReporter("Casino Finder: Button: Find a Casino", objWrapperFunctions.verifyIsElementPresent(button_findCasino), false);
+		 objUtilities.logReporter("Casino Finder: View All casino link", objWrapperFunctions.verifyIsElementPresent(link_viewAllCasino), false);
+		 objUtilities.logReporter("Rank Group Logo", objWrapperFunctions.verifyIsElementPresent(rankGroupLogo), false);
+		 
+		 objUtilities.logReporter("gameCare3 Logo", objWrapperFunctions.verifyIsElementPresent(gameCare3), false);
+		 objUtilities.logReporter("gambling_commission Logo", objWrapperFunctions.verifyIsElementPresent(gambling_commission), false);
+		 objUtilities.logReporter("Gamcare Logo", objWrapperFunctions.verifyIsElementPresent(Gamcare), false);
+		 objUtilities.logReporter("Alderney", objWrapperFunctions.verifyIsElementPresent(Alderney), false);
+		 objUtilities.logReporter("VerifiedSecure Logo", objWrapperFunctions.verifyIsElementPresent(VerifiedSecure), false);
+		 objUtilities.logReporter("keepItFun Logo", objWrapperFunctions.verifyIsElementPresent(keepItFun), false);
+		 
+		 
+		}
+	
+	public void verifyRedirection(By locator, String inputText)
+	{
+		 objUtilities.logReporter(locator.toString(), objWrapperFunctions.click(locator), false);
+		 objUtilities.logReporter("verify redirection of : "+locator.toString(), objWrapperFunctions.verifyURLContainsText(inputText), false);
+		 objWrapperFunctions.getHomewebpage();
+	
+	}
+	
+}

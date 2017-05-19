@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Step >> Click 'Log In'.]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Set 'UserName'.|| Input Value : testmb2511BAU]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Set 'Password'.|| Input Value : Test1234]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click 'Sign In'.]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click 'Download Link' button]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click 'instructionClose Link' button]]>
+    </line>
+    <line>
+      <![CDATA[Step >> Click 'LogOut'.]]>
+    </line>
+  </reporter-output>
+  <suite name="Regression_TestSuite" duration-ms="77859" started-at="2016-12-21T11:55:58Z" finished-at="2016-12-21T11:57:16Z">
+    <groups>
+    </groups>
+    <test name="Regression_FrontEnd" duration-ms="77859" started-at="2016-12-21T11:55:58Z" finished-at="2016-12-21T11:57:16Z">
+      <class name="com.scripts.mobileMecca.AndroidAppBannerValidation_MB">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.scripts.mobileMecca.AndroidAppBannerValidation_MB@1316e00]" name="setUp" is-config="true" duration-ms="29397" started-at="2016-12-21T17:25:58Z" finished-at="2016-12-21T17:26:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginMobile()[pri:0, instance:com.scripts.mobileMecca.AndroidAppBannerValidation_MB@1316e00]" name="loginMobile" duration-ms="48324" started-at="2016-12-21T17:26:28Z" finished-at="2016-12-21T17:27:16Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Step >> Click 'Log In'.]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Set 'UserName'.|| Input Value : testmb2511BAU]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Set 'Password'.|| Input Value : Test1234]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click 'Sign In'.]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click 'Download Link' button]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click 'instructionClose Link' button]]>
+            </line>
+            <line>
+              <![CDATA[Step >> Click 'LogOut'.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginMobile -->
+      </class> <!-- com.scripts.mobileMecca.AndroidAppBannerValidation_MB -->
+    </test> <!-- Regression_FrontEnd -->
+  </suite> <!-- Regression_TestSuite -->
+</testng-results>

@@ -1,0 +1,49 @@
+package com.scripts.mobileMecca;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.pageFactory.mobileMecca.AndroidAppBannerValidation_MB_PF;
+import com.pageFactory.mobileMecca.PageValidation_MB_PF;
+import com.views.mobileMecca.MobileLoginView;
+
+/**
+ * @ScriptName    : CreateNewCustomer
+ * @Description   : Create new customer
+ */
+public class AndroidAppBannerValidation_MB extends BaseTest
+{
+	
+	private MobileLoginView objMobileLoginView;
+	private AndroidAppBannerValidation_MB_PF objAndroidAppBannerValidation_MB_PF;
+	
+	@BeforeClass
+	private void setUp()
+	{
+		initializeAndroidEnvironment("MB");
+		objMobileLoginView = new MobileLoginView(this);
+		objAndroidAppBannerValidation_MB_PF= new AndroidAppBannerValidation_MB_PF(this);
+	}
+	
+	
+	@Title("Android App Download & instructions Validation ")
+	@Test
+	public void loginMobile() 
+	{
+		
+		objMobileLoginView.login();	
+		objAndroidAppBannerValidation_MB_PF.appBannerValidation();
+		objMobileLoginView.logout();
+		
+	}
+	
+	// Closing the browser
+	/*@AfterClass
+	private void tearDown() 
+	{
+		tearDownAndroidEnvironment();
+		objLoginMobile_MB_PF = null;
+	}*/
+}

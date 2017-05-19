@@ -1,0 +1,36 @@
+package com.pageFactory.desktopGcasino;
+
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class CaptchaSample_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	public CaptchaSample_PF(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		pojo.getObjConfig();
+	}
+
+	
+	private By joinBtn=By.xpath("//div[@class='input-container']//button[contains(.,'Login')]");
+	private By captchaCheckBox=By.xpath(".//*[@id='recaptcha-anchor']/div[5]");
+	private By iframe=By.xpath("iframe");
+	
+	public void reCaptchCheck()
+	{
+		
+		 objUtilities.logReporter("Click on joinBtn", objWrapperFunctions.click(joinBtn), false);
+		 objWrapperFunctions.switchToFrameUsingIframe_Element(iframe);
+		 objUtilities.logReporter("Click on captchaCheckBox", objWrapperFunctions.click(captchaCheckBox), false);
+	
+		
+		}
+	
+}

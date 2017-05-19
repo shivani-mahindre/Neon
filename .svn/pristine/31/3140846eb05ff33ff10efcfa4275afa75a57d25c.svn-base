@@ -1,0 +1,73 @@
+package com.views.PAM;
+
+import java.util.Properties;
+
+import ru.yandex.qatools.allure.annotations.Step;
+
+import com.generic.Pojo;
+import com.pageFactory.PAM.PAMLoginLogout;
+import com.pageFactory.desktopMecca.HomePage;
+
+public class PAMLoginView 
+{
+	// Local variables
+	private Pojo objPojo;
+	private String testDataHolder = "";
+	private Properties objConfig;
+	//page object declaration
+	private PAMLoginLogout objPAMLoginLogout;
+	
+	public PAMLoginView(Pojo pojo)
+	{
+		this.objPojo = pojo;
+		pojo.getObjUtilities();
+		pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+	}
+
+	@Step("Login np01 PAM")
+	public void login() 
+	{
+		objPAMLoginLogout = new PAMLoginLogout(objPojo);
+		testDataHolder = objConfig.getProperty("web.PAMUsername");
+		objPAMLoginLogout.setUserName(testDataHolder);
+		testDataHolder = objConfig.getProperty("web.PAMPassword");
+		objPAMLoginLogout.setPassword(testDataHolder);
+		objPAMLoginLogout.clickLogin();
+try
+{
+	Thread.sleep(5000);
+} catch (InterruptedException e)
+{
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
+	objPAMLoginLogout=null;
+
+	}
+
+	/**
+	 * @Method: logout
+	 * @Description:  logout from the web site
+	 * @author Automation Tester (SQS) 
+	 * @Creation Date:  27 April 2015  @Modified Date:
+	 */
+	@Step("Log out from np01 PAM")
+	public void logout()
+	{
+		objPAMLoginLogout = new PAMLoginLogout(objPojo);
+		objPAMLoginLogout.clickLogOut();
+		try 
+		{
+			Thread.sleep(8000);
+		} catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+		objPAMLoginLogout = null;
+	}
+	
+	
+		
+
+}

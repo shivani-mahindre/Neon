@@ -1,0 +1,117 @@
+package com.pageFactory.PAM;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.sun.jna.platform.unix.X11.Screen;
+
+public class TransactionHistory_TwoUsers_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	Screen objScreen;
+	static String tranxID1="",tranxID2="",date1="",date2="";
+	static String note1="",note2="",noteDate1="",noteDate2="";
+	public TransactionHistory_TwoUsers_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		//System.out.println("Usernmme->>"+user);
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+		  
+	// PAM credentials transactions ids & date
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By transactionTAb=By.xpath("//a[contains(.,'Transactions')]");
+	private By firstTarnsactionId=By.xpath("//tbody//tr[1]//td[5]");
+	private By logoutLink=By.xpath("//a[contains(.,'Logout')]");
+	private By firstTarnsactionDate=By.xpath("//tbody//tr[1]//td[1]");
+	
+	// Notes
+	private By notes=By.xpath("//a[contains(.,'Notes')]");
+    private By noteTextAddedOnSite=By.xpath("//div[@class='js-player-notes table-region']//table[1]//tr[1]//td[2]");
+    private By noteTextAddedOnSiteDate=By.xpath("//div[@class='js-player-notes table-region']//table[1]//tr[1]//td[1]");
+	
+	public void transactioHistoryBE_user1() 
+	{
+	    objUtilities.logReporter("Enter username :", objWrapperFunctions.setText(PAMUsername, "Rank_MShinde"), false);
+	    objUtilities.logReporter("Enter Password :", objWrapperFunctions.setText(PAMpassword, "0RikU2Tc"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on Transaction Tab", objWrapperFunctions.click(transactionTAb), false);
+	    tranxID1=objWrapperFunctions.getText(firstTarnsactionId);
+	    date1=objWrapperFunctions.getText(firstTarnsactionDate);
+	    System.out.println("tranxID1 "+tranxID1 +""+"Date "+date1);
+	    
+	    objUtilities.logReporter("Click on NOtes Tab", objWrapperFunctions.click(notes), false);
+	    note1=objWrapperFunctions.getText(noteTextAddedOnSite);
+	    noteDate1=objWrapperFunctions.getText(noteTextAddedOnSiteDate);
+	    System.out.println("note1 "+note1 +""+"noteDate1 "+noteDate1);
+	}
+	
+	public void transactioHistoryBE_user2() 
+	{
+		
+	    objUtilities.logReporter("Enter username :", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+	    objUtilities.logReporter("Enter Password :", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on Transaction Tab", objWrapperFunctions.click(transactionTAb), false);
+	    tranxID2=objWrapperFunctions.getText(firstTarnsactionId);
+	    
+	    date2=objWrapperFunctions.getText(firstTarnsactionDate);
+	    System.out.println("tranxID2 "+tranxID2+""+"Date "+date2);
+	    
+	    objUtilities.logReporter("Click on NOtes Tab", objWrapperFunctions.click(notes), false);
+	    note2=objWrapperFunctions.getText(noteTextAddedOnSite);
+	    noteDate2=objWrapperFunctions.getText(noteTextAddedOnSiteDate);
+	    System.out.println("note2 "+note2 +""+"noteDate2 "+noteDate2);
+	    
+    }
+
+	public void CompareTransactions()
+	{
+		
+		System.out.println("text"+tranxID1); 
+		System.out.println("text"+tranxID2);  
+		
+		
+		if(tranxID1.equals(tranxID2) && date1.equals(date2))
+	    {
+			System.out.println("Both user transaction history refrenece ID && Date  matches ");
+	    }
+	    else
+	    {
+		System.out.println("Both user transaction history refrenece ID && Date do not matches ");
+	    }
+		
+		if(note1.equals(note2) && noteDate1.equals(noteDate2))
+	    {
+			System.out.println("Both user Notes && Dates  matches ");
+	    }
+	    else
+	    {
+		System.out.println("Both user Notes && Dates  matches do not matches ");
+	    }
+	
+		
+	}
+}

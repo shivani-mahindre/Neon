@@ -1,0 +1,174 @@
+!SESSION 2016-09-29 14:43:03.962 -----------------------------------------------
+eclipse.buildId=4.5.0.I20140806-2000
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product -data C:\SQS_Automation_Trinity_Framework -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.ui 4 4 2016-09-29 14:43:06.379
+!MESSAGE MenuAdditionCacheEntry.mergeIntoModel: Invalid menu URI: GeniePlugin.menuContribution7
+!SESSION 2016-10-07 12:07:47.288 -----------------------------------------------
+eclipse.buildId=4.5.0.I20140806-2000
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product -data C:\SQS_Automation_Trinity_Framework -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.ui 4 4 2016-10-07 12:07:50.511
+!MESSAGE MenuAdditionCacheEntry.mergeIntoModel: Invalid menu URI: GeniePlugin.menuContribution7
+!SESSION 2016-10-20 10:31:18.823 -----------------------------------------------
+eclipse.buildId=4.5.0.I20140806-2000
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product -data C:\SQS_Automation_Trinity_Framework -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.ui 4 4 2016-10-20 10:31:21.928
+!MESSAGE MenuAdditionCacheEntry.mergeIntoModel: Invalid menu URI: GeniePlugin.menuContribution7
+!SESSION 2016-11-04 11:07:55.917 -----------------------------------------------
+eclipse.buildId=4.5.0.I20140806-2000
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product -data C:\SQS_Automation_Trinity_Framework -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.ui 4 4 2016-11-04 11:07:59.155
+!MESSAGE MenuAdditionCacheEntry.mergeIntoModel: Invalid menu URI: GeniePlugin.menuContribution7
+!SESSION 2016-11-14 17:23:25.118 -----------------------------------------------
+eclipse.buildId=4.5.0.I20140806-2000
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product -data C:\SQS_Automation_Trinity_Framework -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.sonarlint.eclipse.core 4 0 2016-11-14 17:23:27.561
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.sonarlint.eclipse.core [487]
+  Unresolved requirement: Require-Bundle: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.0"
+    -> Bundle-SymbolicName: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.1"
+       org.sonarsource.sonarlint.core.sonarlint-client-api [490]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.sonarlint.eclipse.jdt 4 0 2016-11-14 17:23:27.581
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.sonarlint.eclipse.jdt [488]
+  Unresolved requirement: Require-Bundle: org.sonarlint.eclipse.core
+    -> Bundle-SymbolicName: org.sonarlint.eclipse.core; bundle-version="2.2.1.201608261350-RELEASE"; singleton:="true"
+       org.sonarlint.eclipse.core [487]
+         Unresolved requirement: Require-Bundle: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.0"
+           -> Bundle-SymbolicName: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.1"
+              org.sonarsource.sonarlint.core.sonarlint-client-api [490]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.sonarlint.eclipse.ui 4 0 2016-11-14 17:23:27.581
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.sonarlint.eclipse.ui [489]
+  Unresolved requirement: Import-Package: org.sonarsource.sonarlint.core.client.api.connected
+    -> Export-Package: org.sonarsource.sonarlint.core.client.api.connected; bundle-version="2.4.1"; bundle-symbolic-name="org.sonarsource.sonarlint.core.sonarlint-client-api"; version="2.4.1"
+       org.sonarsource.sonarlint.core.sonarlint-client-api [490]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.ui 4 4 2016-11-14 17:23:29.460
+!MESSAGE MenuAdditionCacheEntry.mergeIntoModel: Invalid menu URI: GeniePlugin.menuContribution7
+!SESSION 2016-12-21 15:40:46.213 -----------------------------------------------
+eclipse.buildId=4.5.0.I20140806-2000
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product -data C:\SQS_Automation_Trinity_Framework -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.sonarlint.eclipse.core 4 0 2016-12-21 15:40:48.350
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.sonarlint.eclipse.core [481]
+  Unresolved requirement: Require-Bundle: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.0"
+    -> Bundle-SymbolicName: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.1"
+       org.sonarsource.sonarlint.core.sonarlint-client-api [484]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.sonarlint.eclipse.jdt 4 0 2016-12-21 15:40:48.363
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.sonarlint.eclipse.jdt [482]
+  Unresolved requirement: Require-Bundle: org.sonarlint.eclipse.core
+    -> Bundle-SymbolicName: org.sonarlint.eclipse.core; bundle-version="2.2.1.201608261350-RELEASE"; singleton:="true"
+       org.sonarlint.eclipse.core [481]
+         Unresolved requirement: Require-Bundle: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.0"
+           -> Bundle-SymbolicName: org.sonarsource.sonarlint.core.sonarlint-client-api; bundle-version="2.4.1"
+              org.sonarsource.sonarlint.core.sonarlint-client-api [484]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.sonarlint.eclipse.ui 4 0 2016-12-21 15:40:48.363
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.sonarlint.eclipse.ui [483]
+  Unresolved requirement: Import-Package: org.sonarsource.sonarlint.core.client.api.connected
+    -> Export-Package: org.sonarsource.sonarlint.core.client.api.connected; bundle-version="2.4.1"; bundle-symbolic-name="org.sonarsource.sonarlint.core.sonarlint-client-api"; version="2.4.1"
+       org.sonarsource.sonarlint.core.sonarlint-client-api [484]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.ui 4 4 2016-12-21 15:40:53.423
+!MESSAGE MenuAdditionCacheEntry.mergeIntoModel: Invalid menu URI: GeniePlugin.menuContribution7

@@ -1,0 +1,88 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class LoginLogout
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	//constructor
+		public LoginLogout(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+		// buttons
+		  private  By btnSignIn = By.xpath("//button[contains(.,'Sign in')]");
+		  private  By btnLogin = By.xpath("//p[contains(.,'Login')]");
+		  private  By btnCloseCookie = By.xpath("//button[@class='js-cookie-close-btn cookie-close-btn btn']");
+		  
+		// Link
+		  private  By linkLogOut = By.xpath("//a[contains(.,'Logout')]");
+		  // Inputs
+		  private  By inptUserName = By.id("loginUsername_106");
+		  private  By inptPassword = By.id("loginPassword_106");
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : set user name */
+		  public void setUserName(String userName)
+		  {
+			  objUtilities.logReporter("Set 'UserName'.", userName, objWrapperFunctions.mobileSetText(inptUserName, userName), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Set password */
+		  public void setPassword(String userPassword)
+		  {
+			  objUtilities.logReporter("Set 'Password'.", userPassword, objWrapperFunctions.mobileSetText(inptPassword, userPassword), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickCloseCookie()
+		  {
+			  objUtilities.logReporter("Click 'Close cookie Button'.", objWrapperFunctions.mobileClick(btnCloseCookie), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogin()
+		  {
+			  try
+			{
+				Thread.sleep(5000);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			  objUtilities.logReporter("Click 'Log In'.", objWrapperFunctions.mobileClick(btnLogin), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickSignIn()
+		  {
+			  objUtilities.logReporter("Click 'Sign In'.", objWrapperFunctions.mobileClick(btnSignIn), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogOut()
+		  {
+			  objWrapperFunctions.verifymobileIsElementPresent(linkLogOut);
+			  objUtilities.logReporter("Click 'LogOut'.", objWrapperFunctions.mobileClick(linkLogOut), false);
+		  }
+		  
+}

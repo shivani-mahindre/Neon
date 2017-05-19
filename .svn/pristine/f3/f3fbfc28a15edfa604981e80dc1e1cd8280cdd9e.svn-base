@@ -1,0 +1,52 @@
+package com.scripts.mobileMecca;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.GetTcStatus;
+import com.pageFactory.mobileMecca.Deposit_PaySafe_PF;
+import com.views.mobileMecca.MobileLoginView;
+
+/**
+ * @ScriptName    : CreateNewCustomer
+ * @Description   : Create new customer
+ */
+@Listeners({GetTcStatus.class})
+public class Deposit__PaySafe extends BaseTest
+{
+	//private Utilities objUtilities;
+	private MobileLoginView objMobileLoginView ;
+	private Deposit_PaySafe_PF objDeposit_PaySafe_PF;
+
+	// Initializing Environment 
+	@BeforeClass
+	private void setUp()
+	{
+	    initializeAndroidEnvironment("MB");
+		objDeposit_PaySafe_PF =new Deposit_PaySafe_PF(this);
+		objMobileLoginView = new  MobileLoginView(this);
+	}
+	
+    // Execution flow for the test
+    @Title("Mobile Deposit using PaySafe")
+    @Test
+    public void depositPayPal() 
+    {
+
+    objMobileLoginView.login();
+	objDeposit_PaySafe_PF.depositPaySafe();
+	objMobileLoginView.logout();
+    }
+	
+	/*// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		tearDownAndroidEnvironment();
+		objMobileLoginView = null;
+	}*/
+}

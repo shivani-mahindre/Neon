@@ -1,0 +1,90 @@
+package com.pageFactory.PAM;
+
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class ChangeLimitsFunctionality_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	String PAMUser,PAMPass;
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	
+	public ChangeLimitsFunctionality_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		PAMUser=pojo.getPAMUser();
+		PAMPass=pojo.getPAMPassword();
+		System.out.println("Usernmme->>"+user +PAMUser+PAMPass);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By changeLimit=By.xpath("//span[contains(.,'Change Limits')]");
+	
+	private By depositLimitsTab=By.xpath("//label[contains(.,'Deposit Limits')]");
+	private By dailyLimit=By.xpath("//input[@data-limit-type='Daily']");
+	private By weeklyLimit=By.xpath("//input[@data-limit-type='Weekly']");
+	private By monthlyLimit=By.xpath("//input[@data-limit-type='Monthly']");
+	private By transactionLimitsTab=By.xpath("//label[contains(.,'Transaction Limits')]");
+	private By MinimumDeposit=By.xpath("//input[@data-limit-type='MinimumDeposit']");
+	private By MaximumDeposit=By.xpath("//input[@data-limit-type='MaximumDeposit']");
+	private By MinimumWithdrawal=By.xpath("//input[@data-limit-type='MinimumWithdrawal']");
+	private By MaximumWithdrawal=By.xpath("//input[@data-limit-type='MaximumWithdrawal']");
+	private By RealityChecksTab=By.xpath("//label[contains(.,'Reality Checks')]");
+	private By cancelButton=By.xpath("//a[contains(.,'Cancel')]");
+	private By applyButton=By.xpath("//a[contains(.,'Apply')]");
+	private By backButton=By.xpath("//a[contains(.,'Back')]");
+	
+	
+	public void changeLimitsFunctionality()
+	{
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, PAMUser), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, PAMPass), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on Change limit Tab", objWrapperFunctions.click(changeLimit), false);
+	    objUtilities.logReporter("Click on deposit Limits tab", objWrapperFunctions.click(depositLimitsTab), false);
+	    
+	    objUtilities.logReporter("Set dailyLimit ", objWrapperFunctions.setText(dailyLimit, "10"), false);
+	    objUtilities.logReporter("Set weeklyLimit ", objWrapperFunctions.setText(weeklyLimit, "10"), false);
+	    objUtilities.logReporter("Set monthlyLimit ", objWrapperFunctions.setText(monthlyLimit, "10"), false);
+	    objUtilities.logReporter("Click on applyButton button", objWrapperFunctions.click(applyButton), false);
+	    objUtilities.logReporter("Click on backButton", objWrapperFunctions.click(backButton), false);
+	    
+	    objUtilities.logReporter("Click on transactionLimitsTab button", objWrapperFunctions.click(transactionLimitsTab), false);
+	    objUtilities.logReporter("Set MinimumDeposit ", objWrapperFunctions.setText(MinimumDeposit, "10"), false);
+	    objUtilities.logReporter("Set MaximumDeposit ", objWrapperFunctions.setText(MaximumDeposit, "100"), false);
+	    objUtilities.logReporter("Set MinimumWithdrawal ", objWrapperFunctions.setText(MinimumWithdrawal, "10"), false);
+	    objUtilities.logReporter("Set MaximumWithdrawal ", objWrapperFunctions.setText(MaximumWithdrawal, "100"), false);
+	    objUtilities.logReporter("Click on applyButton button", objWrapperFunctions.click(applyButton), false);
+	    objUtilities.logReporter("Click on backButton", objWrapperFunctions.click(backButton), false);
+	    
+	    objUtilities.logReporter("Click on RealityChecksTab", objWrapperFunctions.click(RealityChecksTab), false);
+	    objUtilities.logReporter("Click on cancelButton", objWrapperFunctions.click(cancelButton), false);
+	    
+	 }
+	
+	
+}

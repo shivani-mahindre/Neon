@@ -1,0 +1,38 @@
+{
+  "time" : {
+    "start" : 1494916589770,
+    "stop" : 1494916659697,
+    "duration" : 69927
+  },
+  "testSuites" : [ {
+    "uid" : "e1317e3e5852520d",
+    "name" : "Regression",
+    "title" : "Regression : Desktop",
+    "time" : {
+      "start" : 1494916589770,
+      "stop" : 1494916659697,
+      "duration" : 69927
+    },
+    "statistic" : {
+      "total" : 1,
+      "passed" : 1,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "e54150627503b3be",
+      "name" : "RegisterAndDeposit",
+      "title" : "Register and deposit",
+      "time" : {
+        "start" : 1494916589830,
+        "stop" : 1494916658592,
+        "duration" : 68762
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    } ]
+  } ]
+}

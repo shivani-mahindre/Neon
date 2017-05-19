@@ -1,0 +1,38 @@
+{
+  "time" : {
+    "start" : 1482321358963,
+    "stop" : 1482321436783,
+    "duration" : 77820
+  },
+  "testSuites" : [ {
+    "uid" : "1d1bdbc6044b02a2",
+    "name" : "Regression_TestSuite",
+    "title" : "Regression_TestSuite : Regression_FrontEnd",
+    "time" : {
+      "start" : 1482321358963,
+      "stop" : 1482321436783,
+      "duration" : 77820
+    },
+    "statistic" : {
+      "total" : 1,
+      "passed" : 1,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "2d029fed61f48a17",
+      "name" : "loginMobile",
+      "title" : "Android App Download & instructions Validation ",
+      "time" : {
+        "start" : 1482321388472,
+        "stop" : 1482321436721,
+        "duration" : 48249
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    } ]
+  } ]
+}

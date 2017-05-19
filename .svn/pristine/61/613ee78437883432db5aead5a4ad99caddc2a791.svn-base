@@ -1,0 +1,38 @@
+package com.view.PAM;
+
+import java.util.Properties;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.pageFactory.PAM.PlayerMessenger;
+
+
+public class PlayerMessengerView {
+	private Pojo objPojo;
+	private String testDataHolder = "";
+	private Utilities objUtilities;
+	private Properties objConfig;
+	//page object declaration
+	private PlayerMessenger objPlayerMessenger;
+	
+	public PlayerMessengerView(Pojo pojo)
+	{
+		this.objPojo = pojo;
+		objUtilities = pojo.getObjUtilities();
+		pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+	}
+	
+	public void sendMessageView() 
+	{
+		objPlayerMessenger = new PlayerMessenger(objPojo);
+		objPlayerMessenger.sendMessage("MB");
+		/*testDataHolder = objConfig.getProperty("web.username");
+		objHomePage.setUserName(testDataHolder);
+		testDataHolder = objConfig.getProperty("web.password");
+		objHomePage.setPassword(testDataHolder);
+		objHomePage.clickSignIn();
+		objHomePage=null;*/
+
+	}
+}

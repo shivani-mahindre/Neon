@@ -1,0 +1,52 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class SelfExclusion_ErrorMessages_FE_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	String password = "";
+
+	public SelfExclusion_ErrorMessages_FE_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		password = pojo.getPass();
+	}
+
+	private By accountMenu = By.xpath("//a[@href='/User/Profile/Edit']");
+	private By accountMenuDropDown = By.xpath(".//*[@id='accountMenu']/div/article[1]/p/a");
+	private By responsibleGamingTab = By.xpath("//li[7]//a[contains(.,'Responsible Gaming')]");
+	private By responsibleGamingTab_selfExclusion = By.xpath("//div[@id='accountMenu']//li[7]//ul//li[3]");
+
+	private By selectDurationDropdown = By.xpath("//select[@id='selfExcludeDuration']");
+	private By selectSixMonths = By.xpath("//select[@id='selfExcludeDuration']//option[contains(.,'6 Months')]");
+	private By iUnderStoodCheckBox = By.xpath(".//*[@id='selfExcludeIsConfirmed']");
+	private By selfExcludePassword = By.xpath(".//*[@id='selfExcludePassword']");
+	private By cancelBtn = By.xpath("//button[contains(.,'Cancel')]");
+	private By confirmBtn = By.xpath("//button[contains(.,'Confirm')]");
+
+	private By selfExclusionNLogoutBtn = By.xpath(".//*[@id='selfExcludeForm']/button");
+
+	public void selfExclusion()
+	{
+		objUtilities.logReporter("Click on 'accountMenu' menu ", objWrapperFunctions.mobileClick(accountMenu), false);
+		objUtilities.logReporter("Click on 'accountMenuDropDown' menu ", objWrapperFunctions.mobileClick(accountMenuDropDown), false);
+		objUtilities.logReporter("Click on 'responsibleGamingTab' menu ", objWrapperFunctions.mobileClick(responsibleGamingTab), false);
+		objUtilities.logReporter("Click on 'responsibleGamingTab_selfExclusion' menu ", objWrapperFunctions.mobileClick(responsibleGamingTab_selfExclusion), false);
+		objUtilities.logReporter("Click on 'selectDurationDropdown' menu ", objWrapperFunctions.mobileClick(selectDurationDropdown), false);
+		objUtilities.logReporter("Click on 'selfExclusionNLogoutBtn' menu ", objWrapperFunctions.mobileClick(selfExclusionNLogoutBtn), false);
+		objUtilities.logReporter("Click on 'selectSixMonths' menu ", objWrapperFunctions.mobileClick(selectSixMonths), false);
+		objUtilities.logReporter("Click on 'iUnderStoodCheckBox' menu ", objWrapperFunctions.mobileClick(iUnderStoodCheckBox), false);
+		objUtilities.logReporter("Set 'selfExcludePassword' ", objWrapperFunctions.mobileSetText(selfExcludePassword, password), false);
+		objUtilities.logReporter("Click on 'selfExclusionNLogoutBtn' menu ", objWrapperFunctions.mobileClick(selfExclusionNLogoutBtn), false);
+		objUtilities.logReporter("Verrify Cancel button ", objWrapperFunctions.verifymobileIsElementPresent(cancelBtn), false);
+		objUtilities.logReporter("Verrify confirmBtn  button ", objWrapperFunctions.verifymobileIsElementPresent(confirmBtn), false);
+		objUtilities.logReporter("Click on 'cancelBtn' menu ", objWrapperFunctions.mobileClick(cancelBtn), false);
+	}
+
+}

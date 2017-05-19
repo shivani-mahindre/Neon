@@ -1,0 +1,56 @@
+package com.pageFactory.desktopGcasino;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+	public class LiveChat_functionality_PF 
+	{
+		private Utilities objUtilities;
+		private WrapperFunctions objWrapperFunctions;
+		private Properties objConfig;
+		
+		
+	public LiveChat_functionality_PF(Pojo pojo){
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig=pojo.getObjConfig();
+	}
+	
+	private By homePage_liveChatLink=By.xpath("//a[contains(.,'Live Chat')]");
+	private By cancelChat=By.xpath("//button[contains(.,'Cancel Chat')]");
+	private By contactUsLinkFooter=By.xpath("//a[contains(.,'Contact Us')]");
+	private By contactUs_liveChatLink=By.xpath("//li//a[contains(.,'Live Chat')]");
+	
+	
+	public void liveChat()
+	{
+		try
+		{
+			Thread.sleep(15000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		objUtilities.logReporter("Click on contactUsLinkFooter link", objWrapperFunctions.click(contactUsLinkFooter),false);
+		/*objUtilities.logReporter("Click on contactUs_liveChatLink link", objWrapperFunctions.click(contactUs_liveChatLink),false);
+		objWrapperFunctions.switchToChildWindow();
+		objWrapperFunctions.waitForElementPresence(cancelChat);
+		objWrapperFunctions.switchMainWindow();*/
+		try
+		{
+			Thread.sleep(5000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//objUtilities.logReporter("Click on cancelChat", objWrapperFunctions.click(cancelChat),false);
+	}
+}

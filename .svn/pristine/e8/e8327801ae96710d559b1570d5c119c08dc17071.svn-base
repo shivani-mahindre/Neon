@@ -1,0 +1,185 @@
+package com.pageFactory.desktopGNG;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class CSSPropertyPageFactory_homePage {
+
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+		//constructor
+		public CSSPropertyPageFactory_homePage(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+		// buttons
+		 private  By btnSignIn = By.xpath("//button[@class='btn primary-button login-button js-login-button'][contains(.,'Login')]");
+		  private  By btnCloseCookie = By.xpath("//button[@class='js-cookie-close-btn cookie-close-btn btn']");
+		  
+		// Link
+		  private  By linkLogOut = By.xpath("//a[contains(.,'Logout')]");
+		// Inputs
+		  private  By inptUserName = By.id("loginUsername_2469");
+		  private  By inptPassword = By.id("loginPassword_2469");
+		  private By acceptCookie=By.id("acceptCookie");
+		  private By homeButton=By.xpath("//a[@class='menu-item-link'][contains(.,'Home')]");
+		  private By serachBox=By.xpath("//input[@class='search-input']");
+		  private By serachItem=By.xpath("//span[contains(text(),'Genie Jackpots')]");
+		  private By homePage_bgColor=By.xpath("//div[@class='site-body']");
+		  private By module_bgColor=By.xpath("//div[1]/./div[@class='slot-item-container']");
+		  
+		  private By footer=By.xpath("//div[@class='site-footer']");
+		  private By footertext=By.xpath("//h4[contains(.,'SHORTCUT')]");
+		  
+		  
+		  
+		  
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : set user name */
+		  public void setUserName(String userName)
+		  {
+			  objUtilities.logReporter("Set 'UserName'.", userName, objWrapperFunctions.setText(inptUserName, userName), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Set password */
+		  public void setPassword(String userPassword)
+		  {
+			  objUtilities.logReporter("Set 'Password'.", userPassword, objWrapperFunctions.setText(inptPassword, userPassword), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickCloseCookie()
+		  {
+			  objUtilities.logReporter("Click 'Close cookie Button'.", objWrapperFunctions.click(btnCloseCookie), false);
+		    
+		  }
+		  	  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickSignIn()
+		  {
+			  objUtilities.logReporter("Click 'Sign In'.", objWrapperFunctions.click(btnSignIn), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogOut()
+		  {
+			  objUtilities.logReporter("Click 'LogOut'.", objWrapperFunctions.click(linkLogOut), false);
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : getProperty */
+		  public void getProperty()
+		  {
+			  objUtilities.logReporter("Get 'property'.", objWrapperFunctions.getProperty(homeButton), false);
+		 
+		  
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : getProperty */
+		  public void getbgcolor()
+		  {
+			  String homePageBGColor="";
+			  objUtilities.logReporter("Get 'bgcolor of homepage '.", objWrapperFunctions.getBgColor(homePage_bgColor,homePageBGColor), false);
+			  String homePageModuleBGColor="";
+			  objUtilities.logReporter("Get 'bgcolor of module'.", objWrapperFunctions.getBgColor(module_bgColor,homePageModuleBGColor), false);
+		  }
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : getProperty */
+		  public void getFont()
+		  {
+			//  objUtilities.logReporter("Get 'font proprty'.", objWrapperFunctions.getFont(homeButton), false);
+			  String Homebtnfontvalue="FuturaPT,Arial,Verdana,Helvetica,sans-serif";
+			  
+			  objUtilities.logReporter("verify 'font proprty' of home btton",objWrapperFunctions.getFont(homeButton,Homebtnfontvalue), false);
+		  }
+		  
+		
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : getfooter Color */
+		  public void getFooterColor()
+		  {
+			//  objUtilities.logReporter("Get 'font proprty'.", objWrapperFunctions.getFont(homeButton), false);
+			  String footerbgColorvalue="#173941";
+			  String footerTextColorvalue="#FFFFFF";
+			  objUtilities.logReporter("verify 'footer background color proprty' of home btton",objWrapperFunctions.footerbgColor(footer, footerbgColorvalue), false);
+			  objUtilities.logReporter("verify 'footer font proprty' of home btton",objWrapperFunctions.footertextColor(footertext, footerTextColorvalue), false);
+		  
+		  }
+		
+		 
+		  
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Main menu bg Color property */
+		  public void getMainMenuPanelbgcolor()
+		  {
+			  String mainMenubgColor="#021D22";
+			  objUtilities.logReporter("Get 'bgcolor menu '.", objWrapperFunctions.getBgColor(homePage_bgColor,mainMenubgColor), false);
+			  String homePageModuleBGColor="";
+			//  objUtilities.logReporter("Get 'bgcolor of module'.", objWrapperFunctions.getBgColor(module_bgColor,homePageModuleBGColor), false);
+		  }
+		  
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Main menu bg Color property */
+		  public void getMenubgcolor()
+		  {
+			  String MenubgColor="#021D22";
+			  objUtilities.logReporter("Get 'bgcolor of homepage '.", objWrapperFunctions.getBgColor(homeButton,MenubgColor), false);
+			  String homePageModuleBGColor="";
+			//  objUtilities.logReporter("Get 'bgcolor of module'.", objWrapperFunctions.getBgColor(module_bgColor,homePageModuleBGColor), false);
+		  }
+		  
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Main menu bg Color property */
+		  public void getMenufontcolor()
+		  {
+			  String MenufontColor="#FFFFaFF";
+			  objUtilities.logReporter("verify 'font Color of Menu'",objWrapperFunctions.getFontColor(homeButton,MenufontColor), false);
+			
+		  }
+		  
+		  public void getSearchBoxBgColour()
+		  {
+			  try {
+				String serachboxBgColor="#FFFFFF";
+				  objUtilities.logReporter("enter in search box",objWrapperFunctions.setText(serachBox, "s"), false);
+				  Thread.sleep(10000);
+				  objUtilities.logReporter("enter in search box",objWrapperFunctions.setText(serachBox, "s"), false);
+				  
+				  Thread.sleep(10000);
+				  objUtilities.logReporter("verify 'back colour of search item'",objWrapperFunctions.getProperty(serachItem), false);
+				  System.out.println("done");
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		  }
+		  
+
+}

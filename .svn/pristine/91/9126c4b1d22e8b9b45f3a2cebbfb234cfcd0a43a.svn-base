@@ -1,0 +1,47 @@
+package com.pageFactory.PAM;
+
+
+import java.util.Properties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class SamplePAM_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	public SamplePAM_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	
+	
+	
+	
+	
+	
+	
+	public void CreateClaimDepositBonus()
+	{
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	}
+}

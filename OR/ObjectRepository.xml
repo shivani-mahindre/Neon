@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <ObjectRepository>
+	<!--MB_UsernameTextBox>//input[@id='loginUsername_106']</MB_UsernameTextBox-->
+	<!--MB_PasswordTextBox>//input[@id='loginPassword_106']</MB_PasswordTextBox-->
+	<MB_UsernameTextBox>//input[@placeholder='Username']</MB_UsernameTextBox>
+	<MB_PasswordTextBox>//input[@placeholder='Password']</MB_PasswordTextBox>
+	<MB_LoginBtn>//button[@data-login-button='loginFormWidget_106'][contains(.,'Sign in')]</MB_LoginBtn>
+	<MB_LoginError>//div[@id='loginErrors_106']/li[contains(.,'Login attempt was unsuccessful')]</MB_LoginError>
+	<MB_BalanceDrpdwn>//span[@class='fa fa-chevron-down icon chevron-down']</MB_BalanceDrpdwn>
+	<MB_BalanceText>//span[@class='wallet-amount balance-widget-amount'][@data-balance='cash']</MB_BalanceText>
+	<MB_BalanceDrpup>//span[@class='fa fa-chevron-down icon chevron-down']</MB_BalanceDrpup>
+	<MBPR01_UsernameTextBox>//input[@id='loginUsername_106']</MBPR01_UsernameTextBox>
+	<MBPR01_PasswordTextBox>//input[@id='loginPassword_106']</MBPR01_PasswordTextBox>
+	<MBPR01_LoginBtn>//button[@data-login-button='loginFormWidget_106'][contains(.,'Sign in')]</MBPR01_LoginBtn>
+	
+	 <MB_GOMB>//a[@class='go-to-mecca-link']</MB_GOMB>
+	 <GC_UsernameTextBox>//input[@placeholder='Username']</GC_UsernameTextBox> 
+	 <GC_PasswordTextBox>//input[@placeholder='Password']</GC_PasswordTextBox>
+	 <GC_LoginBtn>//button[contains(.,'Login')]</GC_LoginBtn>
+	 <GC_UsernameTextBoxNP02>//input[@id='loginUsername_598']</GC_UsernameTextBoxNP02> 
+	 <GC_PasswordTextBoxNP02>//input[@id='loginPassword_598']</GC_PasswordTextBoxNP02>
+	 <GC_LoginBtnNP02>//button[@class='btn primary-button login-button js-login-button'][contains(.,'Login')]</GC_LoginBtnNP02>
+	 <GC_BalanceClass>//span[contains(text(),'£')]</GC_BalanceClass>
+	 <!--GC_BalanceClass>//span[@class='combined-balance balance-widget-amount js-hide']</GC_BalanceClass-->
+	 <GC_SearchGame>search-input</GC_SearchGame>		 
+	 <GC_Slots_games>//a[contains(text(),'Slots &amp; Games')]</GC_Slots_games>	               
+	 <GC_ViewAllGames>//a[@class='see-all-games']</GC_ViewAllGames>
+	 <GC_Slots>//span[contains(text(),'Slots')]</GC_Slots>		
+	 <GC_Blueprint_Tab>//span[@class='slot-cat-name'][contains(.,'Blueprint')]</GC_Blueprint_Tab>
+	 <GC_Novomatic_Tab>//span[@class='slot-cat-name'][contains(.,'Novomatic')]</GC_Novomatic_Tab>
+	 <GC_Scintific_Tab>//span[@class='slot-cat-name'][contains(.,'Scientific Games')]</GC_Scintific_Tab>
+	 <GC_Eyecon_Tab>//span[@class='slot-cat-name'][contains(.,'Eyecon')]</GC_Eyecon_Tab>
+ 	 <GC_ThorsThunder>//a[@data-title="Thor's Thunder"][contains(.,"Play Now")]</GC_ThorsThunder>
+	 <GC_CloseGame>//div[@id="closeIframe"]</GC_CloseGame>
+	 <!--MB_SlotsAndGames>//*[@id='account-form-id']/div/div/form/button</MB_SlotsAndGames-->
+	 <MiniGame_UsernameTextBox>//input[@name='userName']</MiniGame_UsernameTextBox>
+	 <MiniGame_PasswordTextBox>//input[@name='password']</MiniGame_PasswordTextBox>
+	 <MiniGame_LoginBtn>//input[@id='ctl00_PopupMasterContent_btnLogin']</MiniGame_LoginBtn>
+	 <GC_BalanceText>//*[@id='balance_total']</GC_BalanceText>
+	 <!--MB_BalanceText>//span[contains(text(),'£')]</MB_BalanceText-->
+	 <GC_DealOrNoDeal>//h3[contains(.,'Deal or No Deal')]/../p[contains(.,'Test your nerve against the banker in the Deal or No Deal game!')]/../../a[contains(.,'Play now')]</GC_DealOrNoDeal>
+	 <GC_WildGambler>//h3[contains(.,'Wild Gambler')]/../p[contains(.,'There are big wilds and big wins in this 20-line big game hunter slot')]/../../a[contains(.,'Play now')]</GC_WildGambler>
+	 <GC_ViewAllGames>//a[contains(.,'View all games')]</GC_ViewAllGames>
+	 <GC_GameUsernameTextBox>//*[@id='username']</GC_GameUsernameTextBox>
+	 <GC_GamePasswordTextBox>//*[@type='password']</GC_GamePasswordTextBox>
+	 <GC_GameLoginBtn>//*[@type='submit']</GC_GameLoginBtn>
+	 <MB_GamesAtoZ>//*[@id='submenu-0-2']/ul/li[2]/a</MB_GamesAtoZ>
+	 <MB_GameUsernameTextBox>//*[@id='loginUsernameTextBox']</MB_GameUsernameTextBox>
+	 <MB_GamePasswordTextBox>//*[@id='loginPasswordTextBox']</MB_GamePasswordTextBox>
+	 <MB_GameLoginBtn>//*[@id='PopupMasterContent_btnLogin']</MB_GameLoginBtn>
+	 <MyAccount_AccountHistory>//a[contains(.,'Account History')]</MyAccount_AccountHistory>
+	 <MyAccount_GameTranscation>//input[@value='game_txns']</MyAccount_GameTranscation>
+	 <MyAccount_SubmitBtn>//input[@value='Submit']</MyAccount_SubmitBtn>
+	 <Admin_UsernameTextBox>//input[@class='form-control form-control input-username'][@name='userNameOrEmail']</Admin_UsernameTextBox>
+	 <Admin_PasswordTextBox>//input[@class='form-control input-password'][@name='password']</Admin_PasswordTextBox>
+	 <Admin_LoginBtn>//button[@type='submit']</Admin_LoginBtn>
+	 <PlayerSearchBox>//input[@id='unifiedSearch']</PlayerSearchBox>
+	 <SearchBtn>//button[@id='unifiedSubmit']</SearchBtn>
+	 <TransactionTab>//a[@class='local-menu-link'][contains(.,'Transactions')]</TransactionTab>
+	 
+	 <Admin_Customers>//a[contains(.,'Customers')]</Admin_Customers>
+	 <Admin_UsernametxtBox>Username</Admin_UsernametxtBox>
+	 <Admin_FindCustomers>//input[@value='Find Customer']</Admin_FindCustomers>
+	 <Admin_TransactionQuery>//input[@value='Transaction Query']</Admin_TransactionQuery>
+	 <Admin_ListTransactions>//input[@value='List Transactions']</Admin_ListTransactions>
+	 <Admin_CashDropPayout>//tbody/tr[463]/td[1]/a</Admin_CashDropPayout>
+	 <Admin_LuckOTheIrishPayout>html/body/form/table/tbody/tr[731]/td[1]/a</Admin_LuckOTheIrishPayout>
+	 <Admin_GamesLink>Games</Admin_GamesLink>
+	 <Admin_DefinitionLink>//a[contains(.,'Definition')]</Admin_DefinitionLink>
+	 <Admin_ModifyTestValues>//input[@value='Modify Test Values']</Admin_ModifyTestValues>
+	 <Admin_NextLink>//input[@value='Next']</Admin_NextLink>
+   	 <MB_LuckOTheIrish>//a[@href='/secure/GamesLogin?game.name=Luck+Of+The+Irish&amp;game.launchType=Real']</MB_LuckOTheIrish>
+	 <MB_BunnysRabbits>//div[@class='js-search-results search-results']//a[@href='/umbraco/Surface/SecureSurface/GamesLogin?game.name=Bunny%27s+Rabbits&amp;game.launchType=Real']</MB_BunnysRabbits>
+	 <MB_SnowQueensMagic>//span[@data-gamename="Snow Queen's Magic"][contains(.,'Play Now')]</MB_SnowQueensMagic>
+	 <MB_RapunzelsTower>//span[@data-gamename="Rapunzel's Tower"][contains(.,'Play Now')]</MB_RapunzelsTower>
+	 <MB_SinbadsGoldenVoyage>//span[@data-gamename="Sinbad's Golden Voyage"][contains(.,'Play Now')]</MB_SinbadsGoldenVoyage>
+	 <MB_AroundtheWorldInPlays>//span[@data-gamename="Around The World In 80 Plays"][contains(.,'Play Now')]</MB_AroundtheWorldInPlays>
+	 
+	 
+	 <MB_BritainsGotTalentSuperstar>//a[@href="/secure/GamesLogin?game.name=Britain%27s+Got+Talent+Superstar&amp;game.launchType=Real"]</MB_BritainsGotTalentSuperstar>
+	 <MB_DolphinsTreasure>//div[@class='js-search-results search-results']//a[@href="/secure/GamesLogin?game.name=Dolphin%27s+Treasure&amp;game.launchType=Real"]</MB_DolphinsTreasure>
+	 <MB_DolphinPearlDelux>//span[@data-gamename="Dolphin's Pearl Deluxe"][contains(.,'Play Now')]</MB_DolphinPearlDelux>
+	 <MB_GirlsDayOut>//div[@class='js-search-results search-results']//a[@href="/secure/GamesLogin?game.name=Girl%27s+Day+Out&amp;game.launchType=Real"]</MB_GirlsDayOut>
+	 <MB_PharaohsDream>//div[@class='js-search-results search-results']//a[@href='/secure/GamesLogin?game.name=Pharaoh%27s+Dream&amp;game.launchType=Real']</MB_PharaohsDream>
+	 <MB_ThorsThunder>//a[@href="/secure/GamesLogin?game.name=Thor%27s+Thunder&amp;game.launchType=Real"]</MB_ThorsThunder>
+	 
+	 <GC_RonnieOSullivansBigBreak>//a[contains(.,"Ronnie O’Sullivan’s Big Break ")]</GC_RonnieOSullivansBigBreak>
+	 <MB_CleopatrasChest>//div[@class='js-search-results search-results']//a[@href='/secure/GamesLogin?game.name=Cleopatra%27s+Chest&amp;game.launchType=Real']</MB_CleopatrasChest>
+	 <MB_Menu_GamesLink>html/body/div[2]/div/nav/div/div[3]/ul/li[3]/div[1]/a[1]</MB_Menu_GamesLink>
+	 <Admin_JackpotCell>//*[@id='jackpotcell']</Admin_JackpotCell>
+	 <Admin_DeletePayout>//input[@value='Delete']</Admin_DeletePayout>
+	 <Admin_AddPayout>//input[@value='Add']</Admin_AddPayout>
+	 <Admin_ReelSetPayout>reel_set_index</Admin_ReelSetPayout>
+	 <Admin_UseAndDeactivate>//input[@name="use_and_deactivate"]</Admin_UseAndDeactivate>
+	 <TreasureIsland0>1 - Pirate</TreasureIsland0>
+	 <TreasureIsland1>2 - Pirate</TreasureIsland1>
+	 <TreasureIsland2>0 - Pirate</TreasureIsland2>
+	 <TreasureIsland3>7 - Pirate</TreasureIsland3>
+	 <TreasureIsland4>2 - Pirate</TreasureIsland4>
+	 <Admin_GameVersion>//a[contains(.,'Definition')]/../../td[1]/a</Admin_GameVersion>
+	 <MonsterCash0>1 - DracsCash</MonsterCash0>
+	 <MonsterCash1>2 - DracsCash</MonsterCash1>
+	 <MonsterCash2>0 - DracsCash</MonsterCash2>
+	 <MonsterCash3>4 - DracsCash</MonsterCash3>
+	 <MonsterCash4>2 - DracsCash</MonsterCash4>
+	 <WizardofOdds0>1 - Staff</WizardofOdds0>
+	 <WizardofOdds1>2 - Staff</WizardofOdds1>
+	 <WizardofOdds2>3 - Staff</WizardofOdds2>
+	 <WizardofOdds3>19 - Staff</WizardofOdds3>
+	 <WizardofOdds4>20 - Staff</WizardofOdds4>
+	 <Admin_AddCustomers>//input[@value='Add Customer']</Admin_AddCustomers>
+	 <Admin_AddCustomer_Username>//input[@name='username']</Admin_AddCustomer_Username>
+	 <Admin_UsernameText>javascript{'USER' + Math.floor(Math.random()*111111111)}</Admin_UsernameText>
+	 <Admin_EmailText>javascript{'USER.' + Math.floor(Math.random()*111111111) + '@sqs.com'}</Admin_EmailText>
+	 <Admin_AddCustomer_Password>//input[@name="password"]</Admin_AddCustomer_Password>
+	 <Admin_AddCustomer_VerifyPassword>//input[@name="vfy_password"]</Admin_AddCustomer_VerifyPassword>
+	 <Admin_AddCustomer_Challenge1>//input[@name="challenge_1"]</Admin_AddCustomer_Challenge1>
+	 <Admin_AddCustomer_Response1>//input[@name="response_1"]</Admin_AddCustomer_Response1>
+	 <Admin_AddCustomer_Fname>//input[@name="fname"]</Admin_AddCustomer_Fname>
+	 <Admin_AddCustomer_Lname>//input[@name="lname"]</Admin_AddCustomer_Lname>
+	 <Admin_AddCustomer_AddrStreet1>//input[@name="addr_street_1"]</Admin_AddCustomer_AddrStreet1>
+	 <Admin_AddCustomer_AddrStreet2>//input[@name="addr_street_2"]</Admin_AddCustomer_AddrStreet2>
+	 <Admin_AddCustomer_AddrCity>//input[@name="addr_city"]</Admin_AddCustomer_AddrCity>
+	 <Admin_AddCustomer_Postcode>//input[@name="postcode"]</Admin_AddCustomer_Postcode>
+	 <Admin_AddCustomer_Mobile>//input[@name="mobile"]</Admin_AddCustomer_Mobile>
+	 <Admin_AddCustomer_Email>//input[@name="email"]</Admin_AddCustomer_Email>
+	 <Admin_AddCustomer_Dob>//input[@name="dob"]</Admin_AddCustomer_Dob>
+	 <Admin_AddCustomer_Gender>//input[@name="gender"][@value='M']</Admin_AddCustomer_Gender>
+	 <Admin_CustomerDetail_Description>html/body/table[6]/tbody/tr[4]/td[2]/input[@name='Description']</Admin_CustomerDetail_Description>
+	 <Admin_CustomerDetail_Amount>//input[@name="Amount"]</Admin_CustomerDetail_Amount>
+	 <Admin_CustomerDetail_ManualAdjustment>//input[@value="Do Manual Adjustment"]</Admin_CustomerDetail_ManualAdjustment>
+	 <Admin_TestDefinition_bonus1>html/body/form/table[2]/tbody/tr[4]/td[1]/input[@name="radioPayoutMask"]</Admin_TestDefinition_bonus1>
+	 <Admin_TestDefinition_PopulatePayout>//input[@value="Populate Payout"]</Admin_TestDefinition_PopulatePayout>
+	 <Admin_TestDefinition_Add>//input[@class="btn_def"][@value="Add"]</Admin_TestDefinition_Add>
+	 <Admin_TestDefinition_Modify>//input[@class="btn_def"][@value="Modify"]</Admin_TestDefinition_Modify>
+	 <Admin_AdvancedWheelBonus_CheckBox>AdvBonus_0</Admin_AdvancedWheelBonus_CheckBox>
+ </ObjectRepository>

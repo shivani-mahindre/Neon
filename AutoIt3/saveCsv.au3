@@ -1,0 +1,1 @@
+ControlClick("Internet Explorer","","Button2")

@@ -1,0 +1,175 @@
+{
+  "uid" : "2d029fed61f48a17",
+  "name" : "loginMobile",
+  "title" : "Android App Download & instructions Validation ",
+  "time" : {
+    "start" : 1482321388472,
+    "stop" : 1482321436721,
+    "duration" : 48249
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 9
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "steps" : [ {
+    "name" : "login",
+    "title" : "Login To MobileMecca",
+    "time" : {
+      "start" : 1482321393603,
+      "stop" : 1482321404253,
+      "duration" : 10650
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 4
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Click 'Log In'., true, false]",
+      "title" : "Click 'Log In'.",
+      "time" : {
+        "start" : 1482321399600,
+        "stop" : 1482321399606,
+        "duration" : 6
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Set 'UserName'., testmb2511BAU, true, false]",
+      "title" : "Set 'UserName'. - testmb2511BAU",
+      "time" : {
+        "start" : 1482321401138,
+        "stop" : 1482321401138,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Set 'Password'., Test1234, true, false]",
+      "title" : "Set 'Password'. - Test1234",
+      "time" : {
+        "start" : 1482321403213,
+        "stop" : 1482321403213,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Click 'Sign In'., true, false]",
+      "title" : "Click 'Sign In'.",
+      "time" : {
+        "start" : 1482321404253,
+        "stop" : 1482321404253,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "logReporter[Click 'Download Link' button, true, false]",
+    "title" : "Click 'Download Link' button",
+    "time" : {
+      "start" : 1482321424999,
+      "stop" : 1482321424999,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click 'instructionClose Link' button, true, false]",
+    "title" : "Click 'instructionClose Link' button",
+    "time" : {
+      "start" : 1482321425567,
+      "stop" : 1482321425567,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logout",
+    "title" : "Log out from MobileMecca",
+    "time" : {
+      "start" : 1482321425845,
+      "stop" : 1482321436715,
+      "duration" : 10870
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 1
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Click 'LogOut'., true, false]",
+      "title" : "Click 'LogOut'.",
+      "time" : {
+        "start" : 1482321436715,
+        "stop" : 1482321436715,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  } ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "D9B167BS"
+  }, {
+    "name" : "thread",
+    "value" : "6444@D9B167BS.main"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

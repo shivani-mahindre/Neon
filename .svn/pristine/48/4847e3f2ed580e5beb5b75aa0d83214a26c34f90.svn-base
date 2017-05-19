@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1482321358963" stop="1482321436783" version="1.4.4">
+    <name>Regression_TestSuite</name>
+    <title>Regression_TestSuite : Regression_FrontEnd</title>
+    <test-cases>
+        <test-case start="1482321388472" stop="1482321436721" status="passed">
+            <name>loginMobile</name>
+            <title>Android App Download &amp; instructions Validation </title>
+            <steps>
+                <step start="1482321393603" stop="1482321404253" status="passed">
+                    <name>login</name>
+                    <title>Login To MobileMecca</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1482321399600" stop="1482321399606" status="passed">
+                            <name>logReporter[Click 'Log In'., true, false]</name>
+                            <title>Click 'Log In'.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1482321401138" stop="1482321401138" status="passed">
+                            <name>logReporter[Set 'UserName'., testmb2511BAU, true, false]</name>
+                            <title>Set 'UserName'. - testmb2511BAU</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1482321403213" stop="1482321403213" status="passed">
+                            <name>logReporter[Set 'Password'., Test1234, true, false]</name>
+                            <title>Set 'Password'. - Test1234</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start="1482321404253" stop="1482321404253" status="passed">
+                            <name>logReporter[Click 'Sign In'., true, false]</name>
+                            <title>Click 'Sign In'.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start="1482321424999" stop="1482321424999" status="passed">
+                    <name>logReporter[Click 'Download Link' button, true, false]</name>
+                    <title>Click 'Download Link' button</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1482321425567" stop="1482321425567" status="passed">
+                    <name>logReporter[Click 'instructionClose Link' button, true, false]</name>
+                    <title>Click 'instructionClose Link' button</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1482321425845" stop="1482321436715" status="passed">
+                    <name>logout</name>
+                    <title>Log out from MobileMecca</title>
+                    <attachments/>
+                    <steps>
+                        <step start="1482321436715" stop="1482321436715" status="passed">
+                            <name>logReporter[Click 'LogOut'., true, false]</name>
+                            <title>Click 'LogOut'.</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D9B167BS"/>
+                <label name="thread" value="6444@D9B167BS.main"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

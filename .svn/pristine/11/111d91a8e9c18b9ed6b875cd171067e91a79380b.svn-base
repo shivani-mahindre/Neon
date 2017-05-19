@@ -1,0 +1,85 @@
+package com.scripts.desktopGCasino;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
+
+import com.generic.BaseTest;
+import com.views.desktopGCasino.LocalCasinoView;
+
+
+public class CasinoDetails extends BaseTest 
+{
+	
+	private LocalCasinoView objLocalCasinoView;
+	
+	@Test
+	  public void localCasinosTabAndSubtabsDetails() 
+	{
+		
+		  objLocalCasinoView.checkLocalCasinoTab();
+		  objLocalCasinoView.checkFindCasinoSubTab();
+		  objLocalCasinoView.checkLatestNewsSubTab();
+		  objLocalCasinoView.checkAllOurCasinoSubTab();
+		  
+	  }
+  @Test
+  public void casinoDetailsPage() 
+  {
+	  
+	  objLocalCasinoView.checkCasinoDetailsPage();
+  }
+  
+  @Test
+  public void checkCasinoFinder() {
+
+	  objLocalCasinoView.checkCasinoFinder();
+	  
+  }
+  
+  @BeforeMethod
+  public void beforeMethod() {
+	  
+  }
+
+  @AfterMethod
+  public void afterMethod() {
+	  
+  }
+ 
+  @BeforeClass
+  public void beforeClass() {
+	  initializeWebEnvironment("GC");
+		//objUtilities = this.getObjUtilities();
+	  objLocalCasinoView = new  LocalCasinoView(this);
+  }
+
+  @AfterClass
+  public void afterClass() {
+	  tearDownWebEnvironment();
+  }
+
+  @BeforeTest
+  public void beforeTest() {
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+  @BeforeSuite
+  public void beforeSuite() {
+  }
+
+  @AfterSuite
+  public void afterSuite() {
+  }
+
+}

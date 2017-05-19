@@ -1,0 +1,36 @@
+{
+  "testCases" : [ {
+    "uid" : "1ad929dd61862ff8",
+    "name" : "depositCreditCard",
+    "title" : "Deposit using Credit Card",
+    "time" : {
+      "start" : 1487148696943,
+      "stop" : 1487148769382,
+      "duration" : 72439
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "d1832c3f88846559",
+    "name" : "depositPayPal",
+    "title" : "Deposit using Netteller",
+    "time" : {
+      "start" : 1487148783067,
+      "stop" : 1487148844328,
+      "duration" : 61261
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "f839e14f623a0515",
+    "name" : "depositPayPal",
+    "title" : "Deposit using PayPal",
+    "time" : {
+      "start" : 1487148859939,
+      "stop" : 1487149051762,
+      "duration" : 191823
+    },
+    "severity" : "NORMAL",
+    "status" : "FAILED"
+  } ]
+}

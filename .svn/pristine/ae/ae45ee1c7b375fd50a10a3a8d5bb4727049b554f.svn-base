@@ -1,0 +1,172 @@
+package com.pageFactory.desktopMecca;
+
+import java.awt.print.Printable;
+import java.util.Properties;
+import java.util.Random;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.FindElement;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Screen;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.itextpdf.text.log.SysoCounter;
+
+
+public class Withdraw_CreditCard_PF {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="",pass="";
+	Screen objScreen;
+	
+	public Withdraw_CreditCard_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		//System.out.println("Usernmme->>"+user);
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		pass=pojo.getPass();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	private By statusID=By.xpath(".//*[@id='ContentMain']/div/div/main/player-summary/div/div[4]/div[1]/div/dl[3]/dd[3]");
+	private By selectStatus=By.xpath(".//*[@id='s2id_autogen1']/a");
+	private By statusToBeSelected=By.xpath("//span[@class='option option-passed'][contains(.,'Passed')]");
+	
+	private By textArea=By.xpath("//textarea[@id='playerNote']");
+	private By nextButton=By.xpath("//a[contains(.,'Next')]");
+	private By confirmBtn=By.xpath("//a[contains(.,'Confirm')]");
+	
+	// buttons
+	//select[@id='regGender']
+	  private  By accountMenu = By.xpath("//span[contains(.,'Account')]");
+	  private  By withdrawTab = By.xpath("//li//a[contains(.,'Withdraw')]");
+	  private  By withdrawAmtInput = By.xpath("//input[@id='withdrawAmountInput']");
+	  private  By passwordInput = By.xpath("//input[@id='vm.Password']");
+	  private  By nextBtn = By.xpath("//input[@id='withdrawFormSubmitBtn']");
+	  
+	  private  By continueBtn = By.xpath("//*[@id='body']/div[6]/div/div/div[2]/button[2]");
+	  private  By depositTen = By.xpath("//label//input[@id='predefinedValue-10']/../span[contains(.,'10')]");
+	  private  By submitBtn = By.xpath("//input[@id='paymentFormSubmitBtn']");
+	  
+	  private By paymentMethodContainerFrame=By.cssSelector("iframe#cashierwithdrawIframe.withdraw-iframe");
+	  private By cardMethodDropDown=By.xpath("//b[@class='button']");
+	  private By selectCreditCardOption=By.xpath("//span[@class='ico cc_card']");
+	  private By selectPaypalOption=By.xpath("//ul[1]//li[3]");
+	  private By inputEmail=By.xpath("//input[@id='expresscheckout_account_id']");
+	  private By withdrawNextButton=By.xpath(".//*[@id='continueButton']");
+	  private By withdrawButton=By.xpath("//button[contains(.,'Withdraw')]");
+	  
+	  private By withdrawSuccesssText=By.xpath(".//*[@id='withdrawalConfirmation']/h2");
+	  
+	 
+	 public void PAMstatusUpdate()
+	 {
+	    objUtilities.logReporter("Enter username :", objWrapperFunctions.setText(PAMUsername,"SQS_RDeote"),false);
+	    objUtilities.logReporter("Enter Password :", objWrapperFunctions.setText(PAMpassword,"C3rg7EDi"),false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox,user),false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    objUtilities.logReporter("Click on Status ID", objWrapperFunctions.click(statusID), false);
+	    objUtilities.logReporter("Select Status from dropdown list", objWrapperFunctions.click(selectStatus), false); 
+	    objUtilities.logReporter("Select Status -'Passed' from dropdown list", objWrapperFunctions.click(statusToBeSelected), false);
+	    if(objWrapperFunctions.verifyIsElementPresent(textArea))
+	    {
+	    	objUtilities.logReporter("Add comment ", objWrapperFunctions.setText(textArea,"testing status"),false);
+	    }
+	    else
+	    {
+	    	System.out.println("No text Are present continue clcik on Next");
+	    }
+	    objUtilities.logReporter("Click on netx button", objWrapperFunctions.click(nextButton), false);
+	    objUtilities.logReporter("Click on Confirm button", objWrapperFunctions.click(confirmBtn), false);
+	 }
+	  
+	public void withdrawCC()
+	{ 
+	    objUtilities.logReporter("Click on 'Account' menu ", objWrapperFunctions.click(accountMenu), false);
+	    objUtilities.logReporter("Click on 'Withdraw' Tab ", objWrapperFunctions.click(withdrawTab), false);
+	    objUtilities.logReporter("Enter Amount to withdraw ", objWrapperFunctions.setText(withdrawAmtInput,"10"), false);
+	    objUtilities.logReporter("Enter Password to withdraw ", objWrapperFunctions.setText(passwordInput,pass), false);
+	    objUtilities.logReporter("Click on 'next' button ", objWrapperFunctions.click(nextBtn), false);
+	    if(objWrapperFunctions.verifyIsElementPresent(continueBtn))
+	    {
+	    	objWrapperFunctions.click(continueBtn);
+	    }
+	/* //  System.out.println("objWrapperFunctions.verifyIsElementPresent(iAgreeBtn)"+objWrapperFunctions.verifyIsElementPresent(iAgreeBtn));
+	   try
+	   {
+	       
+	    if(objWrapperFunctions.verifyIsElementPresent(iAgreeBtn))
+	    {
+		System.out.println("i agree button found");
+		objUtilities.logReporter("Click on 'i agree' button ", objWrapperFunctions.click(iAgreeBtn), false);
+	    }
+	    else
+	    {
+		System.out.println("i agree button not found");
+	    }
+	   }
+	    catch(Exception e)
+	    {
+		e.printStackTrace();
+	    }*/
+	 //   objUtilities.logReporter("Click on '$10' button ", objWrapperFunctions.click(depositTen), false);
+	//    objUtilities.logReporter("Click on 'submit' button ", objWrapperFunctions.click(submitBtn), false);
+	    
+	    objWrapperFunctions.switchToFrameUsingIframe_Element(paymentMethodContainerFrame);
+	    
+	   // objWrapperFunctions.waitForElementPresence(paymentMethodContainerFrame);
+	     objUtilities.logReporter("Click on 'Choose payment method'", objWrapperFunctions.click(cardMethodDropDown), false);
+	    // objUtilities.logReporter("Click on 'Selected paypal' option", objWrapperFunctions.click(selectPaypalOption), false);
+	     try {
+		objScreen.click("src/main/resources/images/paypal.PNG");
+	    } catch (FindFailed e) 
+	     {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	     objWrapperFunctions.switchToFrameUsingIframe_Element(paymentMethodContainerFrame);
+	     objUtilities.logReporter("Enter email address", objWrapperFunctions.setText(inputEmail,""), false);
+	     objUtilities.logReporter("Enter email address", objWrapperFunctions.setText(inputEmail,"ralphv2@safecharge.com"), false);
+	     objUtilities.logReporter("Click next", objWrapperFunctions.click(withdrawNextButton), false);
+	     
+	   /*  if(objWrapperFunctions.verifyIsElementPresent(withdrawButton))
+	     {
+		 objUtilities.logReporter("Click withdraw", objWrapperFunctions.click(withdrawButton), false);
+		 System.out.println("Its present");
+	     }
+	     else
+	     {
+		 System.out.println("Its OK");
+	     }
+	     */
+	     
+	     objUtilities.logReporter("Verify withdraw success", objWrapperFunctions.verifyIsElementPresent(withdrawSuccesssText), false);
+	    
+	 //   System.out.println("calue"+value);
+	    
+	}
+	
+		
+	
+	 
+	
+}

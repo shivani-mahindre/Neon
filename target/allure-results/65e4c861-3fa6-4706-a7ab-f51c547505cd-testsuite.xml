@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1495103343105" stop="1495103395399" version="1.4.4">
+    <name>Regression</name>
+    <title>Regression : Desktop</title>
+    <test-cases>
+        <test-case start="1495103354915" stop="1495103394063" status="passed">
+            <name>checkBalanceDetails</name>
+            <steps>
+                <step start="1495103357754" stop="1495103357808" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103359053" stop="1495103359058" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103367028" stop="1495103367032" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103389018" stop="1495103389023" status="passed">
+                    <name>logReporter[Click on view tab, true, false]</name>
+                    <title>Click on view tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103390399" stop="1495103390401" status="passed">
+                    <name>logReporter[Click on Balance Menu, true, false]</name>
+                    <title>Click on Balance Menu</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103392645" stop="1495103392648" status="passed">
+                    <name>logReporter[Verify View Balance text, true, false]</name>
+                    <title>Verify View Balance text</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103392950" stop="1495103392952" status="passed">
+                    <name>logReporter[Verify View Details text, true, false]</name>
+                    <title>Verify View Details text</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D79167BS"/>
+                <label name="thread" value="2272@D79167BS.main"/>
+            </labels>
+        </test-case>
+        <test-case start="1495103354915" stop="1495103394063" status="passed">
+            <name>checkBalanceDetails</name>
+            <steps>
+                <step start="1495103357754" stop="1495103357808" status="passed">
+                    <name>logReporter[Enter username, true, false]</name>
+                    <title>Enter username</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103359053" stop="1495103359058" status="passed">
+                    <name>logReporter[Enter password, true, false]</name>
+                    <title>Enter password</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103367028" stop="1495103367032" status="passed">
+                    <name>logReporter[Click on signBtn, true, false]</name>
+                    <title>Click on signBtn</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103389018" stop="1495103389023" status="passed">
+                    <name>logReporter[Click on view tab, true, false]</name>
+                    <title>Click on view tab</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103390399" stop="1495103390401" status="passed">
+                    <name>logReporter[Click on Balance Menu, true, false]</name>
+                    <title>Click on Balance Menu</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103392645" stop="1495103392648" status="passed">
+                    <name>logReporter[Verify View Balance text, true, false]</name>
+                    <title>Verify View Balance text</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1495103392950" stop="1495103392952" status="passed">
+                    <name>logReporter[Verify View Details text, true, false]</name>
+                    <title>Verify View Details text</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="host" value="D79167BS"/>
+                <label name="thread" value="2272@D79167BS.main"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

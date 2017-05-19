@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression" parallel="false">
+
+	<parameter name="TestFileName" value="projectModule1/SmokeSuite" />
+	<test name="Desktop">
+	<classes> 	     	
+	<class name="com.scripts.noen.CashierAndManagerTC.BalanceDetailsVerification" /> 
+	<!-- 	<class name="com.scripts.desktopGNG.neonReg" /> -->
+		
+	</classes>
+	</test>
+</suite> 
+
+
+
+
+

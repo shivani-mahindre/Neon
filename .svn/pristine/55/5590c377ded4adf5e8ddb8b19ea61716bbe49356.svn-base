@@ -1,0 +1,62 @@
+package com.scripts.mobileMecca;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.pageFactory.mobileMecca.TranscationHistory_PF;
+import com.views.mobileMecca.MobileLoginView;
+
+public class TransactionHistory_FE_BE extends BaseTest
+{
+
+	private MobileLoginView objMobileLoginView;
+	private TranscationHistory_PF objTransactionHistory_PF;
+
+	@Title("Front end transaction")
+	@Test
+	  (priority=1)
+	public void transactionFE()
+	{
+		initializeAndroidEnvironment("MB");
+	    objTransactionHistory_PF= new TranscationHistory_PF(this);
+	    objMobileLoginView = new  MobileLoginView(this);
+	    objMobileLoginView.login();
+	    objTransactionHistory_PF.transactioHistoryFE();
+	  //  tearDown();
+	}
+	
+    // Execution flow for the test
+    @Title("Back end transaction")
+   @Test
+   (priority=2)
+    public void transactionBE() 
+    {
+	// Login in to ACC
+	initializePAMEnvironment("MB");
+	objTransactionHistory_PF= new TranscationHistory_PF(this);
+	objTransactionHistory_PF.transactioHistoryBE();
+	// tearDown();
+    }
+	
+    // Execution flow for the test
+    @Title("Compare transaction")
+    @Test
+    (priority=3)
+    public void compareTransaction() 
+    {
+	objTransactionHistory_PF= new TranscationHistory_PF(this);
+	objTransactionHistory_PF.compareTransactions();
+	//tearDown() ;
+    }
+    
+	// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		tearDownWebEnvironment();
+		 objMobileLoginView= null;
+	}
+}

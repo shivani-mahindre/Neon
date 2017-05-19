@@ -1,0 +1,60 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class AndroidAppBannerValidation_MB_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	//constructor
+		public AndroidAppBannerValidation_MB_PF(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+		
+		  private  By appDownLoadLink = By.xpath("//*[@id='body']/div[3]/div/span[2]");
+		  private By instructionClose=By.xpath("//*[@id='body']/div[4]/div[2]/button");	
+		  private By bannerText=By.xpath("//*[@id='body']/div[4]/div[2]/button");	
+		  
+		  
+		/*  private By homebtn=By.xpath("//button[@class='js-menu btn toggle-menu-button hidden-desktop']");
+		  private By btnJoin=By.xpath("//p[contains(.,'Join')]");
+		  private  By btnLogin = By.xpath("//p[contains(.,'Login')]");
+		  private  By btnSignIn = By.xpath("//button[contains(.,'Sign in')]");
+		  private  By btnJoinNow = By.xpath("//button[contains(.,'Join Now')]");
+		  private  By searchBtn = By.xpath("//*[@id='header-id']/div[2]/article/div/div/div[1]");
+		  private  By bingoLink = By.xpath("//div[@class='title-label-link']//a[@href='/bingo']");
+		  private  By slotsNgamesLink = By.xpath("//div[@class='title-label-link']//a[@href='/games']");
+		  private  By clubLabel = By.xpath("//div[@class='title-label']");	  
+	*/	  
+		  
+		
+		  
+		// Home page validations without login
+		public void appBannerValidation()
+		{
+			try
+			{
+				Thread.sleep(20000);
+			} catch (InterruptedException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
+			objWrapperFunctions.waitForMobileElementPresence(appDownLoadLink);
+			objUtilities.logReporter("Click 'Download Link' button", objWrapperFunctions.mobileClick(appDownLoadLink), false);
+	
+			objWrapperFunctions.waitForMobileElementPresence(instructionClose);
+			objUtilities.logReporter("Click 'instructionClose Link' button", objWrapperFunctions.mobileClick(instructionClose), false);
+			objWrapperFunctions.getmobileText(bannerText);
+	
+		}
+	
+	}

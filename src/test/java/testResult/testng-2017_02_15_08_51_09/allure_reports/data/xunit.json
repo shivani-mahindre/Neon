@@ -1,0 +1,98 @@
+{
+  "time" : {
+    "start" : 1487148682048,
+    "stop" : 1487149054305,
+    "duration" : 372257
+  },
+  "testSuites" : [ {
+    "uid" : "82d2b1b704a42b58",
+    "name" : "Regression",
+    "title" : "Regression : Mobile",
+    "time" : {
+      "start" : 1487149054195,
+      "stop" : 1487149054215,
+      "duration" : 20
+    },
+    "statistic" : {
+      "total" : 0,
+      "passed" : 0,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ ]
+  }, {
+    "uid" : "3dde1492ccb834df",
+    "name" : "Regression",
+    "title" : "Regression : Desktop",
+    "time" : {
+      "start" : 1487148682048,
+      "stop" : 1487149053416,
+      "duration" : 371368
+    },
+    "statistic" : {
+      "total" : 3,
+      "passed" : 2,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 1,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "1ad929dd61862ff8",
+      "name" : "depositCreditCard",
+      "title" : "Deposit using Credit Card",
+      "time" : {
+        "start" : 1487148696943,
+        "stop" : 1487148769382,
+        "duration" : 72439
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    }, {
+      "uid" : "d1832c3f88846559",
+      "name" : "depositPayPal",
+      "title" : "Deposit using Netteller",
+      "time" : {
+        "start" : 1487148783067,
+        "stop" : 1487148844328,
+        "duration" : 61261
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    }, {
+      "uid" : "f839e14f623a0515",
+      "name" : "depositPayPal",
+      "title" : "Deposit using PayPal",
+      "time" : {
+        "start" : 1487148859939,
+        "stop" : 1487149051762,
+        "duration" : 191823
+      },
+      "severity" : "NORMAL",
+      "status" : "FAILED"
+    } ]
+  }, {
+    "uid" : "cc4b887f5fd3976c",
+    "name" : "Regression",
+    "title" : "Regression : PAM",
+    "time" : {
+      "start" : 1487149054255,
+      "stop" : 1487149054305,
+      "duration" : 50
+    },
+    "statistic" : {
+      "total" : 0,
+      "passed" : 0,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ ]
+  } ]
+}

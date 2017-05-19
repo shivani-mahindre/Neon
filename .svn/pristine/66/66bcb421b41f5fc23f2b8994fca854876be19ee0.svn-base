@@ -1,0 +1,193 @@
+package com.pageFactory.PAM;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class CreateClaim_dpeositBonus_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig = new Properties();
+	String user = "";
+	Screen objScreen;
+	String refId_FE = "", refId_BE = "", promoName = "";
+	static String bonusName = "";
+
+	public CreateClaim_dpeositBonus_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user = pojo.getUser();
+		System.out.println("Usernmme->>" + user);
+	}
+
+	// bonusName=objWrapperFunctions.getBonusName();
+	// PAM credentials
+	private By PAMUsername = By.xpath("//input[@id='usernameEmail']");
+	private By PAMpassword = By.xpath("//input[@id='password']");
+	private By loginSubmitBtn = By.xpath("//button[@id='loginSubmit']");
+	private By bonusTool_TAB = By.xpath("//a[@id='menu-link'][contains(.,'Bonus Tool')]");
+	private By createNewButton = By.xpath("//a[contains(.,'Create New')]");
+
+	private By bonusInternalNameInput = By.xpath("//input[@id='internalNameInput']");
+	private By bonusDisplayName = By.xpath("//input[@id='displayNameInput']");
+
+	private By enabledCheckBox = By.xpath("//input[@id='enabledInput']");
+	private By bonusDescriptionTextArea = By.xpath("//textarea[@id='descriptionInput']");
+	private By sitestextBox = By.xpath("//ul[@class='select2-choices']");
+	private By sitestextBox_Meccabingo = By.xpath("//ul[@class='select2-results']//div[contains(.,'meccabingo.com')]");
+
+	private By bonusPriority = By.xpath("//select[@id='bonusPriorityInput']");
+	private By bonusPriorityValueOne = By.xpath("//select[@id='bonusPriorityInput']//option[contains(.,'1')]");
+
+	private By selectReason = By.xpath("//select[@id='reasonInput']");
+	private By selectReasonOptionTest = By.xpath("//select[@id='reasonInput']");
+
+	private By promoCodeTextBox = By.xpath("//input[@id='promoCodeInput']");
+	private By fullEligibiltyCheckBox = By.xpath("//input[@id='fullEligibilityInput']");
+
+	private By targetWallet = By.xpath("//select[@id='targetWalletTypeInput']");
+	private By targetWallet_Bonus = By.xpath("//select[@id='targetWalletTypeInput']//option[contains(.,'Bonus')]");
+
+	private By bonusTypeDropDwon = By.xpath("//select[@id='bonusTypeInput']");
+	private By bonusTypeDropDwon_Deposit = By.xpath("//select[@id='bonusTypeInput']//option[2][contains(.,'Deposit')]");
+	private By minimumDepositAmount_textBox = By.xpath("//input[@id='depositConfigMinimumDeposit']");
+	private By rewardValue = By.xpath(".//*[@id='bonusAmountInput']");
+	// private By rewardValue_textBox
+	// =By.xpath("//input[@id='maximumBonusAmountInput']");
+	private By wageringBonus = By.xpath("//input[@id='hasWageringInput']");
+	private By wageringBonusMultiPlier = By.xpath("//input[@id='wageringMultiplierInput']");
+	private By wageringBonusHours = By.xpath("//input[@id='expiryHoursInput']");
+	private By generateButton = By.xpath("//input [@id='btn-generate']");
+	private By saveBonusBtn = By.xpath("//input[@value='Save Bonus']");
+	private By SaveButton = By.xpath("//button[@id='btnConfirmSave']");
+
+	private By accountMenu = By.xpath("//span[contains(.,'Account')]");
+	private By bonusTab = By.xpath("//span//a[contains(.,'Bonus')]");
+	private By myBonusTab = By.xpath("//a[contains(.,'My Bonuses')]");
+	private By bonusHistoryTab = By.xpath("//a[contains(.,'Bonus History')]");
+	private By promotName_FE = By.xpath("//tbody//tr[1]//td[1]");
+	private By promotcodeTextBox = By.xpath("//input[@id='promoCodeInput']");
+	private By claimPromoBtn = By.xpath(".//*[@id='claimPromo']");
+	private By acceptTermsAndCondt = By.xpath(".//*[@id='acceptedTermsAndConditions']");
+	private By depositBtn = By.xpath("//div[@class='buttons-container']//button[2]");
+	private By depositTen = By.xpath("//label//input[@id='predefinedValue-10']/../span[contains(.,'10')]");
+	private By submitBtn = By.xpath("//input[@id='paymentFormSubmitBtn']");
+	private By cardMethodDropDown = By.xpath("//b[@class='button']");
+	private By paymentMethodContainerFrame = By.cssSelector("iframe#cashierPaymentIframe.payment-iframe");
+	private By inputCardNumber = By.xpath("//input[@id='cc_card_number']");
+	private By selectExpMonth = By.xpath("//select[@id='cc_exp_month']");
+	private By selectExpYear = By.xpath("//select[@id='cc_exp_year']");
+	private By inputCVV2 = By.xpath("//input[@id='cc_cvv2']");
+	private By depositButton = By.xpath("//input[@id='continueButton']");
+
+	private By depositSuccessMsg = By.xpath("//h2[contains(.,'Deposit Success')]");
+
+	public void CreateClaimDepositBonus()
+	{
+		bonusName = objWrapperFunctions.getBonusName();
+		System.out.println("BNonus Name" + bonusName);
+
+		objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+		objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+		objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+
+		objUtilities.logReporter("Click on 'Bonus Tool' Tab", objWrapperFunctions.click(bonusTool_TAB), false);
+		objUtilities.logReporter("Click on 'Create New' button", objWrapperFunctions.click(createNewButton), false);
+
+		objUtilities.logReporter("Set 'Bonus internal Name'", objWrapperFunctions.setText(bonusInternalNameInput, "TESTMB"), false);
+		objUtilities.logReporter("Set 'bonusDisplayName'", objWrapperFunctions.setText(bonusDisplayName, bonusName), false);
+		objUtilities.logReporter("Click on 'enabled CheckBox' ", objWrapperFunctions.click(enabledCheckBox), false);
+		objUtilities.logReporter("Set 'bonus Description TextArea'", objWrapperFunctions.setText(bonusDescriptionTextArea, "Cerate SQS test bonus"), false);
+		objUtilities.logReporter("Click on 'sites' ", objWrapperFunctions.click(sitestextBox), false);
+		objUtilities.logReporter("Click on 'Meccabingo site' ", objWrapperFunctions.click(sitestextBox_Meccabingo), false);
+		objUtilities.logReporter("Click on 'priority' ", objWrapperFunctions.click(bonusPriority), false);
+		objUtilities.logReporter("Click on 'priority Value 1' ", objWrapperFunctions.click(bonusPriorityValueOne), false);
+		objUtilities.logReporter("Click on 'Reason' ", objWrapperFunctions.click(selectReason), false);
+		objUtilities.logReporter("Click on 'Reason- Test' ", objWrapperFunctions.click(selectReasonOptionTest), false);
+		objUtilities.logReporter("Click on 'Promo Code' ", objWrapperFunctions.click(promoCodeTextBox), false);
+
+		objUtilities.logReporter("Set 'Promo Code'", objWrapperFunctions.setText(promoCodeTextBox, bonusName), false);
+		objUtilities.logReporter("Click on 'Full Eligibility' ", objWrapperFunctions.click(fullEligibiltyCheckBox), false);
+		objUtilities.logReporter("Click on 'Target Wallet' ", objWrapperFunctions.click(targetWallet), false);
+		objUtilities.logReporter("Select Target Wallet' ", objWrapperFunctions.click(targetWallet_Bonus), false);
+
+		objUtilities.logReporter("Click on 'Bonus Type' ", objWrapperFunctions.click(bonusTypeDropDwon), false);
+		objUtilities.logReporter("Click on  option 'Deposit' ", objWrapperFunctions.click(bonusTypeDropDwon_Deposit), false);
+		objUtilities.logReporter("Click on 'Min deposit amount' ", objWrapperFunctions.click(minimumDepositAmount_textBox), false);
+		objUtilities.logReporter("Set 'Min deposit amount'", objWrapperFunctions.setText(minimumDepositAmount_textBox, "10"), false);
+
+		objUtilities.logReporter("Click on 'BonusPercentage_textBox' ", objWrapperFunctions.click(rewardValue), false);
+		objUtilities.logReporter("Set 'BonusPercentage_textBoxamount'", objWrapperFunctions.setText(rewardValue, "10"), false);
+		/*
+		 * objUtilities.logReporter("Click on 'Max Reward Value' ",
+		 * objWrapperFunctions.click(rewardValue_textBox), false);
+		 * objUtilities.logReporter("Set 'Max Reward Value'",
+		 * objWrapperFunctions.setText(rewardValue_textBox, "10"), false);
+		 */objUtilities.logReporter("Click on 'wagering Bonus'CheckBox ", objWrapperFunctions.click(wageringBonus), false);
+		objUtilities.logReporter("Set 'Wagering Multiplier'", objWrapperFunctions.setText(wageringBonusMultiPlier, "1"), false);
+		objUtilities.logReporter("Set 'Wagering Hours'", objWrapperFunctions.setText(wageringBonusHours, "1"), false);
+		objUtilities.logReporter("verify 'Generate ' Button ", objWrapperFunctions.verifyIsElementPresent(generateButton), false);
+		objUtilities.logReporter("Click on 'Generate' Button ", objWrapperFunctions.click(generateButton), false);
+		objUtilities.logReporter("verify 'Save Bonus' Button ", objWrapperFunctions.verifyIsElementPresent(saveBonusBtn), false);
+		objUtilities.logReporter("Click on 'Save Bonus' Button ", objWrapperFunctions.click(saveBonusBtn), false);
+		objUtilities.logReporter("Click on 'Confirm Save' Button ", objWrapperFunctions.click(SaveButton), false);
+
+	}
+
+	public void claimBonus()
+	{
+		objUtilities.logReporter("Click Account Menu", objWrapperFunctions.click(accountMenu), false);
+		objUtilities.logReporter("Click Bonus tab", objWrapperFunctions.click(bonusTab), false);
+		objUtilities.logReporter("Click myBonusTab tab", objWrapperFunctions.click(myBonusTab), false);
+
+		System.out.println("BNonus Name" + bonusName);
+		objUtilities.logReporter("Set 'promotcodeTextBox'", objWrapperFunctions.setText(promotcodeTextBox, bonusName), false);
+		objUtilities.logReporter("Click submitBtn tab", objWrapperFunctions.click(claimPromoBtn), false);
+		objUtilities.logReporter("Click acceptTermsAndCondt tab", objWrapperFunctions.click(acceptTermsAndCondt), false);
+		objUtilities.logReporter("Click depositBtn tab", objWrapperFunctions.click(depositBtn), false);
+		objUtilities.logReporter("Click on '$10' button ", objWrapperFunctions.click(depositTen), false);
+		objUtilities.logReporter("Click on 'submit' button ", objWrapperFunctions.click(submitBtn), false);
+		objWrapperFunctions.switchToFrameUsingIframe_Element(paymentMethodContainerFrame);
+		objWrapperFunctions.waitForElementPresence(cardMethodDropDown);
+		objUtilities.logReporter("Click on 'Choose payment method'", objWrapperFunctions.click(cardMethodDropDown), false);
+
+		try
+		{
+			objScreen.click("/src/main/resources/images/VISA_card.PNG");
+
+			if (objWrapperFunctions.verifyIsElementPresent(inputCardNumber))
+			{
+				objUtilities.logReporter("Enter Card Number", objWrapperFunctions.setText(inputCardNumber, "4000065919262217"), false);
+				objUtilities.logReporter("Select expiry Month ", objWrapperFunctions.selectDropDownByRandomIndex(selectExpMonth, 12, 1), false);
+				objUtilities.logReporter("Select expiry year", objWrapperFunctions.selectDropDownByRandomIndex(selectExpYear, 50, 1), false);
+				objWrapperFunctions.waitForElementPresence(inputCVV2);
+			} else
+			{
+				objWrapperFunctions.waitForElementPresence(inputCVV2);
+			}
+			objUtilities.logReporter("Enter CVV2 number", objWrapperFunctions.setText(inputCVV2, "242"), false);
+			objUtilities.logReporter("Click on 'Deposit' button ", objWrapperFunctions.click(depositButton), false);
+			objUtilities.logReporter("Verify Succes Message", objWrapperFunctions.verifyIsElementPresent(depositSuccessMsg), false);
+			objUtilities.logReporter("Click Bonus tab", objWrapperFunctions.click(bonusTab), false);
+			objUtilities.logReporter("Click Bonus history Menu", objWrapperFunctions.click(bonusHistoryTab), false);
+			promoName = objWrapperFunctions.getText(promotName_FE);
+			objUtilities.logReporter("Verify Promo is correct", promoName, bonusName, objWrapperFunctions.verifyIsElementPresent(promotName_FE), false);
+
+		} catch (FindFailed e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+}

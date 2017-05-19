@@ -1,0 +1,328 @@
+{
+  "uid" : "d412bd81b26252cf",
+  "name" : "withdrawPayPal",
+  "title" : "Withdraw using Credit Card",
+  "time" : {
+    "start" : 1482232009626,
+    "stop" : 1482232129271,
+    "duration" : 119645
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 19
+  },
+  "failure" : {
+    "message" : "TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //b[@class='button']\nBuild info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'\nSystem info: host: 'D9B167BS', ip: '192.168.156.185', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_51'\nSession ID: de1617bf-1d8f-4861-a72a-f15330fa2448\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.1}]",
+    "stackTrace" : "org.openqa.selenium.TimeoutException: Timed out after 20 seconds waiting for visibility of element located by By.xpath: //b[@class='button']\nBuild info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'\nSystem info: host: 'D9B167BS', ip: '192.168.156.185', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_51'\nSession ID: de1617bf-1d8f-4861-a72a-f15330fa2448\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.1}]\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)\n\tat com.generic.WrapperFunctions.click(WrapperFunctions.java:561)\n\tat com.pageFactory.desktopMecca.Withdraw_CreditCard_PF.withdrawCC(Withdraw_CreditCard_PF.java:138)\n\tat com.scripts.desktopMecca.Withdraw__Credit_Card.withdrawPayPal(Withdraw__Credit_Card.java:53)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:606)\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:639)\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:821)\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)\n\tat org.testng.TestRunner.privateRun(TestRunner.java:773)\n\tat org.testng.TestRunner.run(TestRunner.java:623)\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:357)\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:259)\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1185)\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1110)\n\tat org.testng.TestNG.run(TestNG.java:1018)\n\tat org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:178)\n\tat org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)\n\tat org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:96)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:606)\n\tat org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)\n\tat org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)\n\tat org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)\nCaused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//b[@class='button']\"}\nCommand duration or timeout: 30.11 seconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'\nSystem info: host: 'D9B167BS', ip: '192.168.156.185', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_51'\n*** Element info: {Using=xpath, value=//b[@class='button']}\nSession ID: de1617bf-1d8f-4861-a72a-f15330fa2448\nDriver info: org.openqa.selenium.firefox.FirefoxDriver\nCapabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=43.0.1}]\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:526)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:361)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:899)\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)\n\tat org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)\n\t... 36 more\nCaused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//b[@class='button']\"}\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'\nSystem info: host: 'D9B167BS', ip: '192.168.156.185', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.7.0_51'\nDriver info: driver.version: unknown\n\tat <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Windows/TEMP/anonymous7622830458729076405webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)\n\tat <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Windows/TEMP/anonymous7622830458729076405webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)\n"
+  },
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "BROKEN",
+  "steps" : [ {
+    "name" : "logReporter[Enter username :, true, false]",
+    "title" : "Enter username :",
+    "time" : {
+      "start" : 1482231998172,
+      "stop" : 1482231998179,
+      "duration" : 7
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter Password :, true, false]",
+    "title" : "Enter Password :",
+    "time" : {
+      "start" : 1482231999400,
+      "stop" : 1482231999400,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Login' Button , true, false]",
+    "title" : "Click on 'Login' Button ",
+    "time" : {
+      "start" : 1482232003082,
+      "stop" : 1482232003082,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Search user , true, false]",
+    "title" : "Search user ",
+    "time" : {
+      "start" : 1482232003179,
+      "stop" : 1482232003179,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on search button, true, false]",
+    "title" : "Click on search button",
+    "time" : {
+      "start" : 1482232003292,
+      "stop" : 1482232003292,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on Status ID, true, false]",
+    "title" : "Click on Status ID",
+    "time" : {
+      "start" : 1482232008208,
+      "stop" : 1482232008208,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Select Status from dropdown list, true, false]",
+    "title" : "Select Status from dropdown list",
+    "time" : {
+      "start" : 1482232008832,
+      "stop" : 1482232008832,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Select Status -'Passed' from dropdown list, true, false]",
+    "title" : "Select Status -'Passed' from dropdown list",
+    "time" : {
+      "start" : 1482232008989,
+      "stop" : 1482232008989,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on netx button, true, false]",
+    "title" : "Click on netx button",
+    "time" : {
+      "start" : 1482232009172,
+      "stop" : 1482232009172,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on Confirm button, true, false]",
+    "title" : "Click on Confirm button",
+    "time" : {
+      "start" : 1482232009301,
+      "stop" : 1482232009301,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "login",
+    "title" : "Login Mecca desktop site",
+    "time" : {
+      "start" : 1482232021771,
+      "stop" : 1482232028580,
+      "duration" : 6809
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 3
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ {
+      "name" : "logReporter[Set 'UserName'., mb1220, true, false]",
+      "title" : "Set 'UserName'. - mb1220",
+      "time" : {
+        "start" : 1482232021920,
+        "stop" : 1482232021920,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Set 'Password'., Test1234, true, false]",
+      "title" : "Set 'Password'. - Test1234",
+      "time" : {
+        "start" : 1482232023362,
+        "stop" : 1482232023362,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    }, {
+      "name" : "logReporter[Click 'Sign In'., true, false]",
+      "title" : "Click 'Sign In'.",
+      "time" : {
+        "start" : 1482232023580,
+        "stop" : 1482232023580,
+        "duration" : 0
+      },
+      "summary" : {
+        "attachments" : 0,
+        "steps" : 0
+      },
+      "status" : "PASSED",
+      "attachments" : [ ],
+      "steps" : [ ]
+    } ]
+  }, {
+    "name" : "logReporter[Click on 'Account' menu , true, false]",
+    "title" : "Click on 'Account' menu ",
+    "time" : {
+      "start" : 1482232030476,
+      "stop" : 1482232030476,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'Withdraw' Tab , true, false]",
+    "title" : "Click on 'Withdraw' Tab ",
+    "time" : {
+      "start" : 1482232032900,
+      "stop" : 1482232032900,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter Amount to withdraw , true, false]",
+    "title" : "Enter Amount to withdraw ",
+    "time" : {
+      "start" : 1482232036286,
+      "stop" : 1482232036286,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Enter Password to withdraw , true, false]",
+    "title" : "Enter Password to withdraw ",
+    "time" : {
+      "start" : 1482232036736,
+      "stop" : 1482232036736,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "logReporter[Click on 'next' button , true, false]",
+    "title" : "Click on 'next' button ",
+    "time" : {
+      "start" : 1482232037945,
+      "stop" : 1482232037945,
+      "duration" : 0
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "D9B167BS"
+  }, {
+    "name" : "thread",
+    "value" : "5440@D9B167BS.main"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Without feature"
+  }, {
+    "name" : "story",
+    "value" : "Without story"
+  } ],
+  "parameters" : [ ]
+}

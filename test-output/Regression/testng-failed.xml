@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression]">
+  <parameter name="TestFileName" value="projectModule1/SmokeSuite"/>
+  <test name="Desktop(failed)">
+    <classes>
+      <class name="com.scripts.desktopGNG.login">
+        <methods>
+          <include name="LOGINd"/>
+        </methods>
+      </class> <!-- com.scripts.desktopGNG.login -->
+    </classes>
+  </test> <!-- Desktop(failed) -->
+</suite> <!-- Failed suite [Regression] -->

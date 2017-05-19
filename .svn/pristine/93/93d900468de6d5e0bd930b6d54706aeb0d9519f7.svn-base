@@ -1,0 +1,107 @@
+package com.pageFactory.PAM;
+
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class ManageBalanceFunctionality_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	String PAMUser,PAMPass;
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	
+	public ManageBalanceFunctionality_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		PAMUser=pojo.getPAMUser();
+		PAMPass=pojo.getPAMPassword();
+		System.out.println("Usernmme->>"+user +PAMUser+PAMPass);
+	}
+	
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	
+	private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+	private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+	//private By manageBalanceTab=By.xpath("//span[contains(.,'Manage Balance')]");
+	private By selectWallet=By.xpath("//span[contains(.,'Please select a wallet')]");
+	private By cashDefault=By.xpath("//div[1][contains(.,'Cash Default')]");
+	private By amount=By.xpath("//input[@id='adjustmentAmount']");
+	private By reason=By.xpath("//span[contains(.,'Please select the reason')]");
+	private By manualCasinoTransfer=By.xpath("//ul//div[contains(.,'Manual Casino Transfer')]");
+	private By playerNoteTextArea=By.xpath("//textarea[@id='playerNote']");
+	private By nextBtn=By.xpath("//a[contains(.,'Next')]");
+	private By confirmBtn=By.xpath("//a[contains(.,'Confirm')]");
+	private By totalBalance=By.xpath("//h2[@class='total-balance-value']");
+	
+	
+	
+	public void manageBalance()
+	{
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, PAMUser), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, PAMPass), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	  double balanceTobeupdated=10;
+	  String totalbalanceOnsite =objWrapperFunctions.getBalance(totalBalance);
+	  System.out.println("totalbalanceOnsite "+totalbalanceOnsite);
+	  double balanceonSite=Double.parseDouble(totalbalanceOnsite) ;
+	  double finalBlanceExpected=balanceTobeupdated+balanceonSite;
+	  try {
+		Thread.sleep(9000);
+		objScreen.click("/src/main/resources/images/ManageBalance.PNG");
+	    } catch (Exception e) {
+		e.printStackTrace();
+	  
+	    }
+	//  objUtilities.logReporter("Click on manageBalanceTab ", objWrapperFunctions.click(manageBalanceTab), false);
+	    objUtilities.logReporter("Click on selectWallet  ", objWrapperFunctions.click(selectWallet), false);
+	    objUtilities.logReporter("Click on cashDefault  ", objWrapperFunctions.click(cashDefault), false);
+	    objUtilities.logReporter("Set Amount", objWrapperFunctions.setText(amount,"10"), false); 
+	    objUtilities.logReporter("Click on reason  ", objWrapperFunctions.click(reason), false);
+	    objUtilities.logReporter("Click on manualCasinoTransfer  ", objWrapperFunctions.click(manualCasinoTransfer), false);
+	    objUtilities.logReporter("Set playerNoteTextArea", objWrapperFunctions.setText(playerNoteTextArea,"Autoamtion Test Note"), false);
+	    objUtilities.logReporter("Click on nextBtn  ", objWrapperFunctions.click(nextBtn), false);
+	    objUtilities.logReporter("Click on confirmBtn  ", objWrapperFunctions.click(confirmBtn), false);
+	    
+	    try {
+		Thread.sleep(10000);
+	    } catch (InterruptedException e) {
+		
+		e.printStackTrace();
+	    }
+	    double finalBlanceActual=Double.parseDouble(objWrapperFunctions.getBalance(totalBalance)) ;
+	    System.out.println("finalBlanceActual "+finalBlanceActual);
+	    
+	    if(finalBlanceExpected==finalBlanceActual)
+	    {
+		objUtilities.logReporter("Balance succesfully Managed   ", objWrapperFunctions.verifyIsElementPresent(totalBalance), false);
+	    }
+	    else
+	    {
+		objUtilities.logReporter("Balance failed to Managed   ", objWrapperFunctions.verifyIsElementPresent(totalBalance), false);
+	    }
+	 
+	    
+}
+	
+	
+}

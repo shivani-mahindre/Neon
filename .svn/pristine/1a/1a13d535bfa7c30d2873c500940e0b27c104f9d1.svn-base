@@ -1,0 +1,80 @@
+package com.pageFactory.mobileMecca;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+
+public class Deposit_NetTeller_PF {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver driver;
+	
+        
+	public Deposit_NetTeller_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+	
+	// buttons
+	  private  By depositMenu = By.xpath("//a[@class='btn btn-transparent control-panel-button ']");
+	  private  By iAgreeBtn = By.xpath("//button[@id='fundsDisclaimerBtn'][contains(.,'I agree')]");
+	  private  By depositTen = By.xpath("//label//input[@id='predefinedValue-10']/../span[contains(.,'10')]");
+	  private  By submitBtn = By.xpath("//input[contains(@id,'FormSubmitBtn')]");
+	  private  By paymentMethodContainerFrame=By.cssSelector("iframe#cashierPaymentIframe.payment-iframe");
+	  private  By cardMethodDropDown=By.xpath("//div[@data-pms-type='dropdown']");
+	  private  By selectNetTellerOption=By.xpath("//option[contains(.,'Neteller')]");
+	  private  By accountId=By.xpath("//input[@id='nettelerAccount']");
+	  private  By secureID=By.xpath("//input[@id='nettelerSecureId']");
+	  private  By depositButton=By.xpath("//input[@id='continueButton']");
+	  private  By depositSuccessMsg=By.xpath("//h2[contains(.,'Deposit Success')]");
+	  
+	  
+    public void depositNetteller() 
+    {
+	objUtilities.logReporter("Click on 'Deposit' menu ", objWrapperFunctions.mobileClick(depositMenu), false);
+	try
+	{
+	try {
+	    Thread.sleep(10000);
+	    if (objWrapperFunctions.verifymobileIsElementPresent(iAgreeBtn) == true) {
+		System.out.println("i agree button found");
+		objUtilities.logReporter("Click on 'I Agree' button", objWrapperFunctions.mobileClick(iAgreeBtn), false);
+	    } else 
+	    {
+		System.out.println("'I Agree' button not found");
+	    }
+	} catch (Exception e) 
+	{
+	    e.printStackTrace();
+	}
+	
+	objUtilities.logReporter("Click on '$5' button ", objWrapperFunctions.mobileClick(depositTen), false);
+	objUtilities.logReporter("Click on 'submit' button ", objWrapperFunctions.mobileClick(submitBtn), false);
+
+	objWrapperFunctions.switchToMobileFrameUsingIframe_Element(paymentMethodContainerFrame);
+
+	objUtilities.logReporter("Click on 'Choose payment method'", objWrapperFunctions.mobileClick(cardMethodDropDown),
+		false);
+	objUtilities.logReporter("Click on 'Selected Credit card option'",
+		objWrapperFunctions.mobileClick(selectNetTellerOption), false);
+	objUtilities.logReporter("Enter Account ID ", objWrapperFunctions.mobileSetText(accountId, "454651018446"), false);
+	objUtilities.logReporter("Enter Secure ID ", objWrapperFunctions.mobileSetText(secureID, "270955"), false);
+	objUtilities.logReporter("Click on 'Deposit' button ", objWrapperFunctions.mobileClick(depositButton), false);
+
+	objWrapperFunctions.waitForMobileElementPresence(depositSuccessMsg);
+	objUtilities.logReporter("Verify Succes Message",
+	objWrapperFunctions.verifymobileIsElementPresent(depositSuccessMsg), false);
+	}
+	catch(Exception e)
+	{
+	    e.printStackTrace();
+	}
+    }
+		
+	
+	 
+	
+}

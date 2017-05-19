@@ -1,0 +1,83 @@
+package com.pageFactory.desktopMecca;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+
+public class LiveChat_PF 
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver driver;
+	
+        
+	public LiveChat_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+	
+	private  By btnJoin = By.xpath("//button[contains(.,'Join Now')]");
+	private  By btnNext = By.xpath("//button[@id='isResMemberSubmit']"); 
+	private  By liveChat_registartion = By.xpath("//a[2][contains(.,'Live Chat')]");
+	private  By closeButton = By.xpath("//button[@class='close']");
+	
+	
+	// Contact us Page
+	private  By liveChat_ContactUsLink = By.xpath("//a[contains(.,'Contact Us')]");
+	private  By startChatLink = By.xpath("//a[2][contains(.,'Start Chat')]");
+	 
+	
+	//Deposit menu
+	 private  By depositMenu = By.xpath("//a[@class='btn btn-transparent control-panel-button ']");
+	 private  By iAgreeBtn = By.xpath("//button[@id='fundsDisclaimerBtn'][contains(.,'I agree')]");
+	
+	
+	
+	public void registrationChatLink()
+	{
+		objUtilities.logReporter("Click on Join now button", objWrapperFunctions.click(btnJoin), false);
+		objUtilities.logReporter("Click on next button", objWrapperFunctions.click(btnNext), false);
+		objWrapperFunctions.waitForElementPresence(liveChat_registartion);
+		objUtilities.logReporter("Click on Chat link ", objWrapperFunctions.click(liveChat_registartion), false);
+		objUtilities.logReporter("Click on Close registration window ", objWrapperFunctions.click(closeButton), false);
+		objWrapperFunctions.switchToChildWindow();
+		objWrapperFunctions.switchMainWindow();
+	}
+	
+	
+    public void contactUsLiveChat() 
+    {
+    	
+    	objUtilities.logReporter("Click on home Page Live Chat Link", objWrapperFunctions.click(startChatLink), false);
+    	objWrapperFunctions.switchToChildWindow();
+    	objWrapperFunctions.switchMainWindow();
+    	objUtilities.logReporter("Click on contact Us Link", objWrapperFunctions.click(liveChat_ContactUsLink), false);
+    	objUtilities.logReporter("Click on Chat Link", objWrapperFunctions.click(startChatLink), false);
+    	objWrapperFunctions.switchToChildWindow();
+    	objWrapperFunctions.switchMainWindow();
+    	
+    	
+    }
+
+    public void depositPage()
+    {
+    	objUtilities.logReporter("Click on Deposit Menu", objWrapperFunctions.click(depositMenu), false);
+    	objUtilities.logReporter("Click on Chat Link", objWrapperFunctions.click(startChatLink), false);
+    	objWrapperFunctions.switchToChildWindow();
+    	objWrapperFunctions.switchMainWindow();
+    }
+    
+    
+
+
+	
+		
+	
+	 
+	
+}

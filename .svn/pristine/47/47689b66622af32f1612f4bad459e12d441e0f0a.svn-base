@@ -1,0 +1,57 @@
+package com.scripts.desktopMecca;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.GetTcStatus;
+import com.pageFactory.desktopMecca.Deposit_CreditCard_PF;
+import com.pageFactory.desktopMecca.Deposit_NetTeller_PF;
+import com.pageFactory.desktopMecca.Deposit_PayPal_PF;
+import com.pageFactory.desktopMecca.Deposit_PaySafe_PF;
+import com.pageFactory.desktopMecca.Deposit_Skrill_PF;
+import com.pageFactory.desktopMecca.PageValidation_PF;
+import com.views.desktopMecca.LoginView;
+
+/**
+ * @ScriptName    : CreateNewCustomer
+ * @Description   : Create new customer
+ */
+@Listeners({GetTcStatus.class})
+public class Deposit__NetTeller extends BaseTest
+{
+	//private Utilities objUtilities;
+	private LoginView objLoginView ;
+	private Deposit_NetTeller_PF objDeposit_NetTeller_PF;
+
+	// Initializing Environment 
+	@BeforeClass
+	private void setUp()
+	{
+	    	initializeWebEnvironment("MB");
+		objDeposit_NetTeller_PF =new Deposit_NetTeller_PF(this);
+		objLoginView = new  LoginView(this);
+	}
+	
+    // Execution flow for the test
+    @Title("Deposit using Netteller")
+    @Test
+    public void depositPayPal() 
+    {
+	// Login in to ACC
+	objLoginView.login();
+	objDeposit_NetTeller_PF.depositNetteller();
+	objLoginView.logout();
+    }
+	
+	// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		tearDownWebEnvironment();
+		objLoginView = null;
+	}
+}

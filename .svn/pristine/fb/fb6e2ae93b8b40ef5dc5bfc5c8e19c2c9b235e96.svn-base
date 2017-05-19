@@ -1,0 +1,125 @@
+package com.pageFactory.PAM;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Screen;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class CreateClaimBonus_sportBook_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver webdriver;
+	Properties objConfig=new Properties();
+	String user="";
+	Screen objScreen;
+	String refId_FE="",refId_BE="";
+	
+	public CreateClaimBonus_sportBook_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objScreen = new Screen();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+	// Front end account
+	  private  By accountMenu = By.xpath("//span[contains(.,'Account')]");
+	  private  By bonusTab = By.xpath("//span//a[contains(.,'Bonus')]");
+	  private  By bonusHistoryTab = By.xpath("//a[contains(.,'Bonus History')]");
+	  private  By promotName_FE = By.xpath("//tbody//tr[1]//td[1]");
+	  
+	// PAM credentials
+	private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+	private  By PAMpassword =By.xpath("//input[@id='password']");
+	private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+	private  By bonusTool_TAB =By.xpath("//a[@id='menu-link'][contains(.,'Bonus Tool')]");
+	private  By createNewButton =By.xpath("//a[contains(.,'Create New')]");
+	
+	private  By bonusInternalNameInput =By.xpath("//input[@id='internalNameInput']");
+	private  By bonusDisplayName =By.xpath("//input[@id='displayNameInput']");
+	
+	private  By enabledCheckBox =By.xpath("//input[@id='enabledInput']");
+	private  By bonusDescriptionTextArea =By.xpath("//textarea[@id='descriptionInput']");
+	private  By sitestextBox =By.xpath("//ul[@class='select2-choices']");
+	private  By sitestextBox_Gro =By.xpath("//ul[@class='select2-results']//div[contains(.,'grosvenorcasinos.com')]");
+	
+	private  By bonusPriority =By.xpath("//select[@id='bonusPriorityInput']");
+	private  By bonusPriorityValueOne =By.xpath("//select[@id='bonusPriorityInput']//option[contains(.,'1')]");
+	
+	private  By selectReason =By.xpath("//select[@id='reasonInput']");
+	private  By selectReasonOptionTest =By.xpath("//select[@id='reasonInput']");
+	
+	private  By promoCodeTextBox =By.xpath("//input[@id='promoCodeInput']");
+	private  By fullEligibiltyCheckBox =By.xpath("//input[@id='fullEligibilityInput']");
+	
+	private  By targetWallet =By.xpath("//select[@id='targetWalletTypeInput']");
+	private  By targetWallet_Sportsbook =By.xpath("//select[@id='targetWalletTypeInput']//option[contains(.,'Sportsbook')]");
+	
+	private  By bonusTypeDropDwon =By.xpath("//select[@id='bonusTypeInput']");
+	private  By bonusTypeDropDwon_Instant =By.xpath("//select[@id='bonusTypeInput']//option[3][contains(.,'Instant')]");
+
+	private  By KambiPromotionId_textBox =By.xpath("//input[@id='kambiPromotionIdInput']");
+	private  By generateButton =By.xpath("//input [@id='btn-generate']");
+	private  By saveBonusBtn =By.xpath("//input[@value='Save Bonus']");	
+	private  By SaveButton =By.xpath("//button[@id='btnConfirmSave']");		
+	
+	private By cancelButton=By.xpath("//table[@id='allbonuses']/tbody/tr[1]/td[13]/input[@class='btn btn-danger']");
+	//creating Instant Bonus for SPORTBOOK wallets.
+	public void CreateClaimBonusSportBook()
+	{
+	    objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+	    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    
+	    objUtilities.logReporter("Click on 'Bonus Tool' Tab", objWrapperFunctions.click(bonusTool_TAB), false);
+	    objUtilities.logReporter("Click on 'Create New' button", objWrapperFunctions.click(createNewButton), false);
+	    
+	    objUtilities.logReporter("Set 'Bonus internal Name'", objWrapperFunctions.setText(bonusInternalNameInput, "TESTGC"), false);
+	    objUtilities.logReporter("Set 'bonusDisplayName'", objWrapperFunctions.setText(bonusDisplayName, "TEST_SportsBook"), false);
+	    objUtilities.logReporter("Click on 'enabled CheckBox' ", objWrapperFunctions.click(enabledCheckBox), false);
+	    objUtilities.logReporter("Set 'bonus Description TextArea'", objWrapperFunctions.setText(bonusDescriptionTextArea, "Cerate SQS test bonus"), false);
+	    objUtilities.logReporter("Click on 'sites' ", objWrapperFunctions.click(sitestextBox), false);
+	    objUtilities.logReporter("Click on 'Meccabingo site' ", objWrapperFunctions.click(sitestextBox_Gro), false);
+	    objUtilities.logReporter("Click on 'priority' ", objWrapperFunctions.click(bonusPriority), false);
+	    objUtilities.logReporter("Click on 'priority Value 1' ", objWrapperFunctions.click(bonusPriorityValueOne), false);
+	    objUtilities.logReporter("Click on 'Reason' ", objWrapperFunctions.click(selectReason), false);
+	    objUtilities.logReporter("Click on 'Reason- Test' ", objWrapperFunctions.click(selectReasonOptionTest), false);
+	    objUtilities.logReporter("Click on 'Promo Code' ", objWrapperFunctions.click(promoCodeTextBox), false);
+	    objUtilities.logReporter("Set 'Promo Code'", objWrapperFunctions.setText(promoCodeTextBox, "TESTGc_SportsBook"), false);
+	    objUtilities.logReporter("Click on 'Full Eligibility' ", objWrapperFunctions.click(fullEligibiltyCheckBox), false);
+	    objUtilities.logReporter("Click on 'Target Wallet' ", objWrapperFunctions.click(targetWallet), false);
+	    objUtilities.logReporter("Select Target Wallet' ", objWrapperFunctions.click(targetWallet_Sportsbook), false);
+	    
+	    objUtilities.logReporter("Click on 'Bonus Type' ", objWrapperFunctions.click(bonusTypeDropDwon), false);
+	    objUtilities.logReporter("Click on  option 'Instant' ", objWrapperFunctions.click(bonusTypeDropDwon_Instant), false);
+	   
+	    objUtilities.logReporter("Click on 'KambiPromotionId_textBox' ", objWrapperFunctions.click(KambiPromotionId_textBox), false);
+	    objUtilities.logReporter("Set 'KambiPromotionId'", objWrapperFunctions.setText(KambiPromotionId_textBox, "162"), false);
+	    objUtilities.logReporter("verify 'Generate ' Button ", objWrapperFunctions.verifyIsElementPresent(generateButton), false);
+	    objUtilities.logReporter("Click on 'Generate' Button ", objWrapperFunctions.click(generateButton), false);
+	    objUtilities.logReporter("verify 'Save Bonus' Button ", objWrapperFunctions.verifyIsElementPresent(saveBonusBtn), false);
+	    objUtilities.logReporter("Click on 'Save Bonus' Button ", objWrapperFunctions.click(saveBonusBtn), false);
+	    objUtilities.logReporter("Click on 'Save' Button ", objWrapperFunctions.click(SaveButton), false);    
+	}
+	public void claimBonuSportBook_FE()
+	{
+		
+	}
+	//Cancel created bonus for SPORTBOOK wallets.
+	public void createAndCancelSportBook_BE()
+	{
+			objUtilities.logReporter("Enter username :SQS_RDeote", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+		    objUtilities.logReporter("Enter Password :C3rg7EDi", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+		    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);		    
+		    objUtilities.logReporter("Click on 'Bonus Tool' Tab", objWrapperFunctions.click(bonusTool_TAB), false);
+		    objUtilities.logReporter("verify 'Cancel ' Button ", objWrapperFunctions.verifyIsElementPresent(cancelButton), false);
+		    objUtilities.logReporter("Click on 'Cancel ' Button ", objWrapperFunctions.click(cancelButton), false);
+		    objWrapperFunctions.pressSpace();
+		 }
+}

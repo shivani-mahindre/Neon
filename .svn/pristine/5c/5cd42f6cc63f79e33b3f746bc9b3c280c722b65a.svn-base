@@ -1,0 +1,78 @@
+package com.pageFactory.desktopMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class HomePage
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+		//constructor
+		public HomePage(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+
+		// buttons
+		  private  By btnSignIn = By.xpath("//button[contains(.,'Sign in')]");
+		  private  By btnCloseCookie = By.xpath("//button[@class='js-cookie-close-btn cookie-close-btn btn']");
+		  
+		// Link
+		  private  By linkLogOut = By.xpath("//a[contains(.,'Logout')]");
+		// Inputs
+		  private  By inptUserName = By.id("loginUsername_106");
+		  private  By inptPassword = By.id("loginPassword_106");
+		  private  By loginError = By.xpath("//li[@class='error']");
+		  
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : set user name */
+		  public void setUserName(String userName)
+		  {
+			  objUtilities.logReporter("Set 'UserName'.", userName, objWrapperFunctions.setText(inptUserName, userName), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Set password */
+		  public void setPassword(String userPassword)
+		  {
+			  objUtilities.logReporter("Set 'Password'.", userPassword, objWrapperFunctions.setText(inptPassword, userPassword), false);
+		  }
+
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickCloseCookie()
+		  {
+			  objUtilities.logReporter("Click 'Close cookie Button'.", objWrapperFunctions.click(btnCloseCookie), false);
+		    
+		  }
+		  	  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickSignIn()
+		  {
+			  objUtilities.logReporter("Click 'Sign In'.", objWrapperFunctions.click(btnSignIn), false);
+			  /*if(objWrapperFunctions.verifyIsElementPresent(loginError))
+			  {
+				  objUtilities.logReporter("Login failure error", objWrapperFunctions.verifyIsElementPresent(loginError), false);
+			  }*/
+		  }
+		  
+		  /**
+		   * @author : Automation Tester(SQS) 
+		   * @Description : Click on Sign in button */
+		  public void clickLogOut()
+		  {
+			  objUtilities.logReporter("Click 'LogOut'.", objWrapperFunctions.click(linkLogOut), false);
+		  }
+		  
+}

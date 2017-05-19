@@ -1,0 +1,30 @@
+package com.scripts.desktopGCasino;
+	
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterClass;
+
+import com.generic.BaseTest;
+import com.pageFactory.desktopGcasino.CaptchaSample_PF;
+import com.pageFactory.desktopGcasino.Footer_PF;
+
+
+public class CaptchSample extends BaseTest 
+{
+	
+	private CaptchaSample_PF objCaptchSample_PF;
+	@Test
+	public void footerGrosvenor()
+	{
+		initializeWebEnvironment("GC");
+		objCaptchSample_PF =new CaptchaSample_PF(this);
+		objCaptchSample_PF.reCaptchCheck();
+	}
+
+	@AfterClass
+	private void tearDown()
+	{
+		tearDownWebEnvironment();
+		objCaptchSample_PF = null;
+	}
+  
+}

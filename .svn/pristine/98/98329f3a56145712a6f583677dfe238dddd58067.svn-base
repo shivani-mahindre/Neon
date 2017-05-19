@@ -1,0 +1,79 @@
+package com.scripts.PAM;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.GetTcStatus;
+import com.pageFactory.PAM.TransactionHistory_TwoUsers_PF;
+import com.pageFactory.desktopMecca.Deposit_CreditCard_PF;
+import com.pageFactory.desktopMecca.Deposit_PayPal_PF;
+import com.pageFactory.desktopMecca.Deposit_PaySafe_PF;
+import com.pageFactory.desktopMecca.Deposit_Skrill_PF;
+import com.pageFactory.desktopMecca.PageValidation_PF;
+import com.pageFactory.desktopMecca.TransactionHistory_PF;
+import com.pageFactory.desktopMecca.Withdraw_CreditCard_PF;
+import com.views.desktopMecca.LoginView;
+
+/**
+ * @ScriptName    : CreateNewCustomer
+ * @Description   : Create new customer
+ */
+@Listeners({GetTcStatus.class})
+public class TranxHistory_PinnedNotes_TwoUsers_BE extends BaseTest
+{
+	//private Utilities objUtilities;
+	private LoginView objLoginView ;
+	private TransactionHistory_TwoUsers_PF objTransactionHistory_TwoUsers_PF;
+
+	   
+    @Title("Back end transaction using First User")
+    @Test
+    (priority=1)
+    public void transactionBE_user1() 
+    {
+     initializePAMEnvironment("MB");
+     objTransactionHistory_TwoUsers_PF= new TransactionHistory_TwoUsers_PF(this);
+     objTransactionHistory_TwoUsers_PF.transactioHistoryBE_user1();
+     tearDown();
+    }
+	
+    @Title("Back end transaction using second User")
+    @Test
+    (priority=2)
+    public void transactionBE_user2() 
+    {
+
+     initializePAMEnvironment("MB");
+     objTransactionHistory_TwoUsers_PF= new TransactionHistory_TwoUsers_PF(this);
+     objTransactionHistory_TwoUsers_PF.transactioHistoryBE_user2();
+     tearDown();
+	 
+    }
+    
+    
+    
+    // Execution flow for the test
+    @Title("Compare transaction")
+    @Test
+    (priority=3)
+    public void compareTransaction() 
+    {
+	
+   	objTransactionHistory_TwoUsers_PF= new TransactionHistory_TwoUsers_PF(this);
+   	objTransactionHistory_TwoUsers_PF.CompareTransactions();
+	
+    }
+    
+	// Closing the browser
+	@AfterClass
+	private void tearDown() 
+	{
+		tearDownWebEnvironment();
+		objLoginView = null;
+	}
+}

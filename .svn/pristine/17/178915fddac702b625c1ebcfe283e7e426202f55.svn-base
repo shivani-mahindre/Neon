@@ -1,0 +1,61 @@
+package com.scripts.desktopMecca;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.GetTcStatus;
+import com.pageFactory.desktopMecca.Deposit_CreditCard_PF;
+import com.pageFactory.desktopMecca.Deposit_PayPal_PF;
+import com.pageFactory.desktopMecca.Deposit_PaySafe_PF;
+import com.pageFactory.desktopMecca.Deposit_Skrill_PF;
+import com.pageFactory.desktopMecca.PageValidation_PF;
+import com.pageFactory.desktopMecca.SelfExclusion_BE_PF;
+import com.pageFactory.desktopMecca.Withdraw_CreditCard_PF;
+import com.views.desktopMecca.LoginView;
+
+/**
+ * @ScriptName : CreateNewCustomer
+ * @Description : Create new customer
+ */
+@Listeners({ GetTcStatus.class })
+public class SelfExclusion_BE extends BaseTest {
+
+    private SelfExclusion_BE_PF objSelfExclusion_BE_PF;
+    LoginView objLoginView;
+
+    @Title("Self Exclusion functionality & Error Messages")
+    @Test(priority=0)
+    public void transactionFE() 
+    {
+	initializePAMEnvironment("MB");
+	objSelfExclusion_BE_PF = new SelfExclusion_BE_PF(this);
+	objSelfExclusion_BE_PF.SelExclusion_ErrorMessages();
+	tearDown();
+
+    }
+
+   /* @Title("Self Exclsuion functionality")
+    @Test(priority=1)
+    public void transactionBE() {
+
+	initializeWebEnvironment("MB");
+	objSelfExclusion_BE_PF = new SelfExclusion_BE_PF(this);
+	objLoginView = new LoginView(this);
+	objLoginView.login();
+	objSelfExclusion_BE_PF.CheckSelfExclusion();
+	tearDown();
+    }*/
+
+    // Closing the browser
+    @AfterClass
+    private void tearDown() {
+	tearDownWebEnvironment();
+
+    }
+}

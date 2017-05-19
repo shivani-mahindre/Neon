@@ -1,0 +1,186 @@
+package com.scripts.desktopGames;
+
+import java.util.Hashtable;
+
+import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.BaseTest;
+import com.generic.Utilities;
+import com.pageFactory.desktopGames.GamePlay_MB_PF;
+import com.views.desktopMecca.LoginView;
+import com.views.desktopGames.GameView;
+/**
+ * @ScriptName    		: ExampleScriptWeb
+ * @Description   		: This is sample script for web testing 
+ * @Author        		: Automation Tester(SQS)
+ * @Creation Date 		: 
+ * @Modification Date	:                         
+ */
+public class GamePlay_MB extends BaseTest
+{
+	// Local Variables
+	private Utilities objUtilities;
+	private LoginView objLoginView ;
+	
+	private GamePlay_MB_PF objWinstar;
+	@BeforeClass
+	public void setUpTest()
+	{
+		initializeWebEnvironment("MB");
+		objUtilities = this.getObjUtilities();
+		objLoginView = new LoginView(this);
+		objWinstar = new GamePlay_MB_PF(this);
+	}
+
+	@DataProvider(name = "TestDataProvider")
+	public Object[][] getDataProvider(ITestContext context)
+	{
+		// Getting test data file name from executing .xml file at run time
+		String dataFile = context.getCurrentXmlTest().getParameter("TestFileName");
+		Object[][] testData = loadDataProvider("SearchGame", dataFile);
+		return testData;
+	}
+
+	// Execution flow for the test
+	@Title("Demo Play invalid login error and login check")
+	@Description("Demo Play invalid login error and login check")
+	@Test(dataProvider = "TestDataProvider")
+	public void demoplay(String strRun, Hashtable<String, String> dataSetValue) {
+		
+			loadTestData(strRun, dataSetValue);
+			objUtilities = this.getObjUtilities();
+			System.out.println("objUtilities.dpString('Game Name')--------------->"
+					+ objUtilities.dpString("Game Name"));
+			objWinstar.searchGame(objUtilities.dpString("Game Name"));
+			objWinstar.clickDemoPlay(objUtilities.dpString("Game Name"));
+			objWinstar.switchToChildWindow();
+			objLoginView.incorrectLogin();
+			objLoginView.login();
+			System.out.println("Connect game--------------->" + objUtilities.dpString("Game Name"));
+			//objWinstar.connectApp(objUtilities.dpString("Game Name"));
+		//	objWinstar.playTheGame(objUtilities.dpString("Game Name"));
+			objWinstar.switchTomainWindow();
+			closeGame();
+			objLoginView.logout();
+			
+
+		
+	}
+	
+	@Title("Real Play  login check")
+	@Description("Real Play login check")
+	@Test(dataProvider = "TestDataProvider")
+	public void realPlay(String strRun, Hashtable<String, String> dataSetValue) {
+		try {
+			loadTestData(strRun, dataSetValue);
+			objUtilities = this.getObjUtilities();
+			
+			objLoginView.login();
+			System.out.println("objUtilities.dpString('Game Name')--------------->"
+					+ objUtilities.dpString("Game Name"));
+			objWinstar.searchGame(objUtilities.dpString("Game Name"));
+			objWinstar.clickRealPlay(objUtilities.dpString("Game Name"));
+			objWinstar.switchToChildWindow();
+			System.out.println("Connect game--------------->" + objUtilities.dpString("Game Name"));
+			//objWinstar.connectApp(objUtilities.dpString("Game Name"));
+			//objWinstar.playTheGame(objUtilities.dpString("Game Name"));
+			objWinstar.switchTomainWindow();
+			closeGame();
+
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			objLoginView.logout();
+		}
+	}
+	/*@DataProvider(name = "TestDataProviderCloverRollover")
+	public Object[][] getDataProviderCloverRollover(ITestContext context)
+	{
+		// Getting test data file name from executing .xml file at run time
+		String dataFile = context.getCurrentXmlTest().getParameter("TestFileName");
+		Object[][] testData = loadDataProvider("SearchGame1", dataFile);
+		return testData;
+	}
+
+	// Execution flow for the test
+	@Title("Play game - Clover Rollover")
+	@Description("Play game - Clover Rollover")
+	@Test(dataProvider = "TestDataProviderCloverRollover") 
+	public void searchGameCloverRollover(String strRun, Hashtable<String, String> dataSetValue)
+	{
+		try
+		{
+			loadTestData(strRun, dataSetValue);
+			objUtilities = this.getObjUtilities();
+			objGameView.login();
+			System.out.println("objUtilities.dpString('Game Name')--------------->" +objUtilities.dpString("Game Name"));
+			objWinstar.searchGame(objUtilities.dpString("Game Name"));
+			//objWinstar.clickRealPlay(objUtilities.dpString("Game Name"));
+		}
+		finally
+		{
+			objGameView.logout();
+		}
+	}
+	
+	@DataProvider(name = "TestDataProviderCasperMysteryMirror")
+	public Object[][] getDataProviderCasperMysteryMirror(ITestContext context)
+	{
+		// Getting test data file name from executing .xml file at run time
+		String dataFile = context.getCurrentXmlTest().getParameter("TestFileName");
+		Object[][] testData = loadDataProvider("SearchGame2", dataFile);
+		return testData;
+	}
+
+	// Execution flow for the test
+	@Title("Play game - Casper Mystery Mirro")
+	@Description("Play game - Casper Mystery Mirro")
+	@Test(dataProvider = "TestDataProviderCasperMysteryMirror") 
+	public void searchGameCasperMysteryMirror(String strRun, Hashtable<String, String> dataSetValue)
+	{
+		try
+		{
+			loadTestData(strRun, dataSetValue);
+			objUtilities = this.getObjUtilities();
+			objGameView.login();
+			System.out.println("objUtilities.dpString('Game Name')--------------->" +objUtilities.dpString("Game Name"));
+			objWinstar.searchGame(objUtilities.dpString("Game Name"));
+			//objWinstar.clickRealPlay(objUtilities.dpString("Game Name"));
+		}
+		finally
+		{
+			objGameView.logout();
+		}
+	}*/
+	
+	public void swapnil()
+	{
+		
+	}
+	
+	public void mane()
+	{
+		
+	}
+
+
+	@AfterClass
+	public void tearDownTest()
+	{
+		tearDownWebEnvironment();
+		objUtilities = null;
+		objLoginView = null;
+		objWinstar = null;
+	}
+}

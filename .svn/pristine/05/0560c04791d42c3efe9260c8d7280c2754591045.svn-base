@@ -1,0 +1,56 @@
+package com.views.desktopGCasino;
+
+import java.util.Properties;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.pageFactory.desktopGcasino.FLOG;
+import com.pageFactory.desktopGcasino.Footer_PF;
+
+public class FlogView {
+	private Pojo objPojo;
+	private String testDataHolder = "";
+	private Utilities objUtilities;
+	private Properties objConfig;
+	//page object declaration
+	private FLOG objFLOG;
+	
+	
+	public FlogView(Pojo pojo)
+	{
+		this.objPojo = pojo;
+		objUtilities = pojo.getObjUtilities();
+		pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+	}
+	
+	public void username() 
+	{
+		
+		objFLOG = new FLOG(objPojo);
+		
+		objFLOG.forgotten_username();		
+		/*testDataHolder = objConfig.getProperty("web.username");
+		objHomePage.setUserName(testDataHolder);
+		testDataHolder = objConfig.getProperty("web.password");
+		objHomePage.setPassword(testDataHolder);
+		objHomePage.clickSignIn();
+		objHomePage=null;*/
+
+	}
+	public void password() 
+	{
+		
+		objFLOG = new FLOG(objPojo);
+		
+		objFLOG.forgotten_password();;		
+		/*testDataHolder = objConfig.getProperty("web.username");
+		objHomePage.setUserName(testDataHolder);
+		testDataHolder = objConfig.getProperty("web.password");
+		objHomePage.setPassword(testDataHolder);
+		objHomePage.clickSignIn();
+		objHomePage=null;*/
+
+	}
+	
+}

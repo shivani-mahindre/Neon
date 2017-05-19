@@ -1,0 +1,153 @@
+package com.pageFactory.mobileMecca;
+
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+
+public class MyVipPageValidation_MB_PF
+{
+	
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;	
+	String user="";
+	
+	public MyVipPageValidation_MB_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		user=pojo.getUser();
+		System.out.println("Usernmme->>"+user);
+	}
+	
+// PAM credentials
+		private  By PAMUsername =By.xpath("//input[@id='usernameEmail']");
+		private  By PAMpassword =By.xpath("//input[@id='password']");
+		private  By loginSubmitBtn =By.xpath("//button[@id='loginSubmit']");
+		private By searchBox=By.xpath("//input[@id='unifiedSearch']");
+		private By searchButton=By.xpath("//button[@id='unifiedSubmit']");
+		private By vipRatingLabel=By.xpath("//div[@id='ContentMain']/div/div/main/player-summary/div/div[4]/div[1]/div/dl[3]/dt[2]");
+		private By vipRatingTextbox=By.xpath("//div[@id='ContentMain']/div/div/main/player-summary/div/div[4]/div[1]/div/dl[3]/dd[2]/a/span");
+		private By vipRatingInput=By.xpath("//input[@class='editable-vip-rating input-small js-editable-input form-control input-sm']");	
+		private By saveButton=By.xpath("//button[@class='btn btn-primary btn-sm editable-submit']");		
+		private By vipStatusButton=By.xpath("//dl[@class='status detail-list']//dd[1]");		
+		private By vipStatusDropdown=By.xpath("//div[@id='s2id_autogen1']/a");
+		private By currentVipStatus=By.xpath("//div[@id='select2-result-label-3']/span");
+		private By noteInput=By.xpath("//textarea[@id='playerNote']");
+		private By nextButton=By.xpath("//a[@class='btn btn-primary js-button js-submit-form']");
+		private By confirmButton=By.xpath("//a[@class='btn btn-primary js-button js-confirm']");
+		
+	//Front End	
+		 //private By menuButton=By.xpath("//*[@id='header-id']/div[1]/div[2]/div/article/div[2]/button");
+		private By menuButton=By.xpath("//button[@class='js-menu btn toggle-menu-button hidden-desktop']");
+		private By myVipTab=By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'My VIP')]");
+		private By vipMenuTab=By.xpath("//a[@class='menu-btn']");
+		
+		private By vipHomeTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[1]");
+		private By competitionsWinnersHomeTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[2]");
+		private By rewardsOffersTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[3]");
+		private By takeAPeekTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[4]");
+		private By backtoMeccaTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[5]");
+		private By securityTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[6]");
+		private By keepItFunTab=By.xpath("//*[@id='body']/header/div[4]/article/nav[2]/ul/a[7]");
+
+	public void verifyMyVIPtabFE()
+	 {	  
+		 
+		 objWrapperFunctions.waitForMobileElementPresence(menuButton);    
+		 try
+		{
+			Thread.sleep(10000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	 objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(menuButton), false);
+    	 
+		
+		 objUtilities.logReporter("Check My VIP tab'", objWrapperFunctions.verifymobileIsElementPresent(myVipTab), false);
+		 objUtilities.logReporter("Click on 'My VIP tab' Button ", objWrapperFunctions.mobileClick(myVipTab), false);
+		 objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(vipMenuTab), false);
+		 
+		 objUtilities.logReporter("Check vip Home tab'", objWrapperFunctions.verifymobileIsElementPresent(vipHomeTab), false);
+		 objUtilities.logReporter("Check competitionsWinnersHomeTab'", objWrapperFunctions.verifymobileIsElementPresent(competitionsWinnersHomeTab), false);
+		 objUtilities.logReporter("Check rewardsOffersTab'", objWrapperFunctions.verifymobileIsElementPresent(rewardsOffersTab), false);
+		 objUtilities.logReporter("Check takeAPeekTab'", objWrapperFunctions.verifymobileIsElementPresent(takeAPeekTab), false);
+		 objUtilities.logReporter("Check backtoMeccaTab'", objWrapperFunctions.verifymobileIsElementPresent(backtoMeccaTab), false);
+		 objUtilities.logReporter("Check securityTab'", objWrapperFunctions.verifymobileIsElementPresent(securityTab), false);
+		 objUtilities.logReporter("Check keepItFunTab'", objWrapperFunctions.verifymobileIsElementPresent(keepItFunTab), false);
+		 verifyRedirection(vipHomeTab, "vip");
+		
+		objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(vipMenuTab), false);
+		verifyRedirection(competitionsWinnersHomeTab, "competitions");
+		
+		objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(vipMenuTab), false);
+		verifyRedirection(rewardsOffersTab, "vip-rewards");
+		
+		objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(vipMenuTab), false);
+		verifyRedirection(securityTab, "security");
+		
+		objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(vipMenuTab), false);
+		verifyRedirection(keepItFunTab, "keep-it-fun");
+		
+		objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(vipMenuTab), false); 
+		verifyRedirection(takeAPeekTab, "exclusive");	 
+	 }
+	
+	public void verifyVIPstatusBE() 
+	{
+	    objUtilities.logReporter("Enter username :", objWrapperFunctions.setText(PAMUsername, "SQS_RDeote"), false);
+	    objUtilities.logReporter("Enter Password :", objWrapperFunctions.setText(PAMpassword, "C3rg7EDi"), false);
+	    objUtilities.logReporter("Click on 'Login' Button ", objWrapperFunctions.click(loginSubmitBtn), false);
+	    objUtilities.logReporter("Search user ", objWrapperFunctions.setText(searchBox, user), false);
+	    objUtilities.logReporter("Click on search button", objWrapperFunctions.click(searchButton), false);
+	    try
+		{
+			Thread.sleep(20000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    objUtilities.logReporter("Check vip status label'", objWrapperFunctions.verifyIsElementPresent(vipStatusButton), false);
+	    objUtilities.logReporter("Click on 'vip status ' Button ", objWrapperFunctions.click(vipStatusButton), false);	    
+	    objUtilities.logReporter("Click on 'vipStatusDropdown ' Button ", objWrapperFunctions.click(vipStatusDropdown), false);
+	    objUtilities.logReporter("Click on 'currentVipStatus ' Button ", objWrapperFunctions.click(currentVipStatus), false);
+	    if(objWrapperFunctions.checkElementDisplyed(noteInput))
+	    {
+	    objUtilities.logReporter("Enter  note:", objWrapperFunctions.setText(noteInput, "test"), false);
+	    }
+	    objUtilities.logReporter("Click on 'next ' Button ", objWrapperFunctions.click(nextButton), false);
+	    objUtilities.logReporter("Click on 'confirm ' Button ", objWrapperFunctions.click(confirmButton), false);
+	    
+	    try
+		{
+			Thread.sleep(10000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	   
+    }
+	public void verifyRedirection(By locator, String inputText)
+	{	 
+		try
+		{
+			Thread.sleep(40000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		 objUtilities.logReporter(locator.toString(), objWrapperFunctions.mobileClick(locator), false);
+		 objWrapperFunctions.waitForMobileElementPresence(locator);  
+		 objUtilities.logReporter("verify redirection of : "+locator.toString(), objWrapperFunctions.verifyMobileURLContainsText(inputText), false);
+		
+	}
+}

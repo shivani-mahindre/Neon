@@ -1,0 +1,35 @@
+package com.scripts.desktopMecca;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import com.generic.BaseTest;
+import com.generic.Pojo;
+import com.pageFactory.desktopMecca.Registration_PF;
+
+public class Register_MB extends BaseTest 
+{
+
+    private Registration_PF objRegistration;
+    Pojo npojo=new Pojo();
+     
+    @BeforeClass
+    private void setUp()
+    {
+	 initializeWebEnvironment("MB");
+	 objRegistration = new Registration_PF(this);
+	
+    }
+
+    @Test
+    public void registerMecca() 
+    {
+    	objRegistration.registration();
+    }
+
+    @AfterMethod
+    public void afterMethod()
+    {
+    	tearDownWebEnvironment();
+    }
+}

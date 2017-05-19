@@ -1,0 +1,285 @@
+ <!DOCTYPE html> 
+ <head> 
+ 	<link rel='stylesheet' type='text/css' href='./CSS/design.css'> 
+	<script type='text/javascript' src='./jquery/jquery-1.11.3.min.js'></script>	<script src='./js/highcharts.js'></script>	<script src='./js/highcharts-3d.js'></script>	<script src='./js/modules/exporting.js'></script> </head> 
+ <body> 
+ 	<table id='mainTable'> 
+ 		<tbody> 
+ 			<tr id='header'> 
+ 				<td id='headertext'> 
+ 					<b><u> <font color='#004080'>Project Name(SQS Trinity Framework_neon) </font></u></b> 
+ 				</td> 
+ 			</tr> 
+ 			<tr id='container'> 
+ 				<td id='content'> 
+ 					<div id='summary' class='info'> 
+				    	<table style='width: 100%;' align='center' > 
+							<tr > 
+								<td style='width: 70%;' align = 'left' valign='top'> 
+ 									<table style='width: 100%;' class='expandCollpaseTable' align='center'> 
+ 										<tr> 
+ 											<th width='70%' align='center' class='expandCollpase'>Test Case</th> 
+ 											<th width='30%' align='center' class='expandCollpase'>Status</th> 
+ 										</tr> 
+ 									</table> 
+ 									<table style='width: 100%;' class='_customReportTestCaseTable' align='center'> 
+ 										<tr> 
+ 											<td width='70%' align='left' class='expandCollpase'>  <a href='javascript:void(0)' onclick="document.getElementById('neonReg_2017_05_16_120633').style.display='block';document.getElementById('fade').style.display='block'"> neonReg</a></td> 
+ 											<td width='30%' align ='center' class='expandCollpase' id = 'neonReg_2017_05_16_120633 _Status'>  </td> 
+ 										</tr> 
+ 									</table> 
+								</td > 
+								<td style='width: 30%;' align = 'left' valign='top'> 
+									<table width = '100%'><tr><td  align='center'><Select id='GraphType'>										<option selected>3D Column</option> 
+										<option>Basic Column</option> 
+										<option>Pie</option> 
+										<option>Basic Bar</option> 
+									</Select> </td></tr><tr><td> 
+									<div id='_customReportGraph' name='_customReportGraph' style='width: 100%; margin: 0 auto'></div>									</td></tr></table> 
+								</td > 
+							</tr> 
+						</table> 
+ 					</div> 
+ 				</td> 
+ 			</tr> 
+ 		</tbody> 
+ 	</table> 
+ 	<div style='display: none;' id='fade' class='_customReport_black_overlay'> </div> 
+ 	<div style='display: none;' id='neonReg_2017_05_16_120633' class='white_content'> 
+ 		<table id='testNameTable'> 
+ 			<tr> 
+ 				<td align ='center' width ='80%'> neonReg </td> 
+ 				<td align ='right' width ='20%'> <button onclick="document.getElementById('fade').style.display='none';document.getElementById('neonReg_2017_05_16_120633').style.display='none'">Close</button></td> 
+ 			</tr> 
+ 		</table> 
+ 		<div style='width:100%; overflow:auto;height:90%;'> 
+ 		<table id='tableStyle' width='100%' class='chartStyle' > 
+ 			<thead> 
+ 				<tr> 
+ 					<th width='5%' align ='center'  class='expandCollpase'>S.No</th> 
+ 					<th width='60%' align='Center' class='expandCollpase'>Step Description</th> 
+ 					<th width='10%' align ='center'  class='expandCollpase'>Input Value</th> 
+ 					<th width='10%' align ='center'  class='expandCollpase'>Expected Value</th> 
+ 					<th width='10%' align ='center'  class='expandCollpase'>Actual Value</th> 
+ 					<th width='5%' align ='center'  class='expandCollpase'>Status</th> 
+ 				</tr> 
+ 			</thead> 
+ <tr>  <td align ='Center'>1</td> 
+ <td align ='left' >Enter username</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>2</td> 
+ <td align ='left' >Enter password</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>3</td> 
+ <td align ='left' >Click on signBtn</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>4</td> 
+ <td align ='left' >Click on customer tab</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>5</td> 
+ <td align ='left' >Click on registartion tab</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>6</td> 
+ <td align ='left' >Enter username</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>7</td> 
+ <td align ='left' >Click on customer tab</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>8</td> 
+ <td align ='left' >Click on customer tab</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>9</td> 
+ <td align ='left' >Enter forename</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>10</td> 
+ <td align ='left' >Enter DateOfBirth</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>11</td> 
+ <td align ='left' >select gender</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>12</td> 
+ <td align ='left' >Enter street</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>13</td> 
+ <td align ='left' >Enter City</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>14</td> 
+ <td align ='left' >Click on card number</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>15</td> 
+ <td align ='left' >Enter street</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>16</td> 
+ <td align ='left' >Click on Save btn</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>17</td> 
+ <td align ='left' > click on No Match Btn</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>18</td> 
+ <td align ='left' > click on No Match Btn</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>19</td> 
+ <td align ='left' > click on yesBtn</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+  <tr>  <td align ='Center'>20</td> 
+ <td align ='left' > click on ok Btn</td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='left'></td> 
+ <td align ='Center' ><img src='./IMG/logpass.png' alt='PASS' style='height:20px;width:20px;border:none'></img></td> 
+ </tr> 
+ <script> document.getElementById('neonReg_2017_05_16_120633 _Status').innerHTML ='<span> <font color=#7BB661><b>Pass</b> </font></span>'</script>
+</table>
+</div>
+</div>
+<input type='hidden' name ='_customReportPassCount' id='_customReportPassCount' value='1'>
+<input type='hidden' name ='_customReportFailCount' id='_customReportFailCount' value='0'>
+ <script type='text/javascript'> 
+ $(function () { 
+ jQuery(document).ready(function(){ 
+ 	  var passCount = 1; 
+ 	  var failCount = 0; 
+ 	  var chart = new Highcharts.Chart({ 
+ 	 chart: {renderTo: '_customReportGraph', margin: 75, options3d: {enabled: true,alpha: 20,beta: 33,depth: 50,viewDistance:25}}, 
+ 		title: {text: 'Execution Status'}, 
+ 		subtitle: {text: ''}, 
+ 		credits: {enabled: false}, 
+ 		xAxis: {categories: ['']}, 
+ 		yAxis: {title: {text: ''}}, 
+ 		plotOptions: {column: {depth: 25}}, 
+ 		series: [{type: 'column', name: 'Pass', color: '#33CC33', data: [['Pass', passCount ]]}, 
+ 					{type: 'column', name: 'Fail', color: '#CC0000', data: [['Fail', failCount ]] }] 
+ 		}); 
+   $('#GraphType').change(function() { 
+ 	 var graphType = $('#GraphType option:selected').text(); 
+     if(graphType == '3D Column') 
+ 	{ 
+ 	  var chart = new Highcharts.Chart({ 
+ 	 chart: {renderTo: '_customReportGraph', margin: 75, options3d: {enabled: true,alpha: 20,beta: 33,depth: 50,viewDistance:25}}, 
+ 		title: {text: 'Execution Status'}, 
+ 		subtitle: {text: ''}, 
+ 		credits: {enabled: false}, 
+ 		xAxis: {categories: ['']}, 
+ 		yAxis: {title: {text: ''}}, 
+ 		plotOptions: {column: {depth: 25}}, 
+ 		series: [{type: 'column', name: 'Pass', color: '#33CC33', data: [['Pass', passCount ]]}, 
+ 					{type: 'column', name: 'Fail', color: '#CC0000', data: [['Fail', failCount ]] }] 
+ 		}); 
+  	} 
+ 	if(graphType == 'Pie') 
+ 	{ 
+ 	     $('#_customReportGraph').highcharts({ 
+             chart: {plotBackgroundColor: null,plotBorderWidth: null,plotShadow: false}, 
+             title: {    text: 'Execution Status'}, 
+ 			credits: {enabled: false}, 
+             tooltip: {pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'}, 
+             plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',dataLabels: {enabled: true},showInLegend: true}}, 
+             series: [{type: 'pie',data: [['Pass', passCount ],['Fail', failCount ],]}] 
+         }); 
+ 	}  
+ 	if(graphType == 'Basic Column') 
+ 	{ 
+ 	$('#_customReportGraph').highcharts({ 
+         chart: {type: 'column'}, 
+         title: {text: 'Execution Status'}, 
+ 		credits: {enabled: false}, 
+         xAxis: {categories: ['']}, 
+         yAxis: {title: {text: ''}}, 
+ 		series: [{type: 'column', name: 'Pass', color: '#33CC33', data: [['Pass', passCount ]]}, 
+ 					{type: 'column', name: 'Fail', color: '#CC0000', data: [['Fail', failCount ]] }]  
+     }); 
+ 	} 
+ 	if(graphType == 'Basic Bar') 
+ 	{ 
+ 	$('#_customReportGraph').highcharts({ 
+         chart: { type: 'bar'}, 
+         title: {text: 'Execution Status'}, 
+ 		credits: {enabled: false}, 
+         xAxis: {categories: ['']}, 
+         yAxis: {title: {text: ''}}, 
+        series: [{type: 'column', name: 'Pass', color: '#33CC33', data: [['Pass', passCount ]]}, 
+ 					{type: 'column', name: 'Fail', color: '#CC0000', data: [['Fail', failCount ]] }] 
+     }); 
+ 	} 
+   }); 
+ }); 
+ }); 
+ </script> 
+ </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "features" : [ {
+    "title" : "Without feature",
+    "statistic" : {
+      "total" : 1,
+      "passed" : 1,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "stories" : [ {
+      "uid" : "5f3b024b0da60efe9ecb322fd34a2604",
+      "title" : "Without story",
+      "statistic" : {
+        "total" : 1,
+        "passed" : 1,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 0
+      },
+      "testCases" : [ {
+        "uid" : "2d029fed61f48a17",
+        "name" : "loginMobile",
+        "title" : "Android App Download & instructions Validation ",
+        "time" : {
+          "start" : 1482321388472,
+          "stop" : 1482321436721,
+          "duration" : 48249
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

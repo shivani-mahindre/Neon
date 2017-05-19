@@ -1,0 +1,93 @@
+package com.pageFactory.desktopMecca;
+
+import java.awt.print.Printable;
+import java.util.Random;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.server.handler.FindElement;
+import org.testng.annotations.Test;
+
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.itextpdf.text.log.SysoCounter;
+
+public class Deposit_CreditCard_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+
+	public Deposit_CreditCard_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+
+	// buttons
+	// select[@id='regGender']
+	private By depositMenu = By.xpath("//a[@class='btn btn-transparent control-panel-button ']");
+	private By iAgreeBtn = By.xpath("//button[@id='fundsDisclaimerBtn'][contains(.,'I agree')]");
+	private By depositTen = By.xpath("//label//input[@id='predefinedValue-10']/../span[contains(.,'10')]");
+	private By submitBtn = By.xpath("//input[@id='paymentFormSubmitBtn']");
+
+	private By paymentMethodContainerFrame = By.cssSelector("iframe#cashierPaymentIframe.payment-iframe");
+	private By cardMethodDropDown = By.xpath("//b[@class='button']");
+	private By selectCreditCardOption = By.xpath("//span[@class='ico cc_card']");
+	private By selectPaypalOption = By.xpath("//span[@class='ico apmgw_expresscheckout']");
+	private By inputCardNumber = By.xpath("//input[@id='cc_card_number']");
+	private By selectExpMonth = By.xpath("//select[@id='cc_exp_month']");
+	private By selectExpYear = By.xpath("//select[@id='cc_exp_year']");
+	private By inputCVV2 = By.xpath("//input[@id='cc_cvv2']");
+	private By depositButton = By.xpath("//input[@id='continueButton']");
+
+	private By depositSuccessMsg = By.xpath("//h2[contains(.,'Deposit Success')]");
+	private By verifyAmt = By.xpath("//tr[1]//td[1]");
+
+	// String value= objWrapperFunctions.getAttributeValue(verifyAmt,"10");
+
+	public void depositCC()
+	{
+
+		objUtilities.logReporter("Click on 'Deposit' menu ", objWrapperFunctions.click(depositMenu), false);
+		try
+		{
+			Thread.sleep(10000);
+			if (objWrapperFunctions.verifyIsElementPresent(iAgreeBtn))
+			{
+				System.out.println("i agree button found");
+				objUtilities.logReporter("Click on 'i agree' button ", objWrapperFunctions.click(iAgreeBtn), false);
+			} else
+			{
+				System.out.println("i agree button not found");
+			}
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		objUtilities.logReporter("Click on '$10' button ", objWrapperFunctions.click(depositTen), false);
+		objUtilities.logReporter("Click on 'submit' button ", objWrapperFunctions.click(submitBtn), false);
+
+		objWrapperFunctions.switchToFrameUsingIframe_Element(paymentMethodContainerFrame);
+
+		objWrapperFunctions.waitForElementPresence(cardMethodDropDown);
+		objUtilities.logReporter("Click on 'Choose payment method'", objWrapperFunctions.click(cardMethodDropDown), false);
+		objUtilities.logReporter("Click on 'Selected Credit card option'", objWrapperFunctions.click(selectCreditCardOption), false);
+
+		objUtilities.logReporter("Enter Card Number", objWrapperFunctions.setText(inputCardNumber, "4000065919262217"), false);
+		objUtilities.logReporter("Select expiry Month ", objWrapperFunctions.selectDropDownByRandomIndex(selectExpMonth, 12, 1), false);
+		objUtilities.logReporter("Select expiry year", objWrapperFunctions.selectDropDownByRandomIndex(selectExpYear, 50, 1), false);
+		objWrapperFunctions.waitForElementPresence(inputCVV2);
+		objUtilities.logReporter("Enter CVV2 number", objWrapperFunctions.setText(inputCVV2, "242"), false);
+		objUtilities.logReporter("Click on 'Deposit' button ", objWrapperFunctions.click(depositButton), false);
+		objWrapperFunctions.waitForElementPresence(depositSuccessMsg);
+		objUtilities.logReporter("Verify Succes Message", objWrapperFunctions.verifyIsElementPresent(depositSuccessMsg), false);
+		//String value = objWrapperFunctions.getText_textBy(verifyAmt, "$10");
+		// System.out.println("calue"+value);
+
+	}
+
+}

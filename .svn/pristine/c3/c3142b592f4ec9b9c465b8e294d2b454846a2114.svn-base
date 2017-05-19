@@ -1,0 +1,89 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class Deposit_Skrill_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	WebDriver driver;
+
+	public Deposit_Skrill_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+	}
+
+	// buttons
+	// select[@id='regGender']
+	private By depositMenu = By.xpath("//a[@class='btn btn-transparent control-panel-button ']");
+	private By iAgreeBtn = By.xpath("//button[@id='fundsDisclaimerBtn'][contains(.,'I agree')]");
+
+	private By depositTen = By.xpath("//label//input[@id='predefinedValue-10']/../span[contains(.,'10')]");
+	private By submitBtn = By.xpath("//input[contains(@id,'FormSubmitBtn')]");
+
+	private By paymentMethodContainerFrame = By.cssSelector("iframe#cashierPaymentIframe.payment-iframe");
+	private By cardMethodDropDown = By.xpath("//div[@data-pms-type='dropdown']");
+	private By sellectSkrillOption = By.xpath("//option[contains(.,'Skrill')]");
+	private By Skrill_Email = By.xpath("//input[@id='wd_mb_email']");
+	private By Skrill_Password = By.xpath("//input[@id='password']");
+	private By Skrill_Login = By.xpath("//input[@id='login_btn']");
+	private By payNowBtn = By.xpath("//input[@id='pay_button']");
+
+	private By depositButton = By.xpath("//input[@id='continueButton']");
+
+	// String value= objWrapperFunctions.getAttributeValue(verifyAmt,"10");
+
+	public void depositSkrill()
+	{
+		objUtilities.logReporter("Click on 'Deposit' menu ", objWrapperFunctions.mobileClick(depositMenu), false);
+
+		try
+		{
+			try
+			{
+				Thread.sleep(10000);
+				if (objWrapperFunctions.verifymobileIsElementPresent(iAgreeBtn) == false)
+				{
+					System.out.println("'I Agree' button not found");
+				} else
+				{
+					System.out.println("i agree button found");
+					objUtilities.logReporter("Click on 'I Agree' button", objWrapperFunctions.mobileClick(iAgreeBtn), false);
+
+				}
+			} catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+
+			objUtilities.logReporter("Click on '$10' button ", objWrapperFunctions.mobileClick(depositTen), false);
+			objUtilities.logReporter("Click on 'submit' button ", objWrapperFunctions.mobileClick(submitBtn), false);
+
+			objWrapperFunctions.switchToMobileFrameUsingIframe_Element(paymentMethodContainerFrame);
+
+			objUtilities.logReporter("Click on 'Choose payment method'", objWrapperFunctions.mobileClick(cardMethodDropDown), false);
+			objUtilities.logReporter("Click on 'Selected Credit card option'", objWrapperFunctions.mobileClick(sellectSkrillOption), false);
+			if (objWrapperFunctions.verifymobileIsElementPresent(Skrill_Email))
+			{
+				objUtilities.logReporter("Enter Email Id", objWrapperFunctions.mobileSetText(Skrill_Email, "jonathanl@safecharge.com"), false);
+			}
+			objUtilities.logReporter("Click on 'Deposit' button ", objWrapperFunctions.mobileClick(depositButton), false);
+			objWrapperFunctions.switchMobileToChildWindow();
+			objUtilities.logReporter("Enter password", objWrapperFunctions.mobileSetText(Skrill_Password, "6tg7q5hnr1"), false);
+			objUtilities.logReporter("Click on 'login' button ", objWrapperFunctions.mobileClick(Skrill_Login), false);
+			objUtilities.logReporter("Click on 'pay Now' button ", objWrapperFunctions.mobileClick(payNowBtn), false);
+			objUtilities.logReporter("Click on 'Continue' button ", objWrapperFunctions.mobileClick(depositButton), false);
+			objWrapperFunctions.switchMobileMainWindow();
+
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+}

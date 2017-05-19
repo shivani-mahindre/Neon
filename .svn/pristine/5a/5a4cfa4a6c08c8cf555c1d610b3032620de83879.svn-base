@@ -1,0 +1,117 @@
+package com.pageFactory.mobileMecca;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.generic.Pojo;
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+
+public class Registration_PF {
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	private Properties objConfig;
+	private String userName;
+	public Registration_PF(Pojo pojo)
+	{
+		objUtilities = pojo.getObjUtilities();
+		objWrapperFunctions = pojo.getObjWrapperFunctions();
+		objConfig = pojo.getObjConfig();
+		userName=pojo.getUser();
+		
+	}
+
+	// buttons
+	//select[@id='regGender']
+	  private  By btnJoin = By.xpath(".//*[@id='header-id']/div[1]/div[1]/div/article/div[3]");
+	  private  By btnNext = By.xpath("//button[@id='isResMemberSubmit']"); 
+	  
+	  
+	  private  By selectTitle = By.xpath("//select[@name='vm.Title']"); 
+	  private  By inputFirstname = By.xpath("//input[@id='regFirstName']");
+	  private  By inputLasttname = By.xpath("//input[@id='regLastName']");
+	  private  By selectDobDay = By.xpath("//select[@id='regDobDay']");
+	  private  By selectDobMon = By.xpath("//select[@id='regDobMonth']");
+	  private  By selectDobYear = By.xpath("//select[@id='regDobYear']");
+	  
+	  private By selectGender=By.xpath("//select[@id='regGender']");
+	  private By email_field=By.xpath("//input[@id='regEmail']");
+	  private By country =By.xpath("//select[@id='regCountry']");
+		 
+	  private By enter_manually =By.xpath("//button[contains(.,'Enter Manually')]");
+		 
+	 private By address1 =By.xpath("//input[@id='regAddressLine1']");
+	 private By address2 =By.xpath("//input[@id='regAddressLine2']");
+	 private By town =By.xpath("//input[@id='regTown']");
+	
+	 private By post_code =By.xpath("//input[@id='regPostcode']");
+	 private By county =By.xpath("//input[@id='regCounty']");
+	 private By telephone =By.xpath("//input[@id='regTelephone']");
+	 private By username =By.xpath("//input[@id='regUsername']");
+	 private By password =By.xpath("//input[@id='regPassword']");
+	 private By confirm_passwd =By.xpath("//input[@id='regConfirmPassword']");
+	 private By iAgreechk =By.xpath("//input[@id='regTermsAndConditionsAgreed']");
+	 private By registerButton =By.xpath("//button[@id='registerButton']");
+	 private By setDepositLimitNO =By.xpath("//input[@id='flp-setLimits-no']");
+	 private By continueButton =By.xpath("//button[contains(text(),'Continue')]");
+	 private By successmsg =By.xpath("//h1[contains(text(),'SUCCESS')]");
+	 
+	
+	  
+	  public void registration()
+	  {
+	      System.out.println("usenrame from config"+userName);
+		  objUtilities.logReporter("Click 'Join'.", objWrapperFunctions.mobileClick(btnJoin), false);
+		  
+		  objUtilities.logReporter("Click 'Next'.", objWrapperFunctions.mobileClick(btnNext), false);
+		  
+		  objUtilities.logReporter("Click 'Select Title'.", objWrapperFunctions.mobileSelectDropDownByRandomIndex(selectTitle,4,0),false);
+		  objUtilities.logReporter("Enter first name", objWrapperFunctions.mobileSetText(inputFirstname, "testFirst"), false);
+		  objUtilities.logReporter("Enter last name", objWrapperFunctions.mobileSetText(inputLasttname, "testLast"), false);
+		  objUtilities.logReporter("Select DOB day", objWrapperFunctions.mobileSelectDropDownByIndex(selectDobDay, 12), false);
+		  objUtilities.logReporter("Select DOB day", objWrapperFunctions.mobileSelectDropDownByIndex(selectDobDay, 20), false);
+		  objUtilities.logReporter("Select DOB day", objWrapperFunctions.mobileSelectDropDownByIndex(selectDobDay, 30), false);
+		  
+		  objUtilities.logReporter("Select DOB Month", objWrapperFunctions.mobileSelectDropDownByRandomIndex(selectDobMon,12,1), false);
+		  objUtilities.logReporter("Select DOB year", objWrapperFunctions.mobileSelectDropDownByRandomIndex(selectDobYear,50,1), false);
+		  objUtilities.logReporter("Select Gender", objWrapperFunctions.mobileSelectDropDownByRandomIndex(selectGender, 2,1), false);
+		 
+		 String email="np01"+objWrapperFunctions.getRandBet(100000, 1000)+"@hotmail.com"; 
+		  
+		  objUtilities.logReporter("Enter Email id", objWrapperFunctions.mobileSetText(email_field, email), false);
+		  objUtilities.logReporter("Country", objWrapperFunctions.mobileSelectDropDownByIndex(country, 0), false);
+		  objUtilities.logReporter("mobileClick enter manually", objWrapperFunctions.mobileClick(enter_manually), false);
+		  
+		  objUtilities.logReporter("address1", objWrapperFunctions.mobileSetText(address1, "BARING GOULD WAY"), false);
+		  objUtilities.logReporter("address2", objWrapperFunctions.mobileSetText(address2, "BARING GOULD WAY"), false);
+		  objUtilities.logReporter("town", objWrapperFunctions.mobileSetText(town, "EGHAM"), false);
+		  objUtilities.logReporter("Enter Post code", objWrapperFunctions.mobileSetText(post_code, "PA756PB"), false);
+		  objUtilities.logReporter("county", objWrapperFunctions.mobileSetText(county, "SURREY"), false);
+		  objUtilities.logReporter("telephone", objWrapperFunctions.mobileSetText(telephone, "0123456789"), false);
+		
+		  
+		  objUtilities.logReporter("username", objWrapperFunctions.mobileSetText(username, userName), false);
+		 // pojo.setUser(userName);
+		  
+		  objUtilities.logReporter("password", objWrapperFunctions.mobileSetText(password, "test123"), false);
+		  objUtilities.logReporter("confirm password", objWrapperFunctions.mobileSetText(confirm_passwd, "test123"), false);
+		  objUtilities.logReporter("check box check", objWrapperFunctions.mobileClick(iAgreechk), false);
+		  objUtilities.logReporter("mobileClick register", objWrapperFunctions.mobileClick(registerButton), false);
+		  try
+		{
+			Thread.sleep(6000);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  objUtilities.logReporter("mobileClick set deposit limit NO", objWrapperFunctions.mobileClick(setDepositLimitNO), false);
+		  objUtilities.logReporter("mobileClick continue", objWrapperFunctions.mobileClick(continueButton), false);
+		  objUtilities.logReporter("verify success msg", objWrapperFunctions.verifymobileIsElementPresent(successmsg), false);
+				  
+	  }
+	  
+	
+}

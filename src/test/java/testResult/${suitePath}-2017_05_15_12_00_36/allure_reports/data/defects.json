@@ -1,0 +1,25 @@
+{
+  "defectsList" : [ {
+    "title" : "Test defects",
+    "status" : "BROKEN",
+    "defects" : [ {
+      "uid" : "a42a90c69a158743",
+      "failure" : {
+        "message" : "NullPointerException: null",
+        "stackTrace" : null
+      },
+      "testCases" : [ {
+        "uid" : "2659d0afc6497405",
+        "name" : "RegisterAndDeposit",
+        "title" : "Register and deposit",
+        "time" : {
+          "start" : 1494849646390,
+          "stop" : 1494849727046,
+          "duration" : 80656
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,427 @@
+package com.pageFactory.mobileMecca;
+
+import org.openqa.selenium.By;
+
+import com.generic.Utilities;
+import com.generic.WrapperFunctions;
+import com.generic.Pojo;
+
+public class PageValidation_MB_PF
+{
+	private Utilities objUtilities;
+	private WrapperFunctions objWrapperFunctions;
+	
+	//constructor
+		public PageValidation_MB_PF(Pojo pojo)
+		{
+			objUtilities = pojo.getObjUtilities();
+			objWrapperFunctions = pojo.getObjWrapperFunctions();
+		}
+		
+		  private  By TabSlider = By.xpath("//div[@class='cycle2-engine cycle-slideshow']");		
+		  private By homePageLogo=By.xpath("//div[@class='header-logo']");	
+		  private By homebtn=By.xpath("//button[@class='js-menu btn toggle-menu-button hidden-desktop']");
+		  private By btnJoin=By.xpath("//p[contains(.,'Join')]");
+		  private  By btnLogin = By.xpath("//p[contains(.,'Login')]");
+		  private  By btnSignIn = By.xpath("//button[contains(.,'Sign in')]");
+		  private  By btnJoinNow = By.xpath("//button[contains(.,'Join Now')]");
+		  private  By searchBtn = By.xpath("//*[@id='header-id']/div[2]/article/div/div/div[1]");
+		  private  By bingoLink = By.xpath("//div[@class='title-label-link']//a[@href='/bingo']");
+		  private  By slotsNgamesLink = By.xpath("//div[@class='title-label-link']//a[@href='/games']");
+		  private  By clubLabel = By.xpath("//div[@class='title-label']");	  
+		  
+		  
+		  private  By accountTab = By.xpath("//a[@href='/User/Profile/Edit']"); 
+		  private  By depositTab = By.xpath("//a[@href='/Deposit']");
+		  									
+		  private  By favouritetTab = By.xpath("//*[@id='header-id']/div[1]/div[2]/div/article/div[2]/div/div[2]/button"); 
+		  private  By playpointsTab = By.xpath("//*[@id='header-id']/div[1]/div[2]/div/article/div[2]/div/div[3]/button");
+		  //private  By searchBtn = By.xpath("//*[@id='header-id']/div[3]/article/div/div/div[1]/button");
+		 
+		  //Bingo
+		  private By homebtn_bingo=By.xpath("//div[@class='menubar-item-target-wrapper']//a[contains(.,'Bingo')]"); 
+		  private By homebtn_bingo_PlusBtn=By.xpath("//div[@class='menubar-item-target-wrapper']//a[@href='#submenu-0-1']");
+		 
+		  private By homebtn_bingo_BingoSchedule=By.xpath(".//*[@id='submenu-0-1']//a[contains(.,'Bingo Schedule')]");
+		  private By homebtn_bingo_BingoSchedule_BingoHeader=By.xpath("//h1[contains(.,'Bingo')]");
+		  private By homebtn_bingo_BingoSchedule_LobbyTab=By.xpath("//a[contains(.,'Lobby')]");
+		  private By homebtn_bingo_BingoSchedule_ScheduleTab=By.xpath("//div[@class='custom-tabs']//a[contains(.,'Schedule')]");
+		  private By homebtn_bingo_BingoSchedule_ScheduleTab_DaySelect=By.xpath("//select//option[@value='Today']");
+		 // private By homebtn_bingo_BingoSchedule_ScheduleTab_TimeSelect=By.xpath("//select//option[@value='Today']");
+		  
+		  
+		  private By homebtn_bingo_BingoRooms=By.xpath(".//*[@id='submenu-0-1']//a[contains(.,'Bingo Rooms')]");
+		  private By homebtn_bingo_BingoRooms_header=By.xpath("//h1[contains(.,'Bingo Rooms')]");
+		 
+		  private By homebtn_bingo_BingoFeatures=By.xpath(".//*[@id='submenu-0-1']//a[contains(.,'Bingo Features')]");
+		  private By homebtn_bingo_BingoFeatures_header=By.xpath("//h1[contains(.,'Bingo Features')]");		  
+		 
+		  private By homebtn_bingo_MeccaPromise=By.xpath(".//*[@id='submenu-0-1']//a[contains(.,'Mecca Promise')]");
+		  private By homebtn_bingo_MeccaPromise_header=By.xpath("//div[@class='orchard-content-header']");
+		  
+		  
+		  //Slots
+		  private By homebtn_slots=By.xpath("//div[@class='menubar-item-target-wrapper']//a[contains(.,'Slots')]");
+		  private By homebtn_slots_plusBtn=By.xpath("//div[@class='menubar-item-target-wrapper']//a[@href='#submenu-0-2']");
+		  
+		  private By homebtn_slots_SlotsnGameHome=By.xpath(".//*[@id='submenu-0-2']//a[contains(.,'Slots And Games Home')]");
+		  private By homebtn_slots_SlotsnGameHome_Header=By.xpath("//h1[contains(.,'Slots & Games')]");
+		  
+		  private By homebtn_slots_VeiwAllGames=By.xpath(".//*[@id='submenu-0-2']//a[contains(.,'View All Games')]");
+		  private By homebtn_slots_VeiwAllGames_Header=By.xpath("//h1[contains(.,'All Slots And Games')]");
+		  
+		  private By homebtn_slots_JackPots=By.xpath(".//*[@id='submenu-0-2']//a[contains(.,'Jackpots')]");
+		  private By homebtn_slots_JackPots_header=By.xpath("//h1[contains(.,'Jackpots')]");
+		  
+		  
+		  
+		  //Apps
+		  private By homebtn_apps=By.xpath("//a[contains(.,'Apps')]");
+		  private By homebtn_apps_header=By.xpath("//h1[contains(.,'Mobile Apps & Games')]");
+		  
+		  //Instant Win
+		  private By homebtn_instantWin=By.xpath("//a[contains(.,'Instant Win')]");
+		  private By homebtn_instantWin_header=By.xpath("//h1[contains(.,'Instant Win')]");
+		  
+		 //Promotion  
+		  private By homebtn_promotions=By.xpath("//div[@class='menubar-item-target-wrapper']//a[contains(.,'Promotions')]");
+		  private By homebtn_promotions_plusBtn=By.xpath("//div[@class='menubar-item-target-wrapper']//a[@href='#submenu-0-5']");
+		  
+		  private By homebtn_promotions_LatestOnlinePromotions=By.xpath("//a[contains(.,'Latest Online Promotions')]");
+		  private By homebtn_promotions_LatestOnlinePromotions_Header=By.xpath("//h1[contains(.,'Promotions')]");
+		  private By homebtn_promotions_LatestOnlinePromotions_LabelType=By.xpath("//label[contains(.,'Type:')]");
+		  private By homebtn_promotions_LatestOnlinePromotions_LabelSort=By.xpath("//label[contains(.,'Sort:')]");
+		  
+		  private By homebtn_promotions_PlayPoints=By.xpath("//a[contains(.,'Play Points')]");
+		  private By homebtn_promotions_PlayPoints_promiseInfo=By.xpath("//div[@class='layout-html promise-info']");
+		  		  
+		  private By homebtn_promotions_LastWeekPromotion=By.xpath("//a[contains(.,'Last Week')]");
+		  private By homebtn_promotions_LastWeekPromotion_Header=By.xpath("//h1[contains(.,'Last Week')]");
+		  
+		  //Clubs
+		  private By homebtn_clubs=By.xpath("//div[@class='menubar-item-target-wrapper']//a[contains(.,'Clubs')]");
+		  private By homebtn_clubs_plusBtn=By.xpath("//div[@class='menubar-item-target-wrapper']//a[@href='#submenu-0-6']");
+		  private By homebtn_clubs_JoinYourLocalClub=By.xpath("//a[contains(.,'Join Your Local Club')]");
+		  
+		  private  By clubsTab_ChooseYourClubDropDown = By.xpath("//select[@id='club-select']");
+		  private  By clubsTab_AberDeenClub = By.xpath("//option[contains(.,'Mecca Aberdeen')]");
+		  private  By clubsTab_AndoverClub = By.xpath("//option[contains(.,'Mecca Andover')]");
+		  private  By Title = By.xpath("//select[@id='join-club-title']");
+		  private  By Title_Mr = By.xpath("//select[@id='join-club-title']//option[@value='Mr']");
+		  private  By Title_Mrs = By.xpath("//select[@id='join-club-title']//option[contains(.,'Mrs')]");
+		  private  By Title_Miss = By.xpath("//select[@id='join-club-title']//option[@value='Miss']");
+		  private  By Title_Ms = By.xpath("//select[@id='join-club-title']//option[@value='Ms']");
+		  private  By LastName = By.xpath("//input[@id='join-club-last-name']");
+		  private  By FirstName = By.xpath("//input[@id='join-club-first-name']");
+		  private  By DOB_day = By.xpath("//select[@id='dob-select-day']");
+		  private  By DOB_day_two = By.xpath("//select[@id='dob-select-day']//option[@value='2']");
+		  
+		  private  By DOB_month = By.xpath("//select[@id='dob-select-month']");
+		  private  By DOB_month_two = By.xpath("//select[@id='dob-select-month']//option[@value='2']");
+		  
+		  private  By DOB_year = By.xpath("//select[@id='dob-select-year']");
+		  private  By DOB_year_eighty = By.xpath("//select[@id='dob-select-year']//option[@value='1997']");
+		  
+		  private  By postCode = By.xpath("//input[@id='lookupPostcode']");
+		  
+		  private  By houseNo = By.xpath("//input[@id='regAddressLine1']");
+		  private  By streetAdress = By.xpath("//input[@id='regAddressLine2']");
+		  private  By town = By.xpath("//input[@id='regTown']");
+		  private  By email = By.xpath("//input[@id='join-club-email']");
+		  private  By confirmEmail = By.xpath("//input[@id='join-club-confirm-email']");
+		  private  By mobileNumber = By.xpath("//input[@id='join-club-mobile-number']");
+		  private  By HomeMobileNumber = By.xpath("//input[@id='join-club-home-number']");
+		  private  By iAmAgedCheckBox = By.xpath(".//*[@id='join-club-tac-accept']");
+		  private  By joinClubBtn = By.xpath("//button[@id='SubmitJoinLocalClubForm']");
+		  	  
+		  private  By clubsTab_ClubA2ZTab = By.xpath("//a[contains(.,'Clubs A - Z')]");
+		  private  By clubsTab_MeccaGiftVoucherTab = By.xpath("//a[contains(.,'Mecca Gift Vouchers')]");
+		  private  By clubsTab_TalkToUstab = By.xpath("//ul[@class='menubar-list-centered']//a[contains(.,'Talk to us')]");
+		  private  By clubsTab_payInCashTab = By.xpath("//a[contains(.,'Pay In & Cash Out In Club')]");
+		  private  By clubsTab_NewMaxTab = By.xpath("//a[contains(.,'New MAX')]");
+		  	  
+		  
+		  //Community
+		  private By homebtn_community=By.xpath("//div[@class='menubar-item-target-wrapper']//a[contains(.,'Community')]");
+		  private By homebtn_community_plusBtn=By.xpath("//div[@class='menubar-item-target-wrapper']//a[@href='#submenu-0-8']");
+		  private  By CommunityTab_CMOfTheMonthTab= By.xpath("//a[contains(.,'CM of the Month')]");
+		  private  By CommunityTab_CMOfTheMonthHeader= By.xpath("//h1[contains(.,'Chat Moderators')]");
+		  
+		  private  By CommunityTab_WinnersTab= By.xpath("//a[@href='/community/winners']");
+		  private  By CommunityTab_WinnersHeader= By.xpath("//h1[contains(.,'Our Fab Winners')]");
+		  
+		  private  By CommunityTab_RoomieOfTheWeekTab= By.xpath("//a[contains(.,'Roomie Of The Week')]");
+		  
+		  private  By CommunityTab_RankCaresTab= By.xpath("//a[contains(.,'Rank Cares')]");	 
+		  private  By CommunityTab_RankCaresHeader= By.xpath("//h1[contains(.,'Rank Cares')]");
+		  
+		  private  By CommunityTab_TellMeccaTab= By.xpath("//a[contains(.,'Tell Mecca')]");
+		  private  By CommunityTab_helpCenterTab= By.xpath("//ul[@class='menubar-list-centered']//a[contains(.,'Help Centre')]");
+		  
+		  
+		//VIP Tab  
+		  	private By menuButton=By.xpath("//button[@class='js-menu btn toggle-menu-button toggle-item-button']");
+			private By vipTab=By.xpath("//a[@class='menubar-item-target collapsed js-menubar-item-target'][contains(.,'VIP')]");
+			private By vipTreatsLabel=By.xpath("//h2[contains(.,'VIP Treats')]"); 
+			private By expandButton=By.xpath("//span[contains(.,'See what you can get!')]");
+			private By collapsedButton=By.xpath("//span[contains(.,'Hide what you can get!')]");
+			private By bronzeButton=By.xpath("//div[@id='vip-benefits-slider']/div/div[1]/ul/li[1]"); 
+			private By bronzeText=By.xpath("//div[@id='vip-benefits-slider-bronze']/h3");
+			private By silverButton=By.xpath("//div[@id='vip-benefits-slider']/div/div[1]/ul/li[2]");
+			private By silverText=By.xpath("//div[@id='vip-benefits-slider-silver']/h3");
+			private By goldButton=By.xpath("//div[@id='vip-benefits-slider']/div/div[1]/ul/li[3]");
+			private By goldText=By.xpath("//div[@id='vip-benefits-slider-gold']/h3");
+			private By platinumButton=By.xpath("//div[@id='vip-benefits-slider']/div/div[1]/ul/li[4]");
+			private By platinumText=By.xpath("//div[@id='vip-benefits-slider-platinum']/h3");
+			private By vipPromosLabel=By.xpath("//h2[contains(.,'VIP Promos')]"); 
+			private By showMoreButton=By.xpath("//span[contains(.,'Show more')]");
+			private By showLessButton=By.xpath("//span[contains(.,'Show less')]");
+			private By termsAndCondition=By.xpath("//*[@id='body']/div[4]/div/div[1]/div/div[2]/div/div/div/div/div/div[4]/div[2]/div/div/p");
+			private By termsAndConditionLabel=By.xpath("//span[contains(.,'Terms and Conditions:')]");
+		  
+		// Home page validations without login
+		  public void PageValidationWithoutLogin()
+		  {
+
+			  objWrapperFunctions.waitForMobileElementPresence(homePageLogo);      
+			  objUtilities.logReporter("Check 'Join' button presence", objWrapperFunctions.verifymobileIsElementPresent(btnJoin), false);
+			  objUtilities.logReporter("Check 'login' button presence", objWrapperFunctions.verifymobileIsElementPresent(btnLogin), false);
+			  objUtilities.logReporter("Click 'Login' button", objWrapperFunctions.mobileClick(btnLogin), false);
+			  
+			  objUtilities.logReporter("Check 'Sign In' button presence", objWrapperFunctions.verifymobileIsElementPresent(btnSignIn), false);
+			  objUtilities.logReporter("Check 'Join Now' button presence", objWrapperFunctions.verifymobileIsElementPresent(btnJoinNow), false);
+			  
+			  objUtilities.logReporter("Check 'searchBtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(searchBtn), false);
+			  objUtilities.logReporter("Check 'bingo link'  presence", objWrapperFunctions.verifymobileIsElementPresent(bingoLink), false);
+			  objUtilities.logReporter("Check 'slot and games link'  presence", objWrapperFunctions.verifymobileIsElementPresent(slotsNgamesLink), false);
+			  objUtilities.logReporter("Check 'slot and games link'  presence", objWrapperFunctions.verifymobileIsElementPresent(clubLabel), false); 
+			  
+		  }
+		// VIP page validations without login
+		  public void vipWithoutLogin()
+	         {
+			  objWrapperFunctions.waitForMobileElementPresence(menuButton);      
+	        	 objUtilities.logReporter("Click 'Menu' button", objWrapperFunctions.mobileClick(menuButton), false);
+	        	 
+	        	 objUtilities.logReporter("Click 'VIP' Tab", objWrapperFunctions.mobileClick(vipTab), false);
+	        	 objUtilities.logReporter("Check 'VIP Treats' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(vipTreatsLabel), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'expandButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(expandButton), false);
+	        	 objUtilities.logReporter("Click 'expandButton' Tab", objWrapperFunctions.mobileClick(expandButton), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'bronzeButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(bronzeButton), false);
+	        	 //objUtilities.logReporter("Click 'bronzeButton' Tab", objWrapperFunctions.mobileClick(bronzeButton), false);
+	        	 objUtilities.logReporter("Check 'bronze' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(bronzeText), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'silverButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(silverButton), false);
+	        	 objUtilities.logReporter("Click 'silverButton' Tab", objWrapperFunctions.mobileClick(silverButton), false);
+	        	 objUtilities.logReporter("Check 'silver' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(silverText), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'goldButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(goldButton), false);
+	        	 objUtilities.logReporter("Click 'goldButton' Tab", objWrapperFunctions.mobileClick(goldButton), false);
+	        	 objUtilities.logReporter("Check 'gold' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(goldText), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'platinumButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(platinumButton), false);
+	        	 objUtilities.logReporter("Click 'platinumButton' Tab", objWrapperFunctions.mobileClick(platinumButton), false);
+	        	 objUtilities.logReporter("Check 'platinum' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(platinumText), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'collapsedButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(collapsedButton), false);
+	        	 objUtilities.logReporter("Click 'collapsedButton' Tab", objWrapperFunctions.mobileClick(collapsedButton), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'VIP Promos' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(vipPromosLabel), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'expandButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(showMoreButton), false);
+	        	 objUtilities.logReporter("Click 'expandButton' Tab", objWrapperFunctions.mobileClick(showMoreButton), false);
+	        	 objUtilities.logReporter("Check 'collapsedButton' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(showLessButton), false);
+	        	 objUtilities.logReporter("Click 'collapsedButton' Tab", objWrapperFunctions.mobileClick(showLessButton), false);
+	        	 
+	        	 objUtilities.logReporter("Check 'termsAndCondition' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(termsAndCondition), false);
+	        	 objUtilities.logReporter("Click 'termsAndCondition' Tab", objWrapperFunctions.mobileClick(termsAndCondition), false);
+	        	 objUtilities.logReporter("Check 'termsAndCondition' text presence on VIP page", objWrapperFunctions.verifymobileIsElementPresent(termsAndConditionLabel), false);
+	         }
+		  
+		// Home page validations
+		  public void PageValidationLogin()
+		  {
+			  objWrapperFunctions.waitForMobileElementPresence(homePageLogo);
+			//  objUtilities.logReporter("Check 'Home Page Logo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homePageLogo), false);
+			objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Check 'accountTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(accountTab), false);
+			  objUtilities.logReporter("Check 'depositTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(depositTab), false);
+			  objUtilities.logReporter("Check 'favouritetTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(favouritetTab), false);
+			  objUtilities.logReporter("Check 'playpointsTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(playpointsTab), false);
+			//  objUtilities.logReporter("Check 'searchBtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(searchBtn), false);
+			  
+			  
+			  // Bingo
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check Slider On bingo tab'", objWrapperFunctions.verifymobileIsElementPresent(TabSlider), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_PlusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_PlusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_BingoSchedule'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_BingoSchedule), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo_BingoSchedule_BingoHeader'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_BingoSchedule_BingoHeader), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo_BingoSchedule_BingoHeader'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_BingoSchedule_LobbyTab), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo_BingoSchedule_BingoHeader'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_BingoSchedule_ScheduleTab), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_BingoSchedule_ScheduleTab'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_BingoSchedule_ScheduleTab), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo_BingoSchedule_ScheduleTab_DaySelect'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_BingoSchedule_ScheduleTab_DaySelect), false);
+			  
+		  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			 // objUtilities.logReporter("Check 'homebtn_bingo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_PlusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_PlusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_BingoRooms'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_BingoRooms), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo_BingoRooms_header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_BingoRooms_header), false);
+		  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			//  objUtilities.logReporter("Check 'homebtn_bingo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_PlusBtn'  ", objWrapperFunctions.mobileClick(homebtn_bingo_PlusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_BingoFeatures'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_BingoFeatures), false);
+			  objUtilities.logReporter("Check 'homebtn_bingo_BingoRooms_header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_BingoFeatures_header), false);
+		  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			 // objUtilities.logReporter("Check 'homebtn_bingo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_PlusBtn'  ", objWrapperFunctions.mobileClick(homebtn_bingo_PlusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_bingo_BingoFeatures'  presence", objWrapperFunctions.mobileClick(homebtn_bingo_MeccaPromise), false);
+			//  objUtilities.logReporter("Check 'homebtn_bingo_BingoRooms_header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_bingo_MeccaPromise_header), false);
+		  
+			  // Slots
+			  objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check 'homebtn_slots'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_slots), false);
+			  objUtilities.logReporter("Click 'homebtn_slots_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_slots_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_slots_SlotsnGameHome'  ", objWrapperFunctions.mobileClick(homebtn_slots_SlotsnGameHome), false);
+			  objUtilities.logReporter("Check 'homebtn_slots_SlotsnGameHome_Header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_slots_SlotsnGameHome_Header), false);
+			  objUtilities.logReporter("Check Slider On slotsNGames page'", objWrapperFunctions.verifymobileIsElementPresent(TabSlider), false);
+			  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  //objUtilities.logReporter("Check 'homebtn_slots'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_slots), false);
+			  objUtilities.logReporter("Click 'homebtn_slots_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_slots_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_slots_VeiwAllGames'  ", objWrapperFunctions.mobileClick(homebtn_slots_VeiwAllGames), false);
+			  objUtilities.logReporter("Check 'homebtn_slots_VeiwAllGames_Header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_slots_VeiwAllGames_Header), false);
+			 
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			//  objUtilities.logReporter("Check 'homebtn_slots'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_slots), false);
+			  objUtilities.logReporter("Click 'homebtn_slots_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_slots_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_slots_JackPots'  ", objWrapperFunctions.mobileClick(homebtn_slots_JackPots), false);
+			  objUtilities.logReporter("Check 'homebtn_slots_JackPots_header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_slots_JackPots_header), false);
+			
+			  
+			  // Apps
+			  objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check 'homebtn_apps'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_apps), false);
+			  objUtilities.logReporter("Click 'homebtn->apps'  presence", objWrapperFunctions.mobileClick(homebtn_apps), false);
+			  objUtilities.logReporter("Check 'homebtn_apps_header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_apps_header), false);
+			
+			  
+			  //Promotions
+			  objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check 'homebtn_promotions'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_promotions), false);
+			  objUtilities.logReporter("Click 'homebtn_promotions_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_promotions_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_promotions_LatestOnlinePromotions'  ", objWrapperFunctions.mobileClick(homebtn_promotions_LatestOnlinePromotions), false);
+			 // objUtilities.logReporter("Check Slider On prmotion page'", objWrapperFunctions.verifymobileIsElementPresent(TabSlider), false);
+			  objUtilities.logReporter("Check 'homebtn_promotions_LatestOnlinePromotions_Header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_promotions_LatestOnlinePromotions_Header), false);
+			  objUtilities.logReporter("Check 'homebtn_promotions_LatestOnlinePromotions_LabelType'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_promotions_LatestOnlinePromotions_LabelType), false);
+			  objUtilities.logReporter("Check 'homebtn_promotions_LatestOnlinePromotions_LabelSort'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_promotions_LatestOnlinePromotions_LabelSort), false);
+		  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn_promotions_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_promotions_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_promotions_PlayPoints'  ", objWrapperFunctions.mobileClick(homebtn_promotions_PlayPoints), false);
+			  objUtilities.logReporter("Check 'homebtn_promotions_PlayPoints_promiseInfo'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_promotions_PlayPoints_promiseInfo), false);
+		  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn_promotions_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_promotions_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_promotions_LastWeekPromotion'  ", objWrapperFunctions.mobileClick(homebtn_promotions_LastWeekPromotion), false);
+			  objUtilities.logReporter("Check 'homebtn_promotions_LastWeekPromotion_Header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_promotions_LastWeekPromotion_Header), false);
+		  
+			
+			  
+			  //Clubs
+			  objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check 'homebtn_clubs'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_clubs), false);
+			  objUtilities.logReporter("Click 'homebtn_clubs_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_clubs_plusBtn), false);
+			  objUtilities.logReporter("Click 'homebtn_clubs_JoinYourLocalClub'  ", objWrapperFunctions.mobileClick(homebtn_clubs_JoinYourLocalClub), false);
+			  
+			//  objUtilities.logReporter("Check 'clubsTab_JoinYourLocalClubheader' text presence on promotion page", objWrapperFunctions.verifymobileIsElementPresent(clubsTab_JoinYourLocalClubheader), false);
+		      objUtilities.logReporter("Click 'Choose Your Club Drop Down' ", objWrapperFunctions.mobileClick(clubsTab_ChooseYourClubDropDown), false);
+		      objUtilities.logReporter("Check 'Aberdeen' Club under DropDown ", objWrapperFunctions.verifymobileIsElementPresent(clubsTab_AberDeenClub), false);
+		      objUtilities.logReporter("Check 'Andover' Club under DropDown ", objWrapperFunctions.verifymobileIsElementPresent(clubsTab_AndoverClub), false);
+		      objUtilities.logReporter("Click 'Andover' Club under DropDown ", objWrapperFunctions.mobileClick(clubsTab_AndoverClub), false);
+		      objUtilities.logReporter("Click on Title ", objWrapperFunctions.mobileClick(Title), false);
+		      objUtilities.logReporter("Check Mr. title ", objWrapperFunctions.verifymobileIsElementPresent(Title_Mr), false);
+		      objUtilities.logReporter("Click Mrs. Title ", objWrapperFunctions.verifymobileIsElementPresent(Title_Mrs), false);
+		      objUtilities.logReporter("Click Miss. Title ", objWrapperFunctions.verifymobileIsElementPresent(Title_Miss), false);
+		      objUtilities.logReporter("Click Ms. Title ", objWrapperFunctions.verifymobileIsElementPresent(Title_Ms), false);
+		      objUtilities.logReporter("Click Ms. Title ", objWrapperFunctions.mobileClick(Title_Ms), false);
+		      
+		      objUtilities.logReporter("Enter last name ", objWrapperFunctions.mobileSetText(LastName, "SQS"), false);
+		      objUtilities.logReporter("Enter first name ", objWrapperFunctions.mobileSetText(FirstName, "Test"), false);
+		      
+		      objUtilities.logReporter("Click DOB_DAY ", objWrapperFunctions.mobileClick(DOB_day), false);
+		      objUtilities.logReporter("Click DOB_DAY day 2 ", objWrapperFunctions.mobileClick(DOB_day_two), false);
+		      
+		      objUtilities.logReporter("Click month ", objWrapperFunctions.mobileClick(DOB_month), false);
+		      objUtilities.logReporter("Click month feb ", objWrapperFunctions.mobileClick(DOB_month_two), false);
+		      
+		      objUtilities.logReporter("Click year ", objWrapperFunctions.mobileClick(DOB_year), false);
+		      objUtilities.logReporter("Click year 1980 ", objWrapperFunctions.mobileClick(DOB_year_eighty), false);
+		      
+		      objUtilities.logReporter("Enter postcode name ", objWrapperFunctions.mobileSetText(postCode, "pa756pb"), false);
+		      objUtilities.logReporter("Enter house no name ", objWrapperFunctions.mobileSetText(houseNo, "568945"), false);
+		      objUtilities.logReporter("Enter Street name ", objWrapperFunctions.mobileSetText(streetAdress, "testStreet"), false);
+		      objUtilities.logReporter("Enter town  name ", objWrapperFunctions.mobileSetText(town, "Amerstedam"), false);
+		      objUtilities.logReporter("Enter email address", objWrapperFunctions.mobileSetText(email, "testSQS@hotmail.com"), false);
+		      objUtilities.logReporter("Enter confirmEmail address", objWrapperFunctions.mobileSetText(confirmEmail, "testSQS@hotmail.com"), false);
+		      objUtilities.logReporter("Enter mobileNumber ", objWrapperFunctions.mobileSetText(mobileNumber, "0123456789"), false);
+		      objUtilities.logReporter("Enter home number ", objWrapperFunctions.mobileSetText(HomeMobileNumber, "0020456789"), false);
+		      objUtilities.logReporter("Click on checkBox age 18 ", objWrapperFunctions.mobileClick(iAmAgedCheckBox), false);
+		      objUtilities.logReporter("Click Join Now button ", objWrapperFunctions.mobileClick(joinClubBtn), false);
+		  
+		      
+	/*	   // Instant Win  (Problem to Page)
+			  objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check 'homebtn_instantWin'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_instantWin), false);
+			  objUtilities.logReporter("Click 'homebtn->instantWin'  presence", objWrapperFunctions.mobileClick(homebtn_instantWin), false);
+			  objUtilities.logReporter("Check 'homebtn_instantWin_header'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_instantWin_header), false);
+			*/
+			 
+		      //community
+		      
+		      objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Check 'homebtn_clubs'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn_community), false);
+			  objUtilities.logReporter("Click 'homebtn_clubs_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_community_plusBtn), false);
+			  
+			  objUtilities.logReporter("Click 'CommunityTab_CMOfTheMonthTab'  presence", objWrapperFunctions.mobileClick(CommunityTab_CMOfTheMonthTab), false);
+			  objUtilities.logReporter("Check 'CommunityTab_CMOfTheMonthHeader' text presence on promotion page", objWrapperFunctions.verifymobileIsElementPresent(CommunityTab_CMOfTheMonthHeader), false);
+			  
+			  objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn_community_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_community_plusBtn), false);
+			  //objUtilities.logReporter("Check 'homebtn_community_WinnersTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(CommunityTab_WinnersTab), false);
+			  objUtilities.logReporter("Click 'CommunityTab_WinnersTab' Tab", objWrapperFunctions.mobileClick(CommunityTab_WinnersTab), false);
+		      objUtilities.logReporter("Check 'CommunityTab_WinnersHeader' text presence on promotion page", objWrapperFunctions.verifymobileIsElementPresent(CommunityTab_WinnersHeader), false);
+		   
+		      objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+		      objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn_community_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_community_plusBtn), false);
+			  
+			 // objUtilities.logReporter("Check 'RoomieOfTheWeekTabs'  presence", objWrapperFunctions.verifymobileIsElementPresent(CommunityTab_RoomieOfTheWeekTab), false);
+		      //objUtilities.logReporter("Click 'CommunityTab_RoomieOfTheWeekTab' Tab", objWrapperFunctions.mobileClick(CommunityTab_RoomieOfTheWeekTab), false);//redirect to live site
+		      
+		     // objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+		     // objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			 // objUtilities.logReporter("Click 'homebtn_community_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_community_plusBtn), false);
+			  //objUtilities.logReporter("Check 'CommunityTab_RankCaresTab'  presence", objWrapperFunctions.verifymobileIsElementPresent(CommunityTab_RankCaresTab), false);
+		      objUtilities.logReporter("Click 'CommunityTab_RankCaresTab' Tab", objWrapperFunctions.mobileClick(CommunityTab_RankCaresTab), false);
+		      objUtilities.logReporter("Check 'CommunityTab_RankCaresHeader' text presence on promotion page", objWrapperFunctions.verifymobileIsElementPresent(CommunityTab_RankCaresHeader), false);
+		
+		      objUtilities.logReporter("Check 'homebtn'  presence", objWrapperFunctions.verifymobileIsElementPresent(homebtn), false);
+		      objUtilities.logReporter("Click 'homebtn'  ", objWrapperFunctions.mobileClick(homebtn), false);
+			  objUtilities.logReporter("Click 'homebtn_community_plusBtn'  presence", objWrapperFunctions.mobileClick(homebtn_community_plusBtn), false);
+		      objUtilities.logReporter("Click 'CommunityTab_helpCenterTab' Tab", objWrapperFunctions.mobileClick(CommunityTab_helpCenterTab), false);  			  
+		 }
+		 
+}

@@ -1,0 +1,14 @@
+{
+  "testCases" : [ {
+    "uid" : "f1f4e235f003b883",
+    "name" : "RegisterAndDeposit",
+    "title" : "Register and deposit",
+    "time" : {
+      "start" : 1494916469091,
+      "stop" : 1494916557660,
+      "duration" : 88569
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  } ]
+}
