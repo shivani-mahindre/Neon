@@ -1,4 +1,4 @@
-package com.scripts.desktopGNG;
+package com.scripts.desktopNeon;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Title;
 
 import com.generic.BaseTest;
-import com.pageFactory.desktopGNG.neonReg_PF;
+import com.pageFactory.desktopNeon.neonReg_PF;
 
 
 public class neonReg extends BaseTest

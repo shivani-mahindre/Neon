@@ -2371,6 +2371,15 @@ public class WrapperFunctions
 			String number=String.valueOf(aNumber);
 			return number;
 		}
-
+		public void displayAllElement(By locator)
+		{
+			waitForElementPresence(locator);		
+			List<WebElement>allElements=webDriver.findElements(locator);
+			for (WebElement element: allElements) 
+			{
+				String temp=element.getText().trim();
+			    System.out.println(temp);	
+			}
+		}	
 		
 }

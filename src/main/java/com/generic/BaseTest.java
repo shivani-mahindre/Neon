@@ -51,6 +51,8 @@ public class BaseTest extends Pojo
     	String user="";
     	user=objConfig.getProperty("web.CustomerNumber");
     	this.setUser(user);
+    	String machine=objConfig.getProperty("web.machine");
+    	this.setMachine(machine);
     	String NeonUser = objConfig.getProperty("web.NeonUsername"); 
     	this.setNeonUser(NeonUser);
     	

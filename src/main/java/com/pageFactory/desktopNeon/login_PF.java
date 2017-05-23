@@ -1,4 +1,4 @@
-package com.pageFactory.desktopGNG;
+package com.pageFactory.desktopNeon;
 
 import java.util.Properties;
 
@@ -47,11 +47,16 @@ public class login_PF
 		objUtilities.logReporter("Enter username", objWrapperFunctions.setText(userName, NeonUser), false);
 		objUtilities.logReporter("Enter password", objWrapperFunctions.setText(password,NeonPass), false);
 		objUtilities.logReporter("Click on signBtn", objWrapperFunctions.click(signBtn), false);
-		Thread.sleep(15000);
+		Thread.sleep(20000);
+	/*	//objWrapperFunctions.waitForElementPresence(okBtn);
 		objWrapperFunctions.pressEnterBtn(okBtn);
 		objWrapperFunctions.pressEnterBtn(okBtn);
 		objWrapperFunctions.pressEnterBtn(okBtn);
-		objWrapperFunctions.pressEnterBtn(okBtn);
+		objWrapperFunctions.pressEnterBtn(okBtn);*/
+		
+		objWrapperFunctions.acceptMultipleAlert(okBtn);
+		
+		
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

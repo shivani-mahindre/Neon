@@ -8,7 +8,6 @@ import ru.yandex.qatools.allure.annotations.Title;
 
 import com.generic.BaseTest;
 import com.pageFactory.CashierManagerTC.BalancePage;
-import com.pageFactory.desktopGNG.neonReg_PF;
 
 
 public class BalanceDetailsVerification extends BaseTest

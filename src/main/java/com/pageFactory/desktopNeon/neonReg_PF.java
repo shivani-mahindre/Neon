@@ -1,4 +1,4 @@
-package com.pageFactory.desktopGNG;
+package com.pageFactory.desktopNeon;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -84,12 +84,11 @@ public class neonReg_PF
 		objUtilities.logReporter("Enter username", objWrapperFunctions.setText(userName, NeonUser), false);
 		objUtilities.logReporter("Enter password", objWrapperFunctions.setText(password,NeonPass), false);
 		objUtilities.logReporter("Click on signBtn", objWrapperFunctions.click(signBtn), false);
-		Thread.sleep(10000);
-		//objWrapperFunctions.waitForElementPresence(okBtn);
-		objWrapperFunctions.acceptMultipleAlert(okBtn);
-	//	objWrapperFunctions.pressEnterBtn(okBtn);
-		//objWrapperFunctions.pressEnterBtn(okBtn);
-		//objWrapperFunctions.pressEnterBtn(okBtn);
+		Thread.sleep(30000);
+		objWrapperFunctions.pressEnterBtn(okBtn);
+		objWrapperFunctions.pressEnterBtn(okBtn);
+		objWrapperFunctions.pressEnterBtn(okBtn);
+		objWrapperFunctions.pressEnterBtn(okBtn);
 		Thread.sleep(2000);
 		System.out.println("****************** Registration ******************");
 		objUtilities.logReporter("Click on customer tab", objWrapperFunctions.click(customerTab), false);

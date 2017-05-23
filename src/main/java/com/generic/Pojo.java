@@ -35,7 +35,7 @@ public class Pojo
 	private String testCaseID = "";
 	private String runID = "",url="";
 	private SWFApp app;
-	private String user,PMAUser,PMAPassword,user1Value,user2Value,pass,testName,NeonUser,NeonPassword; 
+	private String user,Machine,PMAPassword,user1Value,user2Value,pass,testName,NeonUser,NeonPassword; 
 	
 	// Getter Setter for WebDriver object instance
 	public void setDriver(WebDriver webDriver)
@@ -232,16 +232,6 @@ public class Pojo
 		return pass;
 	}
 	
-	
-	
-	public void setPAMUser(String PMAUser)
-	{
-		this.PMAUser = PMAUser;
-	}
-	
-	public String getPAMUser() {
-		return PMAUser;
-	}
 	public void setPAMPassword(String PMAPassword)
 	{
 	    this.PMAPassword = PMAPassword;
@@ -308,6 +298,13 @@ public class Pojo
 	{
 	    return NeonPassword;
 	}
+	public void setMachine(String Machine)
+	{
+		this.Machine = Machine;
+	}
 	
+	public String getMachine() {
+		return Machine;
+	}
 
 }

@@ -1,10 +1,10 @@
-package com.scripts.desktopGNG;
+package com.scripts.desktopNeon;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.generic.BaseTest;
-import com.pageFactory.desktopGNG.logSuspendedCustomer_PF;
+import com.pageFactory.desktopNeon.logSuspendedCustomer_PF;
 
 
 public class logSuspendedCustomer extends BaseTest
